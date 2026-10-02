@@ -1,4 +1,5 @@
 ---
+readingLine: true
 title: "About Dawn Edwards-Jones | Speaker & Founder of The Adawning"
 description: "Meet Dawn Edwards-Jones — author, keynote speaker, self-leadership coach and founder of New Dawn Wellness and The Adawning. Her story, mission and approach."
 sections:

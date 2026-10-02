@@ -98,6 +98,7 @@ content:
       - { name: permalink, type: string, hidden: true }
       - { name: layout, type: string, hidden: true }
       - { name: note, label: Note box at the top (legal pages), type: string }
+      - { name: readingLine, label: "Gold reading line under the menu (long pages)", type: boolean }
       - name: sections
         label: Page sections (top to bottom)
         type: block

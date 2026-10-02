@@ -1,7 +1,7 @@
 <header class="site-header">
   <div class="nav-inner">
     <a class="brand" href="/"><img src="{{ site.logo }}" alt="" height="44" eleventy:ignore><span class="wtext">{{ site.name }}<small>{{ site.tagline }}</small></span></a>
-    <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">&#9776;</button>
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span></button>
     <nav class="main-nav" id="main-nav" aria-label="Main">
       <ul>
       {%- for item in site.nav %}
@@ -9,22 +9,23 @@
           {%- set kids = item.children | liveLinks %}
           {%- if kids.length %}
           {%- set familyLink = item.link if (item.link and (item.link | linkIsLive)) else kids[0].link %}
-        <li class="has-drop{% if (kids | containsUrl(page.url)) or familyLink == page.url %} current{% endif %}">
+        <li class="has-drop{% if (kids | containsUrl(page.url)) or familyLink == page.url %} current{% endif %}" style="--i:{{ loop.index0 }}">
           <a class="drop-link" href="{{ familyLink }}"{% if familyLink == page.url %} aria-current="page"{% endif %}>{{ item.label }}</a>
           <button class="drop-toggle" type="button" aria-expanded="false" aria-label="Show {{ item.label }} pages"><svg viewBox="0 0 10 6" aria-hidden="true" focusable="false"><path d="M1 1l4 4 4-4"/></svg></button>
           <ul class="drop">
             {%- for k in kids %}
-            <li><a href="{{ k.link }}"{% if k.link == page.url %} aria-current="page"{% endif %}>{{ k.label }}</a></li>
+            <li style="--i:{{ loop.index0 }}"><a href="{{ k.link }}"{% if k.link == page.url %} aria-current="page"{% endif %}>{{ k.label }}</a></li>
             {%- endfor %}
           </ul>
         </li>
           {%- endif %}
         {%- elif item.link and item.label and (item.link | linkIsLive) %}
-        <li{% if item.link == page.url %} class="current"{% endif %}><a href="{{ item.link }}"{% if item.link == page.url %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
+        <li{% if item.link == page.url %} class="current"{% endif %} style="--i:{{ loop.index0 }}"><a href="{{ item.link }}"{% if item.link == page.url %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
         {%- endif %}
       {%- endfor %}
-        <li><a class="nav-cta" href="{{ site.navButton.link }}">{{ site.navButton.label }}</a></li>
+        <li style="--i:{{ site.nav.length }}"><a class="nav-cta" href="{{ site.navButton.link }}">{{ site.navButton.label | btnLabel | safe }}</a></li>
       </ul>
     </nav>
   </div>
+  {%- if readingLine %}<span class="read-line" aria-hidden="true"></span>{% endif %}
 </header>

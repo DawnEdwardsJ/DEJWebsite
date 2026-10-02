@@ -8,7 +8,7 @@
 </div>
 {%- if s.closing_line %}
 <div class="method-close reveal"><p class="say">{{ s.closing_line | mdi | safe }}</p>
-{%- if s.closing_button and s.closing_button.link and s.closing_button.label %}<div class="btn-row center"><a class="btn btn-gold" href="{{ s.closing_button.link }}">{{ s.closing_button.label | mdi | safe }}</a></div>{% endif -%}
+{%- if s.closing_button and s.closing_button.link and s.closing_button.label %}<div class="btn-row center"><a class="btn btn-gold" href="{{ s.closing_button.link }}">{{ s.closing_button.label | btnLabel | safe }}</a></div>{% endif -%}
 </div>
 {%- endif %}
 </div></section>

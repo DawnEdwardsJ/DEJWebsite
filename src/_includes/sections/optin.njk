@@ -7,7 +7,7 @@
 </div>
 <form onsubmit="return false">
 <input type="email" placeholder="Your email address" aria-label="Email address">
-<button class="btn btn-gold" type="submit">{{ s.button_label }}</button>
+<button class="btn btn-gold" type="submit">{{ s.button_label | btnLabel | safe }}</button>
 </form>
 {%- if s.fine_print %}<p class="fine">{{ s.fine_print | mdi | safe }}</p>{% endif %}
 </div></section>

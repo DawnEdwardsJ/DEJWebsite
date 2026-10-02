@@ -27,7 +27,7 @@
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 {%- endif %}
 <input type="hidden" name="page" value="{{ page.url }}">
-<div class="btn-row"><button class="btn btn-gold" type="submit">{{ s.button_label or "Send" }}</button></div>
+<div class="btn-row"><button class="btn btn-gold" type="submit">{{ (s.button_label or "Send") | btnLabel | safe }}</button></div>
 <p class="fine">{{ s.fine_print | mdi | safe }}</p>
 <p class="fine form-status" id="f-status" role="status" aria-live="polite"></p>
 </form>

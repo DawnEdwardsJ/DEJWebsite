@@ -1,4 +1,5 @@
 ---
+readingLine: true
 title: "The Adawning Philosophy | What We Believe — Dawn Edwards-Jones"
 description: "The Adawning philosophy — the beliefs behind Dawn Edwards-Jones’ work. You’re not broken. Your body isn’t the enemy. And you deserve support long before breaking point."
 sections:

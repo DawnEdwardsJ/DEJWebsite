@@ -21,6 +21,7 @@ first commit on `main` if you need the history.
 | VA editing | Pages CMS config for every page, section, setting and logo. | `.pages.yml`, `docs/EDITING-GUIDE.md` |
 | Design system | Colour rhythm with no repeated neighbours on any page (13 of 14 had them); photo heroes on all main pages, navy on the three B2B pages; one card style, two corner radii, two shadow depths; grain on every deep section; no bright-white surfaces. | Automated audit of section order |
 | Premium details | Self-hosted fonts with preload and metric-matched fallbacks (no font jump, no Google request); instant page loads via prerender-on-hover; header holds still between pages; blurred photo previews with fade-in; branded share card per page; anchor links clear the sticky header. | |
+| Signature motion | Chosen by Dawn from the Motion Lab: line-by-line headlines, drawn hairlines, photo unveil, scroll-lit quotes, menu morph and cascade, rolling buttons, reading line on long pages, footer curtain. Dropdown family names now link to their main page. | CLS 0, performance 98–99, keyboard and reduced-motion tests pass |
 | Bugs fixed on the way | Outline buttons invisible on navy bands; hero photo squashed beside text on phones; footer column wrapping; off-centre opt-in small print; three placeholder panels replaced with real photos. | |
 
 ### Lighthouse (mobile, simulated throttling)

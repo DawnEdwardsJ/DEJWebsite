@@ -535,3 +535,85 @@ html{scroll-padding-top:96px}
   .main-nav .has-drop>.drop{flex-basis:100%}
 }
 @media(max-width:900px){.main-nav .drop{box-shadow:none;background:transparent;border-radius:0}}
+
+/* ================= SIGNATURE MOTION (chosen in the Motion Lab, Oct 2026) =================
+   All built on the shared tokens; everything collapses under prefers-reduced-motion. */
+
+/* 1. Headlines rise line by line (site.js splits the h1 into measured lines) */
+.js .line-mask{visibility:hidden}
+.js .line-mask.is-split{visibility:visible}
+.line-mask.is-split>span{animation:none;display:block}
+.line-mask.is-split .ln{display:block;overflow:hidden;padding:.08em .2em .16em;margin:-.08em -.2em -.16em}
+.line-mask.is-split .ln>span{display:block;animation:line-rise var(--t-line) var(--ease-out) backwards;animation-delay:calc(var(--i) * 95ms + 120ms)}
+.line-mask.no-anim .ln>span{animation:none}
+
+/* 2. Gold hairlines draw themselves; label letters settle into place */
+.kicker::before{transform-origin:left center}
+.js .reveal .kicker::before{transform:scaleX(0);transition:transform 800ms var(--ease-out) 100ms}
+.js .reveal.in .kicker::before{transform:none}
+.js .reveal .kicker{opacity:0;letter-spacing:5px;transition:opacity 900ms var(--ease-out) 220ms,letter-spacing 1100ms var(--ease-out) 220ms}
+.js .reveal.in .kicker{opacity:1;letter-spacing:3px}
+.hero .kicker::before{animation:draw-line 800ms var(--ease-out) backwards}
+.hero .kicker{animation:settle-letters 1100ms var(--ease-out) 120ms backwards}
+@keyframes draw-line{from{transform:scaleX(0)}}
+@keyframes settle-letters{from{opacity:0;letter-spacing:5px}}
+
+/* 3. Photos unveil from the bottom edge while the image settles */
+/* the frame (and its blurred preview) stays put; the sharp photo unveils inside it */
+.fig.has-img picture{position:absolute;inset:0;display:block;z-index:0}
+.js .reveal .fig.has-img picture{clip-path:inset(100% 0 0 0);transform:scale(1.14);
+  transition:clip-path 1300ms var(--ease-out) 160ms,transform 1900ms var(--ease-out) 160ms}
+.js .reveal.in .fig.has-img picture{clip-path:inset(0 0 0 0);transform:none}
+.hero .hfig.has-img picture{animation:unveil 1300ms var(--ease-out) 150ms backwards,settle-img 1900ms var(--ease-out) 150ms backwards}
+@keyframes unveil{from{clip-path:inset(100% 0 0 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes settle-img{from{transform:scale(1.14)}}
+
+/* 4. Pull quotes light up word by word as you scroll (site.js sets --lit per word) */
+.pullquote .w{opacity:var(--lit,1);transition:opacity 260ms linear}
+
+/* 5. Menu: the icon turns into a cross; items arrive one after another */
+.nav-toggle{position:relative;width:44px;height:44px;font-size:0;padding:0}
+.nav-toggle span{position:absolute;left:11px;right:11px;height:1.5px;border-radius:2px;background:var(--navy);
+  transition:transform 500ms var(--ease-out),opacity 300ms var(--ease-out)}
+.nav-toggle span:nth-child(1){top:15px}.nav-toggle span:nth-child(2){top:21px}.nav-toggle span:nth-child(3){top:27px}
+.nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0;transform:scaleX(.3)}
+.nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+@media(max-width:900px){
+  .main-nav>ul>li{opacity:0;transform:translateX(14px);transition:opacity 450ms var(--ease-out),transform 550ms var(--ease-out)}
+  .main-nav.open>ul>li{opacity:1;transform:none;transition-delay:calc(var(--i) * 40ms + 90ms)}
+}
+@media(min-width:901px){
+  .drop li{opacity:0;transform:translateY(5px);transition:opacity 320ms var(--ease-out),transform 420ms var(--ease-out)}
+  .main-nav li:hover>.drop li,.main-nav li.open>.drop li{opacity:1;transform:none;transition-delay:calc(var(--i) * 35ms + 40ms)}
+}
+
+/* 6. Buttons: the label rolls up on hover, arrows nudge, text links draw an underline */
+.btn,.nav-cta{display:inline-flex;align-items:center;justify-content:center;gap:.45em}
+.roll{display:inline-grid;overflow:hidden;line-height:1.3;padding-block:.06em;vertical-align:top}
+.roll>span{grid-area:1/1;transition:transform 520ms var(--ease-out)}
+.roll>span+span{transform:translateY(115%)}
+.btn:hover .roll>span:first-child,.nav-cta:hover .roll>span:first-child,.btn:focus-visible .roll>span:first-child{transform:translateY(-115%)}
+.btn:hover .roll>span+span,.nav-cta:hover .roll>span+span,.btn:focus-visible .roll>span+span{transform:none}
+.arrow{display:inline-block;transition:transform 420ms var(--ease-out)}
+.btn:hover .arrow,.door:hover .arrow,.crosslink a:hover .arrow{transform:translateX(5px)}
+.legal-doc a,.nd-form .fine a,.split p a,.story p a,.creed a,.crosslink a{text-decoration:none;border-bottom:0;padding-bottom:2px;
+  background:linear-gradient(var(--orange),var(--orange)) 0 100%/0 1px no-repeat,linear-gradient(rgba(80,42,31,.3),rgba(80,42,31,.3)) 0 100%/100% 1px no-repeat;
+  transition:background-size 550ms var(--ease-out),color var(--t-hover) var(--ease-out)}
+.legal-doc a:hover,.nd-form .fine a:hover,.split p a:hover,.story p a:hover,.creed a:hover,.crosslink a:hover{background-size:100% 1px,100% 1px}
+
+/* 7. Reading line on long pages: fills as you read (site.js sets the scale) */
+.read-line{position:absolute;left:0;bottom:-1px;height:2px;width:100%;background:var(--gold);transform-origin:left center;transform:scaleX(0);pointer-events:none}
+
+/* 8. Footer curtain (desktop): the page lifts away to reveal the footer resting beneath */
+@media(min-width:901px) and (min-height:640px){
+  main{position:relative;z-index:1;background:var(--ivory);border-radius:0 0 28px 28px;overflow:clip;
+    box-shadow:0 30px 60px -20px rgba(15,28,56,.45)}
+  .site-footer{position:sticky;bottom:0;z-index:0}
+}
+
+@media (prefers-reduced-motion: reduce){
+  .js .reveal .kicker,.js .reveal .kicker::before,.js .reveal .fig.has-img picture{transition:none}
+  .pullquote .w{opacity:1!important}
+}
+.nav-toggle,.drop-toggle,.btn,.nav-cta{-webkit-tap-highlight-color:transparent}

@@ -5,7 +5,7 @@
 {%- if live.length -%}
 <div class="btn-row{% if center %} center{% endif %}{% if cls %} {{ cls }}{% endif %}">
 {%- for b in live -%}
-<a class="btn btn-{{ b.style or 'gold' }}{% if b.sheen %} sheen{% endif %}{% if small %} btn-sm{% endif %}" href="{{ b.link }}">{{ b.label | mdi | safe }}</a>
+<a class="btn btn-{{ b.style or 'gold' }}{% if b.sheen %} sheen{% endif %}{% if small %} btn-sm{% endif %}" href="{{ b.link }}">{{ b.label | btnLabel | safe }}</a>
 {%- endfor -%}
 </div>
 {%- endif -%}

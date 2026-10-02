@@ -1,4 +1,5 @@
 ---
+readingLine: true
 layout: layouts/legal.njk
 title: "Terms & Conditions | Dawn Edwards-Jones"
 description: "The terms that apply to speaking engagements, corporate workshops, advisory work and coaching with Dawn Edwards-Jones."

@@ -103,6 +103,13 @@ edit `_site/`, it is rebuilt every time).
 - **Motion** follows `docs/UPGRADE-PROMPT.md`: tokens and the reduced-motion guard are in
   `src/assets/style.css`, behaviour in `src/assets/site.js`. No animation libraries. Sheen
   is used on two elements; the third is reserved for the speaker-kit download button.
+  Signature effects Dawn chose (Oct 2026): h1 split into measured lines that rise in turn;
+  kicker hairlines draw and letters settle; photos unveil inside their frame over the
+  blurred preview; pull quotes light word by word with scroll; menu icon morphs to a cross
+  with items cascading; button labels roll on hover, arrows nudge, in-text links draw an
+  underline; a gold reading line on pages with `readingLine: true`; and a footer curtain on
+  desktop (main lifts to reveal the sticky footer). Button labels go through the `btnLabel`
+  filter, which adds an aria-hidden duplicate for the roll.
 - **Links to `newdawnwellness.health` are hidden automatically** while
   `wellnessSiteLive` is `false` in `site.json`. Leave those links in the content; flipping the
   switch brings them all back.

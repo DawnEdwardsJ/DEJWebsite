@@ -7,7 +7,7 @@
 <div class="card reveal" data-delay="{{ (loop.index0 % 4) * 70 }}">
 {%- if c.price %}<div class="price">{{ c.price | mdi | safe }}</div>{% endif -%}
 <h3>{{ c.title | mdi | safe }}</h3>
-{%- if c.button_link and c.button_label %}<p class="card-text">{{ c.text | mdi | safe }}</p><a class="btn btn-ghost btn-sm" href="{{ c.button_link }}">{{ c.button_label | mdi | safe }}</a>
+{%- if c.button_link and c.button_label %}<p class="card-text">{{ c.text | mdi | safe }}</p><a class="btn btn-ghost btn-sm" href="{{ c.button_link }}">{{ c.button_label | btnLabel | safe }}</a>
 {%- else %}<p>{{ c.text | mdi | safe }}</p>{% endif -%}
 </div>
 {%- endfor -%}

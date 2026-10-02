@@ -1,4 +1,5 @@
 ---
+readingLine: true
 layout: layouts/legal.njk
 title: "Privacy Policy | Dawn Edwards-Jones"
 description: "How Dawn Edwards-Jones collects, uses, stores and protects your personal information, and how to access or correct it."

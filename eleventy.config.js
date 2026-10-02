@@ -34,6 +34,24 @@ export default function (eleventyConfig) {
     Array.isArray(items) ? items.filter((it) => isLive(it?.[key])) : []
   );
 
+  // Button text that rolls on hover: the label plus a hidden copy that slides in
+  // beneath it. A trailing arrow is split off so it can nudge forward on hover.
+  const splitArrow = (label) => {
+    const m = String(label || "").trim().match(/^(.*?)\s*(→|&rarr;)$/);
+    return m ? [m[1], true] : [String(label || "").trim(), false];
+  };
+  const arrowSpan = ' <span class="arrow" aria-hidden="true">→</span>';
+  eleventyConfig.addFilter("btnLabel", (label) => {
+    const [text, arrow] = splitArrow(label);
+    const html = md.renderInline(text);
+    return `<span class="roll"><span>${html}</span><span aria-hidden="true">${html}</span></span>${arrow ? arrowSpan : ""}`;
+  });
+  // Links whose text ends in an arrow: keep the words, make the arrow a nudging span.
+  eleventyConfig.addFilter("arrowLabel", (label) => {
+    const [text, arrow] = splitArrow(label);
+    return md.renderInline(text) + (arrow ? arrowSpan : "");
+  });
+
   // Buttons left half-filled in the CMS are skipped rather than shown empty.
   eleventyConfig.addFilter("usable", (items) =>
     Array.isArray(items) ? items.filter((b) => b && b.label && b.link) : []
