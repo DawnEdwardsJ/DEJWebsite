@@ -107,6 +107,19 @@ edit `_site/`, it is rebuilt every time).
   `wellnessSiteLive` is `false` in `site.json`. Leave those links in the content; flipping the
   switch brings them all back.
 
+- **Design system** (palette values unchanged, usage rules only): light sections alternate
+  ivory/cream with no repeats; beige for quote bands; deep colours by meaning (navy =
+  business, forest/olive = method and Soul Mastery, burgundy = credentials), never adjacent;
+  closing CTA band light so it separates from the navy footer; photo heroes on all main
+  pages (navy variant on the three B2B pages). One card style (ivory, beige border, soft
+  shadow), radii `--r-panel` 14px and `--r-pill`, shadows `--shadow-soft`/`--shadow-lift`.
+  No bright-white surfaces.
+- **Fonts are self-hosted** in `src/assets/fonts/` with metric-matched fallbacks. Don't
+  re-add Google Fonts links.
+- **Instant navigation** uses Speculation Rules (prerender on hover) in `base.njk`;
+  anything with side effects on page load must tolerate prerendering (see the Meta Pixel
+  wrapper).
+
 Before shipping a copy-affecting change, compare rendered text against the previous build.
 Copy must not drift.
 

@@ -20,6 +20,7 @@ Pages. Day-to-day text and photo edits happen in [Pages CMS](https://pagescms.or
 ├── .pages.yml                 Pages CMS editor configuration
 ├── eleventy.config.js         Build configuration (Markdown, image optimisation)
 ├── functions/api/enquiry.js   Cloudflare Pages Function: contact form → Tekmatix
+├── og/                        Builds a branded social share card per page at build time
 ├── docs/
 │   ├── EDITING-GUIDE.md       Plain-English guide for whoever edits the site
 │   ├── DEPLOY-CLOUDFLARE.md   Hosting, DNS and deploy procedure
@@ -34,7 +35,8 @@ Pages. Day-to-day text and photo edits happen in [Pages CMS](https://pagescms.or
     ├── _includes/layouts/     Page shell (head, header, footer)
     ├── _includes/partials/    Header and footer, shared by every page
     ├── _includes/sections/    One template per section type (hero, split, cards…)
-    ├── assets/style.css       The stylesheet, including the motion system
+    ├── assets/style.css       The stylesheet: fonts, design tokens, motion system
+    ├── assets/fonts/          Self-hosted Cormorant Garamond + Montserrat (no Google request)
     ├── assets/site.js         Navigation, scroll reveal, form handling (~3KB, no libraries)
     ├── images/photos/         Original photographs at full quality
     └── images/logos/          Client logos
@@ -62,7 +64,14 @@ changing the menu means editing `src/_data/site.json`, one file.
 
 Images referenced in content (e.g. `/images/photos/group1.jpg`) are resized at build time
 into WebP and JPEG at several widths, with `srcset`, `width`/`height` and lazy loading added
-automatically. Upload the original and let the build handle the rest.
+automatically, plus a tiny blurred preview that shows while each photo loads. Upload the
+original and let the build handle the rest.
+
+Each page also gets a branded share card (`/og/<page>.jpg`) built from its opening banner:
+its photo, small label and heading. These are what LinkedIn, Slack and email previews show.
+
+Pages prerender when a visitor hovers a link (Speculation Rules), and the header stays in
+place while content crossfades between pages (View Transitions).
 
 ## Running it locally
 

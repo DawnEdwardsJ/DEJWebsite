@@ -46,6 +46,7 @@ sections:
         link_label: "Listen to the podcast"
 
   - type: split
+    background: cream
     photo: /images/photos/dawn-cup-eyes-closed.jpg
     photo_alt: "Dawn pausing with a warm cup, eyes closed"
     photo_position: center top
@@ -62,7 +63,7 @@ sections:
     quote: "“You don’t need fixing. You need somewhere to exhale.”"
 
   - type: cta_band
-    background: navy
+    background: ivory
     line: "Not sure which door is yours? Tell me where you are — I’ll point you the right way."
     buttons:
       - { label: "Start a conversation", link: "/contact/", style: gold }

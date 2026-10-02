@@ -24,12 +24,15 @@
 {#- A photo panel. With no photo it falls back to the coloured panel with a caption. -#}
 {%- macro fig(photo, alt, tone="gold", pos="", sizes="(max-width: 900px) 90vw, 560px", cls="", eager=false) -%}
 {%- if photo -%}
-<div class="fig {{ tone or 'gold' }} has-img media{% if cls %} {{ cls }}{% endif %}"><img class="ph" src="{{ photo }}" alt="{{ alt }}" sizes="{{ sizes }}"{% if pos %} style="object-position:{{ pos }}"{% endif %}{% if eager %} loading="eager" fetchpriority="high"{% endif %}></div>
+{%- set preview = photo | lqip -%}
+<div class="fig {{ tone or 'gold' }} has-img media{% if cls %} {{ cls }}{% endif %}"{% if preview %} style="--lqip:url({{ preview }}){% if pos %};--pos:{{ pos }}{% endif %}"{% endif %}><img class="ph" src="{{ photo }}" alt="{{ alt }}" sizes="{{ sizes }}"{% if pos %} style="object-position:{{ pos }}"{% endif %}{% if eager %} loading="eager" fetchpriority="high"{% endif %}></div>
 {%- else -%}
 <div class="fig {{ tone or 'gold' }}{% if cls %} {{ cls }}{% endif %}">{{ alt }}</div>
 {%- endif -%}
 {%- endmacro %}
 
-{%- macro bg(s, extra="") -%}
-class="sec{% if s.background and s.background != 'none' %} {{ s.background }}{% endif %}{% if extra %} {{ extra }}{% endif %}"
+{#- Section background. Deep colours (navy, forest, olive, burgundy) always get the soft grain texture. -#}
+{%- macro bg(s, extra="", fallback="") -%}
+{%- set b = s.background if (s.background and s.background != 'none') else fallback -%}
+class="sec{% if b %} {{ b }}{% endif %}{% if b in ['navy', 'forest', 'olive', 'burgundy'] and 'grain' not in extra %} grain{% endif %}{% if extra %} {{ extra }}{% endif %}"
 {%- endmacro %}

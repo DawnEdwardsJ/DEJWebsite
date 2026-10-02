@@ -70,6 +70,21 @@ Pixel ID. Leave them blank to switch tracking off.
 
 ---
 
+## Keeping the design consistent
+
+The site follows a simple colour rhythm. Sticking to it is what makes it look designed
+rather than assembled:
+
+- **Light sections alternate Ivory and Cream.** Never put the same colour twice in a row.
+- **Beige is for quote bands** (pull quotes, testimonials).
+- **Deep colours carry meaning:** Navy for business and speaking, Forest or Olive for the
+  method and Soul Mastery, Burgundy for credentials and numbers. Never two deep sections
+  in a row.
+- **The last band before the footer is always light**, so it stands apart from the navy
+  footer.
+- **Every main page opens with a photo banner.** Business pages (Speaking, Corporate
+  Workshops, Menopause Policy) use the navy version; the rest use cream.
+
 ## House rules
 
 - **Dawn approves all wording before it goes live.** Draft changes and show her first.

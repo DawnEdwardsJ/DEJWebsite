@@ -1,5 +1,5 @@
 {%- from "macros.njk" import buttons -%}
-<section class="hero{% if s.dark %} dark{% endif %}"><div class="wrap">
+<section class="hero{% if s.dark %} dark grain{% endif %}"><div class="wrap">
 {%- if s.kicker %}<div class="kicker">{{ s.kicker | mdi | safe }}</div>{% endif -%}
 <h1 class="line-mask"><span>{{ s.heading | mdi | safe }}</span></h1>
 {%- if s.text %}<p class="lead">{{ s.text | mdi | safe }}</p>{% endif -%}

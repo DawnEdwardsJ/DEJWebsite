@@ -54,6 +54,13 @@
     }
   });
 
+  /* ---- photos fade in over their blurred preview once loaded ---- */
+  d.querySelectorAll('.fig .ph[loading="lazy"]').forEach(function (img) {
+    function done() { img.classList.add("is-loaded"); }
+    if (img.complete && img.naturalWidth) done();
+    else { img.addEventListener("load", done, { once: true }); img.addEventListener("error", done, { once: true }); }
+  });
+
   /* ---- sticky nav condenses after 80px ---- */
   var header = d.querySelector(".site-header");
   var ticking = false;

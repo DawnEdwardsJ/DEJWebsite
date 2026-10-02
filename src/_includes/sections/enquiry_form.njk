@@ -1,7 +1,7 @@
-{%- from "macros.njk" import head -%}
+{%- from "macros.njk" import head, bg -%}
 {%- set sent = s.success_message or "Thank you. Your message has been sent." -%}
 {%- set failed = s.error_message or ("Sorry, your message didn’t send. Please email " + site.email + ".") -%}
-<section class="sec ivory" id="enquire"><div class="wrap">
+<section {{ bg(s, "", "cream") }} id="enquire"><div class="wrap">
 {{ head(s) }}
 <form class="nd-form" id="enquiry" action="/api/enquiry" method="post"
   data-success="{{ sent }}" data-error="{{ failed }}">

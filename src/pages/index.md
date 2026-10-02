@@ -27,7 +27,7 @@ sections:
   - type: logos
 
   - type: cards
-    background: beige
+    background: ivory
     kicker: "Ways to work with me"
     heading: "Three ways in — wherever you’re starting."
     intro: "Whether you’re booking a stage, looking for ongoing support, or ready to go all in privately — there’s a door here for you."
@@ -46,7 +46,7 @@ sections:
         button_link: /soul-mastery-ascension/
 
   - type: manifesto
-    background: ivory
+    background: cream
     kicker: "Why this matters"
     heading: "Why women are running on empty."
     lines:
@@ -61,7 +61,7 @@ sections:
     footer_button: { label: "Read what we believe →", link: "/philosophy/", style: gold }
 
   - type: split
-    background: cream
+    background: ivory
     section_kicker: "Why Dawn"
     section_heading: "Everything I teach, I have first lived."
     photo: /images/photos/dawn-cup-stillness.jpg
@@ -152,7 +152,7 @@ sections:
     fine_print: "No pressure, no spam. Unsubscribe any time."
 
   - type: cta_band
-    background: navy
+    background: cream
     line: "Ready to bring calm, embodied leadership into your room?"
     buttons:
       - { label: "Enquire now", link: "/contact/", style: gold }

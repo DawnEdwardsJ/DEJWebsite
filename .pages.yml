@@ -46,6 +46,7 @@ components:
       - { name: sheen, label: "Gentle shimmer on hover", type: boolean, hidden: true }
   background:
     label: Background colour
+    description: "Keep the rhythm: alternate Ivory and Cream, never the same colour twice in a row. Beige is for quote bands. Deep colours have a meaning: Navy = business and speaking, Forest/Olive = the method and Soul Mastery, Burgundy = credentials. The last band before the footer stays light."
     type: select
     options:
       values:
@@ -123,6 +124,7 @@ content:
               - { name: photo_position, component: photo_position }
               - { name: tone, component: tone }
               - { name: credentials, label: Small credentials line, type: string }
+              - { name: dark, label: "Navy background (business pages: Speaking, Corporate, Menopause Policy)", type: boolean }
           - name: trust_strip
             label: Trust strip (rating + quote)
             fields:
@@ -316,6 +318,7 @@ content:
           - name: enquiry_form
             label: Enquiry form
             fields:
+              - { name: background, component: background }
               - { name: kicker, component: kicker }
               - { name: heading, component: heading }
               - { name: intro, component: intro }

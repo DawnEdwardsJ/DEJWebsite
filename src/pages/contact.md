@@ -12,6 +12,7 @@ sections:
   - type: split
     photo: /images/photos/dawn-journaling-wide.jpg
     photo_alt: "Dawn journaling at home, warm and approachable"
+    photo_position: 70% center
     photo_side: right
     tone: gold
     kicker: "Get in touch"

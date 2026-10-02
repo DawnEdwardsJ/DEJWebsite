@@ -13,7 +13,7 @@ sections:
     tone: burgundy
 
   - type: story
-    background: cream
+    background: ivory
     kicker: "My story"
     heading: "Everything I teach, I have first lived."
     intro: "I didn’t arrive at this work through theory. I arrived through my own body — the long way."
@@ -61,6 +61,7 @@ sections:
           Because I know what it costs to hold everything alone — and I know what becomes possible when you finally don’t have to. No woman should have to choose between her success and her wellbeing. My work exists so she doesn’t have to.
 
   - type: split
+    background: cream
     photo: /images/photos/nd-circle.jpg
     photo_alt: "Women resting at a wellness retreat"
     tone: beige
@@ -71,7 +72,7 @@ sections:
       - { label: "Explore retreats →", link: "https://newdawnwellness.health/retreats.html", style: gold }
 
   - type: cards
-    background: cream
+    background: ivory
     kicker: "What I stand for"
     heading: "A few things I believe."
     cards:

@@ -2,15 +2,18 @@
 title: "The Adawning Philosophy | What We Believe — Dawn Edwards-Jones"
 description: "The Adawning philosophy — the beliefs behind Dawn Edwards-Jones’ work. You’re not broken. Your body isn’t the enemy. And you deserve support long before breaking point."
 sections:
-  - type: hero
+  - type: hero_photo
     kicker: "The Adawning"
     heading: "What we believe."
     text: "Everything I teach — on stage, in the studio and one to one — comes back to a few simple truths. This is the ground it all stands on."
     buttons:
       - { label: "Find your way in", link: "/start-here/", style: ghost }
+    photo: /images/photos/dawn-white-linen-namaste.jpg
+    photo_alt: "Dawn standing in cream linen, hands at her heart"
+    tone: beige
 
   - type: creed
-    background: cream
+    background: ivory
     kicker: "Our philosophy"
     heading: "We believe…"
     intro: "Not as slogans. As the things I’ve lived, and the things I’ve watched change women’s lives when they finally let themselves believe them too."
@@ -35,9 +38,10 @@ sections:
         text: "When you stop abandoning yourself, your health, your relationships and your work all begin to change from the inside out."
 
   - type: split
-    photo: /images/photos/dawn-white-linen-namaste.jpg
-    photo_alt: "Dawn standing in cream linen, hands at her heart"
-    tone: beige
+    background: cream
+    photo: /images/photos/studio2-soundhealing.jpg
+    photo_alt: "Dawn sitting among crystal singing bowls by candlelight"
+    tone: olive
     kicker: "Where this came from"
     heading: "None of this is theory."
     body: |-
@@ -49,7 +53,7 @@ sections:
     quote: "“You’re not inconsistent. You’re unsupported.”"
 
   - type: manifesto
-    background: navy
+    background: forest
     kicker: "The Adawning"
     heading: "This is the work."
     lines:

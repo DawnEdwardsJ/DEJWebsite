@@ -19,6 +19,8 @@ first commit on `main` if you need the history.
 | Accessibility | Skip link, visible focus states, dropdowns are real buttons with `aria-expanded`, Escape closes menus, correct heading order, reduced-motion respected everywhere. | Keyboard-only and reduced-motion tests pass |
 | Motion | Token system, scroll reveal, hero mask, condensing nav, media scale, button lift, logo marquee, two sheens, View Transitions. No libraries. | |
 | VA editing | Pages CMS config for every page, section, setting and logo. | `.pages.yml`, `docs/EDITING-GUIDE.md` |
+| Design system | Colour rhythm with no repeated neighbours on any page (13 of 14 had them); photo heroes on all main pages, navy on the three B2B pages; one card style, two corner radii, two shadow depths; grain on every deep section; no bright-white surfaces. | Automated audit of section order |
+| Premium details | Self-hosted fonts with preload and metric-matched fallbacks (no font jump, no Google request); instant page loads via prerender-on-hover; header holds still between pages; blurred photo previews with fade-in; branded share card per page; anchor links clear the sticky header. | |
 | Bugs fixed on the way | Outline buttons invisible on navy bands; hero photo squashed beside text on phones; footer column wrapping; off-centre opt-in small print; three placeholder panels replaced with real photos. | |
 
 ### Lighthouse (mobile, simulated throttling)

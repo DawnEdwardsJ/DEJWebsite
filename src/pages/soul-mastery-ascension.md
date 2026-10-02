@@ -2,15 +2,19 @@
 title: "Soul Mastery Ascension | 1:1 Coaching with Dawn Edwards-Jones"
 description: "Soul Mastery Ascension — premium 1:1 coaching with Dawn Edwards-Jones. Deep identity and nervous-system work for women ready for lasting transformation."
 sections:
-  - type: hero
+  - type: hero_photo
     kicker: "1:1 Coaching"
     heading: "Soul Mastery Ascension."
     text: "The private, 1:1 version of the Soul Mastery Sanctuary — my premium container for women ready to go all in. Deep identity and nervous-system work, close proximity and faster, lasting transformation."
     buttons:
       - { label: "Enquire about working together", link: "/contact/?type=soul-mastery-ascension#enquire", style: gold }
+    photo: /images/photos/nd-dawn-portrait.jpg
+    photo_alt: "Dawn Edwards-Jones, smiling warmly"
+    photo_position: center 30%
+    tone: forest
 
   - type: cards
-    background: cream
+    background: forest
     kicker: "The work"
     heading: "Deep, personal, transformational."
     cards:

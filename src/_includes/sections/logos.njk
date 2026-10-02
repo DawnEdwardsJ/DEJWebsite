@@ -1,5 +1,6 @@
 {%- set label = s.label or logos.label -%}
-<section class="sec {{ s.background or 'cream' }}"><div class="wrap trusted">
+{%- from "macros.njk" import bg -%}
+<section {{ bg(s, "", "cream") }}><div class="wrap trusted">
 <div class="label">{{ label | mdi | safe }}</div>
 <div class="logo-marquee" role="region" aria-label="{{ label }} (focus or hover to pause)" tabindex="0">
 <ul class="logo-track">

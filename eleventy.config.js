@@ -1,6 +1,9 @@
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import markdownIt from "markdown-it";
 import fs from "node:fs";
+import path from "node:path";
+import sharp from "sharp";
+import buildOgImages from "./og/build-og.js";
 
 export default function (eleventyConfig) {
   // ---- Markdown: used for page bodies and for every text field in the CMS.
@@ -37,6 +40,25 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("containsUrl", (items, url) =>
     Array.isArray(items) && items.some((it) => it?.link === url)
   );
+  // Tiny blurred previews shown behind each photo while it loads (~300 bytes each).
+  // Built for every image under src/images, so newly uploaded photos get one too.
+  const lqip = new Map();
+  eleventyConfig.on("eleventy.before", async () => {
+    const root = "src/images";
+    const walk = (dir) => fs.readdirSync(dir, { withFileTypes: true }).flatMap((e) =>
+      e.isDirectory() ? walk(path.join(dir, e.name)) : [path.join(dir, e.name)]);
+    const files = walk(root).filter((f) => /\.(jpe?g|png|webp)$/i.test(f) && !f.includes(`${path.sep}logos${path.sep}`));
+    await Promise.all(files.map(async (file) => {
+      const key = "/" + path.relative("src", file).split(path.sep).join("/");
+      const stat = fs.statSync(file);
+      const cached = lqip.get(key);
+      if (cached && cached.mtime === stat.mtimeMs) return;
+      const buf = await sharp(file).resize(24).blur(1.2).webp({ quality: 40 }).toBuffer();
+      lqip.set(key, { mtime: stat.mtimeMs, uri: `data:image/webp;base64,${buf.toString("base64")}` });
+    }));
+  });
+  eleventyConfig.addFilter("lqip", (src) => lqip.get(src)?.uri || "");
+
   eleventyConfig.addFilter("json", (value) => JSON.stringify(value));
   eleventyConfig.addFilter("year", () => new Date().getFullYear());
 
@@ -57,6 +79,15 @@ export default function (eleventyConfig) {
     htmlOptions: {
       imgAttributes: { loading: "lazy", decoding: "async" },
     },
+  });
+
+  // Branded share card per page (og/build-og.js), written to _site/og/<page>.jpg
+  eleventyConfig.on("eleventy.after", async ({ dir }) => buildOgImages(dir.output));
+  eleventyConfig.addFilter("ogImage", (url) => {
+    const slug = String(url || "/").replace(/^\/|\/$/g, "") || "home";
+    return /^[a-z0-9-]+$/.test(slug) && fs.existsSync(`src/pages/${slug === "home" ? "index" : slug}.md`)
+      ? `/og/${slug}.jpg`
+      : "/og-image.jpg";
   });
 
   eleventyConfig.addWatchTarget("src/assets/");
