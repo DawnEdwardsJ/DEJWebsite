@@ -1,0 +1,18 @@
+{%- from "macros.njk" import head, bg, buttons -%}
+{%- set items = s.cards | liveLinks("button_link") -%}
+<section {{ bg(s) }}><div class="wrap">
+{{ head(s) }}
+<div class="grid">
+{%- for c in items -%}
+<div class="card reveal" data-delay="{{ (loop.index0 % 4) * 70 }}">
+{%- if c.price %}<div class="price">{{ c.price | mdi | safe }}</div>{% endif -%}
+<h3>{{ c.title | mdi | safe }}</h3>
+{%- if c.button_link and c.button_label %}<p class="card-text">{{ c.text | mdi | safe }}</p><a class="btn btn-ghost btn-sm" href="{{ c.button_link }}">{{ c.button_label | btnLabel | safe }}</a>
+{%- else %}<p>{{ c.text | mdi | safe }}</p>{% endif -%}
+</div>
+{%- endfor -%}
+</div>
+{%- if (s.footer_button and [s.footer_button] | usable | liveLinks | length) %}
+<div class="cta-band after-grid">{{ buttons([s.footer_button], true) }}</div>
+{%- endif %}
+</div></section>

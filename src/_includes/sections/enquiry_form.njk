@@ -1,0 +1,34 @@
+{%- from "macros.njk" import head, bg -%}
+{%- set sent = s.success_message or "Thank you. Your message has been sent." -%}
+{%- set failed = s.error_message or ("Sorry, your message didn’t send. Please email " + site.email + ".") -%}
+<section {{ bg(s, "", "cream") }} id="enquire"><div class="wrap">
+{{ head(s) }}
+<form class="nd-form" id="enquiry" action="/api/enquiry" method="post"
+  data-success="{{ sent }}" data-error="{{ failed }}">
+<p class="fine form-note ok" id="enquiry-sent" tabindex="-1"><svg class="tick" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><circle cx="24" cy="24" r="22"/><path d="M15 24.5l6 6 12-13"/></svg><span>{{ sent }}</span></p>
+<p class="fine form-note err" id="enquiry-error" tabindex="-1">{{ failed }}</p>
+<div class="row-2">
+<div><label for="f-name">First name</label><input id="f-name" name="first_name" type="text" autocomplete="given-name" autocapitalize="words" required maxlength="80" data-missing="Please add your first name."></div>
+<div><label for="f-last">Last name</label><input id="f-last" name="last_name" type="text" autocomplete="family-name" autocapitalize="words" maxlength="80"></div>
+</div>
+<div class="row-2">
+<div><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" autocapitalize="off" spellcheck="false" required maxlength="160" data-missing="Please add your email address." data-invalid="That email address looks incomplete."></div>
+<div><label for="f-phone">Phone (optional)</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" maxlength="40"></div>
+</div>
+<div><label for="f-about">What is this about?</label>
+<select id="f-about" name="enquiry_type" required data-missing="Please choose what this is about.">
+<option value="" disabled selected>Choose one</option>
+{%- for t in enquiry.types %}<option value="{{ t.value }}">{{ t.label }}</option>{% endfor -%}
+</select></div>
+<div><label for="f-msg">Your message</label><textarea id="f-msg" name="message" maxlength="5000" placeholder="{{ s.message_placeholder }}"></textarea></div>
+<div class="hp" aria-hidden="true"><label for="f-nd-check">Leave this field empty</label><input id="f-nd-check" name="nd_check" type="text" tabindex="-1" autocomplete="off"></div>
+{%- if site.turnstileSiteKey %}
+<div class="cf-turnstile" data-sitekey="{{ site.turnstileSiteKey }}" data-theme="light"></div>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+{%- endif %}
+<input type="hidden" name="page" value="{{ page.url }}">
+<div class="btn-row"><button class="btn btn-gold" type="submit">{{ (s.button_label or "Send") | btnLabel | safe }}</button></div>
+<p class="fine">{{ s.fine_print | mdi | safe }}</p>
+<p class="fine form-status" id="f-status" role="status" aria-live="polite"></p>
+</form>
+</div></section>

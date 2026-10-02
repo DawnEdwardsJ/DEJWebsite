@@ -1,0 +1,96 @@
+{
+  "url": "https://dawnedwards-jones.com",
+  "name": "Dawn Edwards-Jones",
+  "tagline": "Author · Speaker · Coach",
+  "logo": "https://assets.cdn.filesafe.space/udrK047tPShRFKCOgu0a/media/69ba2f9e9c981702addae6c0.png",
+  "email": "contact@newdawnwellness.health",
+  "phone": "+61 429 460 733",
+  "wellnessSiteLive": false,
+  "wellnessUrl": "https://newdawnwellness.health",
+  "turnstileSiteKey": "",
+  "analytics": {
+    "ga4Id": "",
+    "metaPixelId": ""
+  },
+  "nav": [
+    { "label": "Home", "link": "/" },
+    { "label": "Start Here", "link": "/start-here/" },
+    { "label": "About", "link": "/about/" },
+    { "label": "Philosophy", "link": "/philosophy/" },
+    {
+      "label": "Work With Me",
+      "link": "/soul-mastery-ascension/",
+      "children": [
+        { "label": "Soul Mastery Sanctuary — Group (online)", "link": "https://newdawnwellness.health/soul-mastery-sanctuary.html" },
+        { "label": "Soul Mastery Ascension — 1:1", "link": "/soul-mastery-ascension/" },
+        { "label": "Calm to Chaos — Business Coaching", "link": "/calm-to-chaos/" }
+      ]
+    },
+    {
+      "label": "Speaking",
+      "link": "/speaking/",
+      "children": [
+        { "label": "Keynote Speaking", "link": "/speaking/" },
+        { "label": "Corporate Workshops", "link": "/corporate-workshops/" },
+        { "label": "Menopause Policy Advisory", "link": "/menopause-policy/" }
+      ]
+    },
+    {
+      "label": "Publications",
+      "link": "/podcast/",
+      "children": [
+        { "label": "The Adawning Podcast", "link": "/podcast/" },
+        { "label": "The Book", "link": "/book/" }
+      ]
+    },
+    {
+      "label": "New Dawn Wellness",
+      "link": "https://newdawnwellness.health",
+      "children": [
+        { "label": "The Studio", "link": "https://newdawnwellness.health" },
+        { "label": "Pilates & Yoga", "link": "https://newdawnwellness.health/pilates-yoga.html" },
+        { "label": "Retreats", "link": "https://newdawnwellness.health/retreats.html" },
+        { "label": "Wellness Events", "link": "https://newdawnwellness.health/wellness-events.html" },
+        { "label": "Massage & Healing", "link": "https://newdawnwellness.health/flow-and-glow-massage.html" },
+        { "label": "The Adawning Experience", "link": "https://newdawnwellness.health/adawning-experience.html" }
+      ]
+    }
+  ],
+  "navButton": { "label": "Enquire", "link": "/contact/" },
+  "footer": {
+    "blurb": "Author, keynote speaker and self-leadership coach helping women — and the organisations they work in — move from overwhelm to calm, embodied leadership.",
+    "tagline": "Dawn Edwards-Jones · Founder of The Adawning",
+    "columns": [
+      {
+        "heading": "Work With Dawn",
+        "links": [
+          { "label": "Soul Mastery Sanctuary — Group", "link": "https://newdawnwellness.health/soul-mastery-sanctuary.html" },
+          { "label": "Soul Mastery Ascension — 1:1", "link": "/soul-mastery-ascension/" },
+          { "label": "Calm to Chaos", "link": "/calm-to-chaos/" },
+          { "label": "Contact", "link": "/contact/" }
+        ]
+      },
+      {
+        "heading": "Speaking",
+        "links": [
+          { "label": "Keynote Speaking", "link": "/speaking/" },
+          { "label": "Corporate Workshops", "link": "/corporate-workshops/" },
+          { "label": "Menopause Policy Advisory", "link": "/menopause-policy/" }
+        ]
+      },
+      {
+        "heading": "Explore",
+        "links": [
+          { "label": "About Dawn", "link": "/about/" },
+          { "label": "The Adawning Podcast", "link": "/podcast/" },
+          { "label": "The Book", "link": "/book/" },
+          { "label": "New Dawn Wellness Studio →", "link": "https://newdawnwellness.health" }
+        ]
+      }
+    ]
+  },
+  "social": [
+    { "label": "Facebook", "link": "https://www.facebook.com/newdawnpilates" },
+    { "label": "Instagram", "link": "https://www.instagram.com/newdawnpilates/" }
+  ]
+}

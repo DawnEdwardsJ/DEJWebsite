@@ -82,22 +82,57 @@ fitness coach, not a generic mindset coach.
 
 Sales language is invitation-based and relational. Never pushy or deadline-driven.
 
-## Architecture — read this before editing any HTML
+## Architecture — read this before editing
 
-**The HTML in `src/` is generated output, not source.** It is produced by
-`generator/build_sites.py`, a single ~197KB Python file. Edit the HTML directly and your
-change is destroyed the next time anyone runs the generator.
+The site is built with **Eleventy**. Source is in `src/`, output goes to `_site/` (never
+edit `_site/`, it is rebuilt every time).
 
-Two further wrinkles you need to know:
+- **Copy lives in `src/pages/*.md`**, as a list of `sections` in each file's front matter.
+  Each section's `type` maps to a template in `src/_includes/sections/`.
+- **Menu, footer, contact details, analytics IDs** live in `src/_data/site.json`. Header and
+  footer are shared partials, so a menu change is one edit.
+- **Images**: reference originals like `/images/photos/x.jpg`. The image transform in
+  `eleventy.config.js` produces WebP + JPEG, `srcset`, dimensions and lazy loading. Never
+  inline images as base64.
+- **Pages CMS** (`.pages.yml`) is how Dawn's VA edits text and photos. It only preserves
+  fields declared in `.pages.yml`, so **any new field you add to a section template must
+  also be added to `.pages.yml`**, or the CMS will silently drop it on the next save.
+- **Contact form** posts to `functions/api/enquiry.js` (Cloudflare Pages Function), which
+  upserts the contact in Tekmatix, adds tags from `src/_data/enquiry.json`, and attaches the
+  message as a note. It needs the `TEKMATIX_API_TOKEN` secret in Cloudflare.
+- **Motion** follows `docs/UPGRADE-PROMPT.md`: tokens and the reduced-motion guard are in
+  `src/assets/style.css`, behaviour in `src/assets/site.js`. No animation libraries. Sheen
+  is used on two elements; the third is reserved for the speaker-kit download button.
+  Signature effects Dawn chose (Oct 2026): h1 split into measured lines that rise in turn;
+  kicker hairlines draw and letters settle; photos unveil inside their frame over the
+  blurred preview; pull quotes light word by word with scroll; menu icon morphs to a cross
+  with items cascading; button labels roll on hover, arrows nudge, in-text links draw an
+  underline; a gold reading line on pages with `readingLine: true`; and a footer curtain on
+  desktop (main lifts to reveal the sticky footer). Button labels go through the `btnLabel`
+  filter, which adds an aria-hidden duplicate for the roll.
+- **Finishing details**: headings use `text-wrap: balance`, paragraphs `pretty`; pull-quote
+  marks hang via the `hang` filter (text unchanged). The enquiry form uses inline messages
+  from `data-missing` / `data-invalid` attributes in `enquiry_form.njk` (site.js sets
+  `novalidate`, so without JavaScript the browser's own validation still applies).
+- **Links to `newdawnwellness.health` are hidden automatically** while
+  `wellnessSiteLive` is `false` in `site.json`. Leave those links in the content; flipping the
+  switch brings them all back.
 
-1. `build_sites.py` builds **both** sites — this one and New Dawn Wellness. Only the
-   Dawn Edwards-Jones half is in scope here. The wellness half of the file is dead weight
-   in this repo.
-2. The generator **base64-inlines every photograph** directly into the HTML. This is why
-   pages are 250–850KB each. It is the single biggest technical problem with the build.
+- **Design system** (palette values unchanged, usage rules only): light sections alternate
+  ivory/cream with no repeats; beige for quote bands; deep colours by meaning (navy =
+  business, forest/olive = method and Soul Mastery, burgundy = credentials), never adjacent;
+  closing CTA band light so it separates from the navy footer; photo heroes on all main
+  pages (navy variant on the three B2B pages). One card style (ivory, beige border, soft
+  shadow), radii `--r-panel` 14px and `--r-pill`, shadows `--shadow-soft`/`--shadow-lift`.
+  No bright-white surfaces.
+- **Fonts are self-hosted** in `src/assets/fonts/` with metric-matched fallbacks. Don't
+  re-add Google Fonts links.
+- **Instant navigation** uses Speculation Rules (prerender on hover) in `base.njk`;
+  anything with side effects on page load must tolerate prerendering (see the Meta Pixel
+  wrapper).
 
-Resolving this is task 1 in `HANDOVER.md`. Until it is resolved, treat `build_sites.py`
-as the source of truth and `src/` as disposable build output.
+Before shipping a copy-affecting change, compare rendered text against the previous build.
+Copy must not drift.
 
 ## Tekmatix (the CRM and booking system)
 
@@ -120,9 +155,10 @@ Live calendars relevant to this site:
 `Free 15 Minute Consult` (`zUZ27bXMmnGOu9O4lnKP`) exists but is **inactive** — do not use
 it without asking Dawn to reactivate it.
 
-There is **no corporate or speaking discovery calendar yet.** Several CTAs on
-`corporate-workshops.html` and `menopause-policy.html` say "Book a discovery call" with
-nowhere to send them. See `docs/DAWN-TO-SUPPLY.md`.
+There is **no corporate or speaking discovery calendar yet.** The "Book a discovery call"
+CTAs on the corporate workshops and menopause policy pages currently open the enquiry form
+with the right topic preselected. When Dawn creates the calendar, add a `calendar` section.
+See `docs/DAWN-TO-SUPPLY.md`.
 
 Relevant products: Soul Mastery Ascension `6a18178e5e7d1e7aef6b9acc`,
 Soul Mastery Sanctuary `6922785fbeeb5a99c08307c5`.
@@ -140,9 +176,10 @@ Soul Mastery Sanctuary `6922785fbeeb5a99c08307c5`.
 ## Cross-site links
 
 The top nav has a "New Dawn Wellness" dropdown pointing at six pages on
-`newdawnwellness.health`. **Those pages are not live yet.** That domain currently serves
-Tekmatix funnel pages, not the new wellness site. Every page in this repo contains these
-links, so they need handling before launch — see `HANDOVER.md` item 4.
+`newdawnwellness.health`, plus Soul Mastery Sanctuary links on several pages. **Those pages
+are not live yet**, so Dawn decided (2 October 2026) to hide them until the wellness site
+launches. They are hidden by the `wellnessSiteLive` switch in `src/_data/site.json`, not
+deleted.
 
 ## Working style Dawn expects
 

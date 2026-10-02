@@ -1,0 +1,13 @@
+{%- from "macros.njk" import head, bg -%}
+<section {{ bg(s, "optin") }}><div class="wrap">
+<div class="sec-head reveal">
+{%- if s.kicker %}<div class="kicker">{{ s.kicker | mdi | safe }}</div>{% endif -%}
+<h2>{{ s.heading | mdi | safe }}</h2>
+{%- if s.text %}<p class="optin-text">{{ s.text | mdi | safe }}</p>{% endif -%}
+</div>
+<form onsubmit="return false">
+<input type="email" placeholder="Your email address" aria-label="Email address">
+<button class="btn btn-gold" type="submit">{{ s.button_label | btnLabel | safe }}</button>
+</form>
+{%- if s.fine_print %}<p class="fine">{{ s.fine_print | mdi | safe }}</p>{% endif %}
+</div></section>

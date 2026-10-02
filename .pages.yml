@@ -1,0 +1,430 @@
+# Pages CMS configuration: the editing screen your VA uses at https://app.pagescms.org
+# Every change saved there is committed to this repo; Cloudflare rebuilds the site
+# automatically. See docs/EDITING-GUIDE.md.
+#
+# Pages CMS only keeps fields that are listed here, so if you add a new field to a
+# section template, add it below too.
+
+media:
+  input: src/images
+  output: /images
+  path: photos
+  categories: [image]
+
+settings:
+  commit:
+    templates:
+      update: "Update {path} (via Pages CMS)"
+
+components:
+  button:
+    type: object
+    fields:
+      - { name: label, label: Button text, type: string }
+      - name: link
+        label: Link
+        type: string
+        description: "A page on this site like /contact/ or a full web address. Links to newdawnwellness.health stay hidden until that site is switched on in Site settings."
+      - name: style
+        label: Style
+        type: select
+        default: gold
+        options: { values: [ { value: gold, label: "Gold (main action)" }, { value: ghost, label: "Outline (secondary)" } ] }
+      - { name: sheen, label: "Gentle shimmer on hover (max three on the whole site)", type: boolean, hidden: true }
+  buttons:
+    label: Buttons
+    type: object
+    list: { collapsible: { collapsed: true, summary: "{label}" } }
+    fields:
+      - { name: label, label: Button text, type: string, required: true }
+      - { name: link, label: Link, type: string, required: true, description: "A page on this site like /contact/ or a full web address." }
+      - name: style
+        label: Style
+        type: select
+        default: gold
+        options: { values: [ { value: gold, label: "Gold (main action)" }, { value: ghost, label: "Outline (secondary)" } ] }
+      - { name: sheen, label: "Gentle shimmer on hover", type: boolean, hidden: true }
+  background:
+    label: Background colour
+    description: "Keep the rhythm: alternate Ivory and Cream, never the same colour twice in a row. Beige is for quote bands. Deep colours have a meaning: Navy = business and speaking, Forest/Olive = the method and Soul Mastery, Burgundy = credentials. The last band before the footer stays light."
+    type: select
+    options:
+      values:
+        - { value: none, label: "Ivory (page background)" }
+        - { value: ivory, label: "Ivory" }
+        - { value: cream, label: "Cream" }
+        - { value: beige, label: "Beige" }
+        - { value: navy, label: "Navy" }
+        - { value: forest, label: "Forest green" }
+        - { value: burgundy, label: "Burgundy" }
+        - { value: olive, label: "Olive" }
+  tone:
+    label: Photo frame colour (shows while the photo loads)
+    type: select
+    options: { values: [gold, forest, burgundy, olive, navy, beige] }
+  kicker:
+    label: Small label above the heading
+    type: string
+  heading:
+    label: Heading
+    type: string
+    description: "Wrap words in *asterisks* to make them italic."
+  intro:
+    label: Intro line under the heading
+    type: text
+  photo:
+    label: Photo
+    type: image
+  photo_alt:
+    label: Photo description (for screen readers and Google)
+    type: string
+  photo_position:
+    label: Photo focus point
+    type: string
+    description: "Optional. e.g. 'center top' keeps faces in frame."
+
+content:
+  - name: pages
+    label: Pages
+    type: collection
+    path: src/pages
+    format: yaml-frontmatter
+    view:
+      fields: [title]
+    operations: { create: false, delete: false, rename: false }
+    fields:
+      - { name: title, label: Browser tab title (also used by Google), type: string, required: true }
+      - { name: description, label: Google description, type: text, required: true, description: "One or two sentences shown under the page name in search results." }
+      - { name: permalink, type: string, hidden: true }
+      - { name: layout, type: string, hidden: true }
+      - { name: note, label: Note box at the top (legal pages), type: string }
+      - { name: readingLine, label: "Gold reading line under the menu (long pages)", type: boolean }
+      - name: sections
+        label: Page sections (top to bottom)
+        type: block
+        blockKey: type
+        list: { collapsible: { collapsed: true, summary: "{type}: {heading}" } }
+        blocks:
+          - name: hero
+            label: Top banner (text)
+            fields:
+              - { name: kicker, component: kicker }
+              - { name: heading, component: heading }
+              - { name: text, label: Text, type: text }
+              - { name: buttons, component: buttons }
+              - { name: dark, label: Dark navy background, type: boolean }
+          - name: hero_photo
+            label: Top banner (text + photo)
+            fields:
+              - { name: kicker, component: kicker }
+              - { name: heading, component: heading }
+              - { name: text, label: Text, type: text }
+              - { name: buttons, component: buttons }
+              - { name: photo, component: photo }
+              - { name: photo_alt, component: photo_alt }
+              - { name: photo_position, component: photo_position }
+              - { name: tone, component: tone }
+              - { name: credentials, label: Small credentials line, type: string }
+              - { name: dark, label: "Navy background (business pages: Speaking, Corporate, Menopause Policy)", type: boolean }
+          - name: trust_strip
+            label: Trust strip (rating + quote)
+            fields:
+              - { name: rating, label: Rating line, type: string }
+              - { name: quote, label: Quote, type: text }
+              - { name: cite, label: Who said it, type: string }
+              - { name: mark, label: Right-hand note (one item per line), type: text }
+          - name: logos
+            label: Client logos (edit the logos under "Client logos")
+            fields:
+              - { name: background, component: background }
+              - { name: label, label: Label override (optional), type: string }
+          - name: cards
+            label: Cards
+            fields:
+              - { name: background, component: background }
+              - { name: kicker, component: kicker }
+              - { name: heading, component: heading }
+              - { name: intro, component: intro }
+              - name: cards
+                label: Cards
+                type: object
+                list: { collapsible: { collapsed: true, summary: "{title}" } }
+                fields:
+                  - { name: title, label: Title, type: string }
+                  - { name: text, label: Text, type: text }
+                  - { name: price, label: Price (optional), type: string }
+                  - { name: button_label, label: Button text (optional), type: string }
+                  - { name: button_link, label: Button link (optional), type: string }
+              - { name: footer_button, label: Button under the cards (optional), component: button }
+          - name: manifesto
+            label: Manifesto (short centred lines)
+            fields:
+              - { name: background, component: background }
+              - { name: kicker, component: kicker }
+              - { name: heading, component: heading }
+              - { name: intro, component: intro }
+              - name: lines
+                label: Lines
+                type: object
+                list: { collapsible: { collapsed: true, summary: "{text}" } }
+                fields:
+                  - { name: text, label: Text, type: text }
+                  - name: style
+                    label: Style
+                    type: select
+                    options: { values: [ { value: normal, label: "Large serif" }, { value: list, label: "Medium, burgundy" }, { value: small, label: "Small body text" } ] }
+              - { name: footer_button, label: Button underneath (optional), component: button }
+          - name: split
+            label: Photo + text side by side
+            fields:
+              - { name: background, component: background }
+              - { name: section_kicker, label: Centred label above (optional), type: string }
+              - { name: section_heading, label: Centred heading above (optional), type: string }
+              - { name: photo, component: photo }
+              - { name: photo_alt, component: photo_alt }
+              - { name: photo_position, component: photo_position }
+              - name: photo_side
+                label: Photo side
+                type: select
+                default: left
+                options: { values: [left, right] }
+              - { name: tone, component: tone }
+              - { name: kicker, component: kicker }
+              - { name: heading, component: heading }
+              - { name: lead, label: Larger first paragraph (optional), type: text }
+              - { name: body, label: Text, type: rich-text, options: { format: markdown } }
+              - { name: ticks, label: Tick list, type: string, list: true }
+              - { name: buttons, component: buttons }
+          - name: pullquote
+            label: Pull quote
+            fields:
+              - { name: quote, label: Quote, type: text }
+              - { name: cite, label: Attribution (defaults to Dawn), type: string }
+          - name: method
+            label: Method steps
+            fields:
+              - { name: background, component: background }
+              - { name: kicker, component: kicker }
+              - { name: heading, component: heading }
+              - { name: intro, component: intro }
+              - name: steps
+                label: Steps
+                type: object
+                list: { collapsible: { collapsed: true, summary: "{title}" } }
+                fields:
+                  - { name: question, label: Small label, type: string }
+                  - { name: title, label: Title, type: string }
+                  - { name: text, label: Text, type: text }
+              - { name: closing_line, label: Closing line, type: string }
+              - name: closing_button
+                label: Closing button
+                type: object
+                fields:
+                  - { name: label, label: Button text, type: string }
+                  - { name: link, label: Link, type: string }
+          - name: stats
+            label: Numbers
+            fields:
+              - { name: background, component: background }
+              - { name: kicker, component: kicker }
+              - { name: heading, component: heading }
+              - name: stats
+                label: Numbers
+                type: object
+                list: true
+                fields:
+                  - { name: number, label: "Number (e.g. 30, 16+, 2,000+)", type: string }
+                  - { name: label, label: Label, type: string }
+          - name: testimonials
+            label: Testimonials
+            fields:
+              - { name: background, component: background }
+              - { name: kicker, component: kicker }
+              - { name: heading, component: heading }
+              - name: quotes
+                label: Testimonials
+                type: object
+                list: { collapsible: { collapsed: true, summary: "{cite}" } }
+                fields:
+                  - { name: quote, label: Quote, type: text }
+                  - { name: cite, label: "Name · role or organisation", type: string }
+          - name: optin
+            label: Email sign-up
+            fields:
+              - { name: background, component: background }
+              - { name: kicker, component: kicker }
+              - { name: heading, component: heading }
+              - { name: text, label: Text, type: text }
+              - { name: button_label, label: Button text, type: string }
+              - { name: fine_print, label: Small print, type: string }
+          - name: cta_band
+            label: Call-to-action band
+            fields:
+              - { name: background, component: background }
+              - { name: line, label: Line, type: text }
+              - { name: buttons, component: buttons }
+          - name: crosslink
+            label: Cross-link strip
+            fields:
+              - { name: text, label: Text, type: string }
+              - { name: link_label, label: Link text, type: string }
+              - { name: link, label: Link, type: string }
+          - name: doorways
+            label: Doorways (large link cards)
+            fields:
+              - { name: background, component: background }
+              - { name: kicker, component: kicker }
+              - { name: heading, component: heading }
+              - { name: intro, component: intro }
+              - name: doors
+                label: Doors
+                type: object
+                list: { collapsible: { collapsed: true, summary: "{title}" } }
+                fields:
+                  - { name: intent, label: Italic line (e.g. "I want to…"), type: string }
+                  - { name: title, label: Title, type: string }
+                  - { name: text, label: Text, type: text }
+                  - { name: link_label, label: Link text, type: string }
+                  - { name: link, label: Link, type: string }
+          - name: creed
+            label: Beliefs list
+            fields:
+              - { name: background, component: background }
+              - { name: kicker, component: kicker }
+              - { name: heading, component: heading }
+              - { name: intro, component: intro }
+              - name: beliefs
+                label: Beliefs
+                type: object
+                list: { collapsible: { collapsed: true, summary: "{belief}" } }
+                fields:
+                  - { name: belief, label: Belief, type: string }
+                  - { name: text, label: Explanation, type: text }
+          - name: story
+            label: Story chapters
+            fields:
+              - { name: background, component: background }
+              - { name: kicker, component: kicker }
+              - { name: heading, component: heading }
+              - { name: intro, component: intro }
+              - name: chapters
+                label: Chapters
+                type: object
+                list: { collapsible: { collapsed: true, summary: "{label}" } }
+                fields:
+                  - { name: label, label: Chapter label, type: string }
+                  - { name: heading, label: Heading, type: string }
+                  - { name: lead, label: Larger first paragraph (optional), type: text }
+                  - { name: body, label: Text, type: rich-text, options: { format: markdown } }
+          - name: enquiry_form
+            label: Enquiry form
+            fields:
+              - { name: background, component: background }
+              - { name: kicker, component: kicker }
+              - { name: heading, component: heading }
+              - { name: intro, component: intro }
+              - { name: message_placeholder, label: Hint inside the message box, type: string }
+              - { name: button_label, label: Button text, type: string, required: true }
+              - { name: fine_print, label: Small print, type: text }
+              - { name: success_message, label: Message after sending, type: text, required: true }
+              - { name: error_message, label: Message if sending fails, type: text, required: true }
+          - name: calendar
+            label: Booking calendar (Tekmatix)
+            fields:
+              - { name: background, component: background }
+              - { name: anchor, label: "Section ID (for links like /page/#book)", type: string }
+              - { name: kicker, component: kicker }
+              - { name: heading, component: heading }
+              - { name: intro, component: intro }
+              - { name: calendar_id, label: Tekmatix calendar ID, type: string, required: true }
+              - { name: frame_title, label: Calendar title (screen readers), type: string }
+      - { name: body, label: Page text (legal pages only), type: rich-text, options: { format: markdown } }
+
+  - name: site
+    label: Site settings
+    type: file
+    path: src/_data/site.json
+    format: json
+    fields:
+      - { name: url, type: string, hidden: true }
+      - { name: name, label: Name, type: string }
+      - { name: tagline, label: Tagline under the name, type: string }
+      - { name: logo, label: Logo web address, type: string }
+      - { name: email, label: Contact email, type: string }
+      - { name: phone, label: Phone, type: string }
+      - name: wellnessSiteLive
+        label: New Dawn Wellness site is live
+        type: boolean
+        description: "Turn on once newdawnwellness.health has its new pages. Every link to that site (menu, footer, buttons) reappears."
+      - { name: wellnessUrl, type: string, hidden: true }
+      - { name: turnstileSiteKey, label: "Cloudflare Turnstile site key (spam protection, optional)", type: string }
+      - name: analytics
+        label: Analytics
+        type: object
+        fields:
+          - { name: ga4Id, label: "Google Analytics 4 ID (G-XXXXXXXXXX)", type: string }
+          - { name: metaPixelId, label: Meta Pixel ID, type: string }
+      - name: nav
+        label: Top menu
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{label}" } }
+        fields:
+          - { name: label, label: Menu text, type: string }
+          - { name: link, label: Link, type: string, description: "Where clicking the menu name goes. For a dropdown, leave empty to use its first item." }
+          - name: children
+            label: Dropdown items
+            type: object
+            list: true
+            fields:
+              - { name: label, label: Menu text, type: string }
+              - { name: link, label: Link, type: string }
+      - name: navButton
+        label: Menu button
+        type: object
+        fields:
+          - { name: label, label: Button text, type: string }
+          - { name: link, label: Link, type: string }
+      - name: footer
+        label: Footer
+        type: object
+        fields:
+          - { name: blurb, label: Short description, type: text }
+          - { name: tagline, label: Bottom line, type: string }
+          - name: columns
+            label: Link columns
+            type: object
+            list: { collapsible: { collapsed: true, summary: "{heading}" } }
+            fields:
+              - { name: heading, label: Column heading, type: string }
+              - name: links
+                label: Links
+                type: object
+                list: true
+                fields:
+                  - { name: label, label: Link text, type: string }
+                  - { name: link, label: Link, type: string }
+      - name: social
+        label: Social links
+        type: object
+        list: true
+        fields:
+          - name: label
+            label: Network
+            type: select
+            options: { values: [Facebook, Instagram] }
+          - { name: link, label: Link, type: string }
+
+  - name: logos
+    label: Client logos
+    type: file
+    path: src/_data/logos.json
+    format: json
+    fields:
+      - { name: label, label: Label above the logos, type: string }
+      - name: items
+        label: Logos
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{name}" } }
+        fields:
+          - { name: file, label: Logo file, type: image }
+          - { name: name, label: Organisation name, type: string }

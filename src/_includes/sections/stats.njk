@@ -1,0 +1,7 @@
+{%- from "macros.njk" import head, bg -%}
+<section {{ bg(s, "grain") }}><div class="wrap">
+{{ head(s) }}
+<div class="stats stats-center reveal">
+{%- for st in s.stats %}<div><b class="count" data-count="{{ st.number }}">{{ st.number }}</b><span>{{ st.label | mdi | safe }}</span></div>{% endfor -%}
+</div>
+</div></section>

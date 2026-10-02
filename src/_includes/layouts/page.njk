@@ -1,0 +1,7 @@
+---
+layout: layouts/base.njk
+---
+{%- for s in sections %}
+{%- include "sections/" + s.type + ".njk" %}
+{%- endfor %}
+{{ content | safe }}

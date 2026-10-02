@@ -1,0 +1,13 @@
+{%- set label = s.label or logos.label -%}
+{%- from "macros.njk" import bg -%}
+<section {{ bg(s, "", "cream") }}><div class="wrap trusted">
+<div class="label">{{ label | mdi | safe }}</div>
+<div class="logo-marquee" role="region" aria-label="{{ label }} (focus or hover to pause)" tabindex="0">
+<ul class="logo-track">
+{%- for l in logos.items %}<li class="logo-item"><img src="{{ l.file }}" alt="{{ l.name }} logo" eleventy:widths="160,320" sizes="150px"></li>{% endfor -%}
+</ul>
+<ul class="logo-track logo-track-dup" aria-hidden="true">
+{%- for l in logos.items %}<li class="logo-item"><img src="{{ l.file }}" alt="" eleventy:widths="160,320" sizes="150px"></li>{% endfor -%}
+</ul>
+</div>
+</div></section>
