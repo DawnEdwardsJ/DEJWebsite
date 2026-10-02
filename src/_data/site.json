@@ -19,6 +19,7 @@
     { "label": "Philosophy", "link": "/philosophy/" },
     {
       "label": "Work With Me",
+      "link": "/soul-mastery-ascension/",
       "children": [
         { "label": "Soul Mastery Sanctuary — Group (online)", "link": "https://newdawnwellness.health/soul-mastery-sanctuary.html" },
         { "label": "Soul Mastery Ascension — 1:1", "link": "/soul-mastery-ascension/" },
@@ -27,6 +28,7 @@
     },
     {
       "label": "Speaking",
+      "link": "/speaking/",
       "children": [
         { "label": "Keynote Speaking", "link": "/speaking/" },
         { "label": "Corporate Workshops", "link": "/corporate-workshops/" },
@@ -35,6 +37,7 @@
     },
     {
       "label": "Publications",
+      "link": "/podcast/",
       "children": [
         { "label": "The Adawning Podcast", "link": "/podcast/" },
         { "label": "The Book", "link": "/book/" }
@@ -42,6 +45,7 @@
     },
     {
       "label": "New Dawn Wellness",
+      "link": "https://newdawnwellness.health",
       "children": [
         { "label": "The Studio", "link": "https://newdawnwellness.health" },
         { "label": "Pilates & Yoga", "link": "https://newdawnwellness.health/pilates-yoga.html" },

@@ -8,8 +8,10 @@
         {%- if item.children %}
           {%- set kids = item.children | liveLinks %}
           {%- if kids.length %}
-        <li class="has-drop{% if kids | containsUrl(page.url) %} current{% endif %}">
-          <button class="drop-toggle" type="button" aria-expanded="false">{{ item.label }}</button>
+          {%- set familyLink = item.link if (item.link and (item.link | linkIsLive)) else kids[0].link %}
+        <li class="has-drop{% if (kids | containsUrl(page.url)) or familyLink == page.url %} current{% endif %}">
+          <a class="drop-link" href="{{ familyLink }}"{% if familyLink == page.url %} aria-current="page"{% endif %}>{{ item.label }}</a>
+          <button class="drop-toggle" type="button" aria-expanded="false" aria-label="Show {{ item.label }} pages"><svg viewBox="0 0 10 6" aria-hidden="true" focusable="false"><path d="M1 1l4 4 4-4"/></svg></button>
           <ul class="drop">
             {%- for k in kids %}
             <li><a href="{{ k.link }}"{% if k.link == page.url %} aria-current="page"{% endif %}>{{ k.label }}</a></li>

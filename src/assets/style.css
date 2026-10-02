@@ -516,3 +516,22 @@ html{scroll-padding-top:96px}
   filter:blur(14px);transform:scale(1.12)}
 .js .fig .ph[loading="lazy"]{opacity:0;transition:opacity 700ms var(--ease-out),transform 900ms var(--ease-out)}
 .js .fig .ph.is-loaded{opacity:1}
+
+/* ---- dropdown families: the name is a link, the chevron opens the list ---- */
+.main-nav .has-drop{display:flex;align-items:center}
+.main-nav .has-drop>a::after{content:none}
+.main-nav .drop-link{padding-right:4px}
+.current>.drop-link{color:var(--accent-deep)!important;font-weight:600}
+.drop-toggle{display:inline-flex;align-items:center;justify-content:center;padding:10px 10px 10px 2px;min-width:24px}
+.drop-toggle::after{content:none}
+.drop-toggle svg{width:10px;height:6px;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;opacity:.65;
+  transition:transform var(--t-panel) var(--ease-out),opacity var(--t-hover) var(--ease-out)}
+.has-drop.open>.drop-toggle svg{transform:rotate(180deg);opacity:1}
+@media(min-width:901px){.main-nav li.has-drop:hover>.drop-toggle svg{transform:rotate(180deg);opacity:1}}
+@media(max-width:900px){
+  .main-nav .has-drop{flex-wrap:wrap}
+  .main-nav .drop-link{flex:1}
+  .drop-toggle{width:auto;min-width:48px;min-height:44px;padding:10px 14px;justify-content:center}
+  .main-nav .has-drop>.drop{flex-basis:100%}
+}
+@media(max-width:900px){.main-nav .drop{box-shadow:none;background:transparent;border-radius:0}}

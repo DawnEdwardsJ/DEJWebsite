@@ -369,7 +369,7 @@ content:
         list: { collapsible: { collapsed: true, summary: "{label}" } }
         fields:
           - { name: label, label: Menu text, type: string }
-          - { name: link, label: Link (leave empty for a dropdown), type: string }
+          - { name: link, label: Link, type: string, description: "Where clicking the menu name goes. For a dropdown, leave empty to use its first item." }
           - name: children
             label: Dropdown items
             type: object
