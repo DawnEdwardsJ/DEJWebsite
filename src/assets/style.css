@@ -617,3 +617,6 @@ html{scroll-padding-top:96px}
   .pullquote .w{opacity:1!important}
 }
 .nav-toggle,.drop-toggle,.btn,.nav-cta{-webkit-tap-highlight-color:transparent}
+/* numbers band: centred under its heading */
+.stats-center{justify-content:center;text-align:center;gap:clamp(32px,6vw,88px)}
+.stats-center>div{display:flex;flex-direction:column;align-items:center}
