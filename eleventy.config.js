@@ -73,7 +73,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
     formats: ["svg", "webp", "jpeg"],
     svgShortCircuit: true,
-    widths: [480, 800, 1200, 1600],
+    widths: [480, 640, 800, 1200, 1600],
     sharpWebpOptions: { quality: 74 },
     sharpJpegOptions: { quality: 78, mozjpeg: true, progressive: true },
     htmlOptions: {

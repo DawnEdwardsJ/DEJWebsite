@@ -1,0 +1,17 @@
+// Cloudflare Workers configuration (the "dejwebsite" Worker connected to this repo).
+// The build runs automatically before every deploy, so no build command is needed
+// in the Cloudflare dashboard.
+{
+  "name": "dejwebsite",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-09-01",
+  "build": { "command": "npm run build" },
+  "assets": {
+    "directory": "./_site",
+    "binding": "ASSETS",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page",
+    "run_worker_first": ["/api/*"]
+  },
+  "observability": { "enabled": true }
+}

@@ -22,10 +22,29 @@ edits by the VA commit to `main` directly; that is intended for text and photo c
 
 ---
 
-## 2. Create the Pages project
+## 2. The Cloudflare project
 
-Cloudflare dashboard → Workers & Pages → Create → Pages → Connect to Git → choose
-`DawnEdwardsJ/DEJWebsite`.
+**Current setup (2 October 2026): a Cloudflare _Worker_ named `dejwebsite`**, connected to
+this repo through Workers Builds. Everything it needs is in `wrangler.jsonc`:
+
+- the build runs automatically before each deploy (`npm run build`), so the dashboard's
+  build command can be left empty; the deploy command is the default `npx wrangler deploy`
+- the finished site in `_site/` is served as static assets, including `_headers`,
+  `_redirects` and the custom 404 page
+- `/api/*` is routed to `worker/index.js`, which runs the enquiry form handler
+
+Every branch push builds a preview version; production deploys from `main`. Turn on
+**Preview URLs** in the Worker's settings to get a shareable link for each pull request.
+
+The contact form secret goes in: Cloudflare → Workers & Pages → `dejwebsite` → Settings →
+**Variables and Secrets** → add `TEKMATIX_API_TOKEN` (type Secret). The same place takes the
+optional `TURNSTILE_SECRET_KEY`.
+
+### Alternative: a Pages project
+
+If you ever move to Cloudflare Pages instead: Workers & Pages → Create → Pages → Connect
+to Git → choose `DawnEdwardsJ/DEJWebsite`. Pages ignores `wrangler.jsonc` and uses the
+`functions/` folder for the form handler.
 
 | Setting | Value |
 |---|---|
@@ -46,8 +65,8 @@ The enquiry form needs one secret, or it tells visitors to email instead:
 1. Tekmatix → Settings → **Private Integrations** → create one named "Website enquiry
    form" with scopes to **view and edit contacts** (contacts, contact tags, contact notes).
    Copy the token.
-2. Cloudflare → the Pages project → Settings → **Variables and Secrets** → add
-   `TEKMATIX_API_TOKEN` (type: Secret) for Production *and* Preview → redeploy.
+2. Cloudflare → the `dejwebsite` Worker (or Pages project) → Settings → **Variables and
+   Secrets** → add `TEKMATIX_API_TOKEN` (type: Secret) → redeploy.
 3. Submit a real test enquiry on the preview URL and confirm the contact appears in
    Tekmatix with the `website-contact-dej` tag plus the topic tags (see
    `src/_data/enquiry.json`).

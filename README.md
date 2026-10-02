@@ -19,7 +19,9 @@ Pages. Day-to-day text and photo edits happen in [Pages CMS](https://pagescms.or
 ├── HANDOVER.md                Launch checklist and status
 ├── .pages.yml                 Pages CMS editor configuration
 ├── eleventy.config.js         Build configuration (Markdown, image optimisation)
-├── functions/api/enquiry.js   Cloudflare Pages Function: contact form → Tekmatix
+├── functions/api/enquiry.js   Contact form → Tekmatix (works as a Pages Function or via worker/)
+├── worker/index.js            Cloudflare Workers entry: serves _site, routes /api/* to the form
+├── wrangler.jsonc             Cloudflare Workers config (builds automatically on deploy)
 ├── og/                        Builds a branded social share card per page at build time
 ├── docs/
 │   ├── EDITING-GUIDE.md       Plain-English guide for whoever edits the site
@@ -82,12 +84,12 @@ npm run build      # writes the finished site to _site/
 ```
 
 The contact form posts to a Cloudflare Function, which doesn't run under `npm start`. To
-test it locally, use `npx wrangler pages dev _site` after a build.
+test it locally, use `npx wrangler dev` (it builds first).
 
 ## Deploying
 
-Cloudflare Pages builds from `main`: build command `npm run build`, output directory
-`_site`. Every pull request gets a preview URL. Full procedure, the one secret the contact
+Cloudflare (the `dejwebsite` Worker) builds and deploys from `main` automatically, using
+`wrangler.jsonc`. Every branch gets a preview build. Full procedure, the one secret the contact
 form needs, and the DNS steps are in `docs/DEPLOY-CLOUDFLARE.md`.
 
 ## History
