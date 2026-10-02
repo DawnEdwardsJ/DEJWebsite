@@ -247,17 +247,62 @@
       select.value = wanted;
     }
     var status = form.querySelector("#f-status");
-    function show(kind) {
-      status.textContent = kind === "ok" ? form.dataset.success : form.dataset.error;
-      status.className = "fine form-status " + kind;
+    var sentNote = form.querySelector("#enquiry-sent");
+    function sent() {
+      form.classList.add("is-sent");
+      sentNote.focus({ preventScroll: true });
+      sentNote.scrollIntoView({ block: "center", behavior: reduceMotion ? "auto" : "smooth" });
     }
+    function failed() {
+      status.textContent = form.dataset.error;
+      status.className = "fine form-status err";
+    }
+
+    /* calm inline messages instead of the browser's validation bubbles */
+    form.noValidate = true;
+    var emailShape = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+    var checked = form.querySelectorAll("[data-missing]");
+    function problem(el) {
+      var v = el.value.trim();
+      if (el.required && !v) return el.dataset.missing;
+      if (el.type === "email" && v && !emailShape.test(v)) return el.dataset.invalid;
+      if (!el.validity.valid) return el.dataset.invalid || el.dataset.missing;
+      return "";
+    }
+    function flagged(el) { return el.getAttribute("aria-invalid") === "true"; }
+    function mark(el) {
+      var msg = problem(el);
+      if (msg) el.setAttribute("aria-invalid", "true"); else el.removeAttribute("aria-invalid");
+      d.getElementById(el.id + "-msg").textContent = msg;
+      return !msg;
+    }
+    checked.forEach(function (el) {
+      var out = d.createElement("span");
+      out.className = "field-msg";
+      out.id = el.id + "-msg";
+      el.insertAdjacentElement("afterend", out);
+      el.setAttribute("aria-describedby", out.id);
+      // a fix clears the message at once; a finished entry is checked when you move on
+      el.addEventListener("input", function () { if (flagged(el) && !problem(el)) mark(el); });
+      el.addEventListener("change", function () { if (flagged(el)) mark(el); });
+      el.addEventListener("blur", function () { if (el.value.trim() || flagged(el)) mark(el); });
+    });
 
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-      if (!form.reportValidity()) return;
+      var firstBad = null;
+      checked.forEach(function (el) { if (!mark(el) && !firstBad) firstBad = el; });
+      if (firstBad) {
+        firstBad.focus({ preventScroll: true });
+        firstBad.scrollIntoView({ block: "center", behavior: reduceMotion ? "auto" : "smooth" });
+        return;
+      }
       var button = form.querySelector('button[type="submit"]');
       button.disabled = true;
+      button.classList.add("is-sending");
+      form.setAttribute("aria-busy", "true");
       status.textContent = "";
+      status.className = "fine form-status";
       fetch(form.action, {
         method: "POST",
         headers: { Accept: "application/json" },
@@ -270,13 +315,17 @@
         })
         .then(function () {
           var type = select ? select.value : "";
-          show("ok");
           form.reset();
+          sent();
           if (window.gtag) window.gtag("event", "generate_lead", { enquiry_type: type });
           if (window.fbq) window.fbq("track", "Lead", { content_category: type });
         })
-        .catch(function () { show("err"); })
-        .then(function () { button.disabled = false; });
+        .catch(failed)
+        .then(function () {
+          button.disabled = false;
+          button.classList.remove("is-sending");
+          form.removeAttribute("aria-busy");
+        });
     });
   }
 })();

@@ -22,6 +22,7 @@ first commit on `main` if you need the history.
 | Design system | Colour rhythm with no repeated neighbours on any page (13 of 14 had them); photo heroes on all main pages, navy on the three B2B pages; one card style, two corner radii, two shadow depths; grain on every deep section; no bright-white surfaces. | Automated audit of section order |
 | Premium details | Self-hosted fonts with preload and metric-matched fallbacks (no font jump, no Google request); instant page loads via prerender-on-hover; header holds still between pages; blurred photo previews with fade-in; branded share card per page; anchor links clear the sticky header. | |
 | Signature motion | Chosen by Dawn from the Motion Lab: line-by-line headlines, drawn hairlines, photo unveil, scroll-lit quotes, menu morph and cascade, rolling buttons, reading line on long pages, footer curtain. Dropdown family names now link to their main page. | CLS 0, performance 98–99, keyboard and reduced-motion tests pass |
+| Finishing | Typography: balanced headlines, no stranded last words, hanging quote marks on pull quotes, steady even-width numbers, hairlines both sides of centred labels. Form: calm inline messages instead of browser bubbles, softer focus, menu-style chevron, warm autofill, breathing button while sending, confirmation panel with a drawn tick. Closed phone menu fully hidden (no edge shadow, not reachable by Tab). | Copy diff clean, performance 98–99, keyboard tests pass |
 | Bugs fixed on the way | Outline buttons invisible on navy bands; hero photo squashed beside text on phones; footer column wrapping; off-centre opt-in small print; three placeholder panels replaced with real photos. | |
 
 ### Lighthouse (mobile, simulated throttling)
@@ -61,7 +62,9 @@ first commit on `main` if you need the history.
   (`nd-circle`, `nd-dawn-leading`, `dawn-portrait-smile`). Swap in the CMS if Dawn prefers others.
 - **New copy needing approval:** the Ascension calendar section heading ("Book a Soul
   Mastery Alignment Call.", "30 minutes, by Zoom or phone, Monday to Friday.") and the
-  form's success/failure messages.
+  form's success/failure messages, plus the form's inline prompts ("Please add your first
+  name.", "Please add your email address.", "That email address looks incomplete.",
+  "Please choose what this is about."), which live in `src/_includes/sections/enquiry_form.njk`.
 
 ## Phase 1 evidence (from `docs/ELEVATION-FRAMEWORK.md`): needs Dawn
 

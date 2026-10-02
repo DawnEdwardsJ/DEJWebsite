@@ -52,6 +52,20 @@ export default function (eleventyConfig) {
     return md.renderInline(text) + (arrow ? arrowSpan : "");
   });
 
+  // Pull quotes: an opening or closing quote mark is wrapped so it can hang just
+  // outside the text, leaving the words optically centred. The text is unchanged.
+  const quotePairs = { "“": "”", "‘": "’", "&quot;": "&quot;" };
+  eleventyConfig.addFilter("hang", (html) => {
+    const s = String(html || "");
+    const open = Object.keys(quotePairs).find((q) => s.startsWith(q));
+    if (!open) return s;
+    const close = quotePairs[open];
+    const body = s.slice(open.length);
+    return `<span class="hang-l">${open}</span>` + (body.endsWith(close)
+      ? `${body.slice(0, -close.length)}<span class="hang-r">${close}</span>`
+      : body);
+  });
+
   // Buttons left half-filled in the CMS are skipped rather than shown empty.
   eleventyConfig.addFilter("usable", (items) =>
     Array.isArray(items) ? items.filter((b) => b && b.label && b.link) : []

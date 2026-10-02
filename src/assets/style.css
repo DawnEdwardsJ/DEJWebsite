@@ -620,3 +620,78 @@ html{scroll-padding-top:96px}
 /* numbers band: centred under its heading */
 .stats-center{justify-content:center;text-align:center;gap:clamp(32px,6vw,88px)}
 .stats-center>div{display:flex;flex-direction:column;align-items:center}
+
+/* ================= TYPOGRAPHY FINISHING ================= */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+/* headlines break into even lines; paragraphs never end on one stranded word */
+h1,h2,h3,h4,.say,.pullquote blockquote{text-wrap:balance}
+p,li,cite,.quote-card p{text-wrap:pretty}
+/* pull-quote marks hang just outside the words, so the words themselves sit centred */
+.hang-l{margin-left:-.4em}
+.hang-r{margin-right:-.4em}
+/* numbers: lining and even-width, so the count-up holds steady */
+.stats b,.count{font-variant-numeric:lining-nums tabular-nums}
+/* centred labels get a hairline on both sides, so the words sit on the centre line */
+.sec-head .kicker::after{content:"";width:26px;height:1px;background:currentColor;display:inline-block;margin-left:-3px;transform-origin:right center}
+.js .reveal .kicker::after{transform:scaleX(0);transition:transform 800ms var(--ease-out) 100ms}
+.js .reveal.in .kicker::after{transform:none}
+
+/* ================= FORM FINISHING ================= */
+.nd-form input,.nd-form select,.nd-form textarea{border-color:rgba(25,43,83,.2);caret-color:var(--orange);
+  transition:border-color var(--t-hover) var(--ease-out),box-shadow var(--t-hover) var(--ease-out)}
+.nd-form input:hover,.nd-form select:hover,.nd-form textarea:hover{border-color:rgba(25,43,83,.4)}
+.nd-form input:focus,.nd-form select:focus,.nd-form textarea:focus{outline:2px solid transparent;border-color:var(--navy);box-shadow:0 0 0 4px rgba(244,162,97,.28)}
+.nd-form ::placeholder{color:rgba(25,43,83,.64);opacity:1}
+.nd-form textarea{field-sizing:content;max-height:440px}
+/* the select gets the same fine chevron as the menu */
+.nd-form select{appearance:none;-webkit-appearance:none;padding-right:44px;cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%23192b53' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 18px center;background-size:10px 6px}
+.nd-form select:has(option[value=""]:checked){color:rgba(25,43,83,.64)}
+.nd-form option{color:var(--navy)}
+/* autofilled fields stay warm instead of turning browser blue */
+.nd-form input:-webkit-autofill{-webkit-text-fill-color:var(--navy);box-shadow:inset 0 0 0 100px #fff3e3;transition:background-color 9999s}
+.nd-form input:-webkit-autofill:focus{box-shadow:inset 0 0 0 100px #fff3e3,0 0 0 4px rgba(244,162,97,.28)}
+/* calm inline messages in place of the browser's bubbles (site.js) */
+.nd-form [aria-invalid="true"]{border-color:var(--burgundy)}
+.nd-form [aria-invalid="true"]:focus{box-shadow:0 0 0 4px rgba(80,42,31,.14)}
+.field-msg{display:block;margin-top:8px;font-size:.85rem;line-height:1.5;color:var(--burgundy);font-weight:400;animation:msg-in 360ms var(--ease-out)}
+.field-msg:empty{display:none}
+@keyframes msg-in{from{opacity:0;transform:translateY(-4px)}}
+/* while sending, the button label breathes */
+.nd-form button[disabled]{opacity:1}
+.nd-form .is-sending .roll{animation:breathe 1.2s var(--ease-smooth) infinite alternate}
+@keyframes breathe{to{opacity:.4}}
+/* sent: the form gives way to a quiet confirmation */
+.form-note .tick{display:none}
+.nd-form.is-sent>:not(#enquiry-sent),.nd-form:has(#enquiry-sent:target)>:not(#enquiry-sent){display:none}
+.nd-form.is-sent #enquiry-sent,.nd-form #enquiry-sent:target{display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center;
+  padding:clamp(40px,6vw,60px) 28px;background:var(--ivory);border:1px solid var(--beige);border-radius:var(--r-panel);box-shadow:var(--shadow-soft);
+  font-family:var(--serif);font-style:italic;font-size:1.5rem;font-weight:400;line-height:1.4;color:var(--navy);outline:none;
+  animation:panel-in 700ms var(--ease-out)}
+.nd-form.is-sent .tick,.nd-form #enquiry-sent:target .tick{display:block;width:52px;height:52px;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.tick circle{stroke:var(--gold);stroke-dasharray:139;stroke-dashoffset:139;animation:tick-draw 1000ms var(--ease-out) 150ms forwards}
+.tick path{stroke:var(--accent-deep);stroke-dasharray:30;stroke-dashoffset:30;animation:tick-draw 600ms var(--ease-out) 750ms forwards}
+@keyframes tick-draw{to{stroke-dashoffset:0}}
+@keyframes panel-in{from{opacity:0;transform:translateY(12px)}}
+/* not sent: a quiet note, never an alarm */
+.nd-form .form-status.err,.nd-form #enquiry-error:target{font-size:.9rem;font-weight:500;color:var(--burgundy);padding:14px 18px;
+  background:var(--ivory);border:1px solid var(--beige);border-left:3px solid var(--burgundy);border-radius:var(--r-panel);max-width:none}
+/* the guide sign-up matches */
+.optin input[type=email]{caret-color:var(--orange);transition:border-color var(--t-hover) var(--ease-out),box-shadow var(--t-hover) var(--ease-out)}
+.optin input[type=email]:focus{outline:2px solid transparent;border-color:var(--gold);box-shadow:0 0 0 4px rgba(244,162,97,.32)}
+.optin input::placeholder{color:rgba(25,43,83,.64);opacity:1}
+
+/* the closed phone menu is fully hidden: no shadow at the screen edge, no tabbing into it */
+@media(max-width:900px){
+  .main-nav{visibility:hidden;transition:transform .3s,visibility 0s linear .3s}
+  .main-nav.open{visibility:visible;transition-delay:0s}
+  .drop{transition:max-height .25s,padding .25s,visibility 0s linear .25s}
+  .main-nav li:not(.open)>.drop,.main-nav:not(.open) .drop{visibility:hidden}
+  .main-nav li.open>.drop{transition-delay:0s}
+}
+
+@media (prefers-reduced-motion: reduce){
+  .js .reveal .kicker::after{transition:none}
+  .nd-form .is-sending{opacity:.6}
+}

@@ -110,6 +110,10 @@ edit `_site/`, it is rebuilt every time).
   underline; a gold reading line on pages with `readingLine: true`; and a footer curtain on
   desktop (main lifts to reveal the sticky footer). Button labels go through the `btnLabel`
   filter, which adds an aria-hidden duplicate for the roll.
+- **Finishing details**: headings use `text-wrap: balance`, paragraphs `pretty`; pull-quote
+  marks hang via the `hang` filter (text unchanged). The enquiry form uses inline messages
+  from `data-missing` / `data-invalid` attributes in `enquiry_form.njk` (site.js sets
+  `novalidate`, so without JavaScript the browser's own validation still applies).
 - **Links to `newdawnwellness.health` are hidden automatically** while
   `wellnessSiteLive` is `false` in `site.json`. Leave those links in the content; flipping the
   switch brings them all back.
