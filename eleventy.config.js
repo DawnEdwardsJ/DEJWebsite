@@ -2,6 +2,7 @@ import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import markdownIt from "markdown-it";
 import fs from "node:fs";
 import path from "node:path";
+import crypto from "node:crypto";
 import sharp from "sharp";
 import buildOgImages from "./og/build-og.js";
 
@@ -58,6 +59,13 @@ export default function (eleventyConfig) {
     }));
   });
   eleventyConfig.addFilter("lqip", (src) => lqip.get(src)?.uri || "");
+
+  // Cache-busting: /assets/style.css?v=<hash of the file>, so a changed stylesheet or
+  // script is fetched fresh while unchanged ones stay cached.
+  eleventyConfig.addFilter("v", (url) => {
+    const hash = crypto.createHash("sha1").update(fs.readFileSync(path.join("src", url))).digest("hex").slice(0, 10);
+    return `${url}?v=${hash}`;
+  });
 
   eleventyConfig.addFilter("json", (value) => JSON.stringify(value));
   eleventyConfig.addFilter("year", () => new Date().getFullYear());
