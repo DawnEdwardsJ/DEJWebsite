@@ -41,7 +41,7 @@ img{max-width:100%;display:block}
 .main-nav .has-drop>a::after{content:" \25BE";font-size:.6em;opacity:.6}
 .drop{list-style:none;position:absolute;top:100%;left:0;min-width:230px;background:#fff;border:1px solid var(--beige);
   border-radius:12px;box-shadow:0 16px 40px rgba(25,43,83,.14);padding:8px;opacity:0;visibility:hidden;transform:translateY(8px);transition:.2s}
-.main-nav li:hover>.drop, .main-nav li:focus-within>.drop{opacity:1;visibility:visible;transform:translateY(0)}
+.main-nav li:hover>.drop{opacity:1;visibility:visible;transform:translateY(0)}
 .drop a{border-radius:8px;font-size:.8rem;padding:9px 12px}
 .drop a:hover{background:var(--cream);color:var(--accent-deep)}
 .nav-cta{background:var(--accent);color:var(--navy)!important;border-radius:999px;font-weight:600!important;
@@ -380,7 +380,6 @@ p.local-seo{max-width:70ch;margin:0 auto;text-align:center;font-size:.95rem;line
   .site-header.condensed .nav-inner{padding-block:10px}
 }
 .main-nav a{transition:color var(--t-hover) var(--ease-out),background var(--t-hover) var(--ease-out)}
-.drop{transition:opacity var(--t-panel) var(--ease-out),transform var(--t-panel) var(--ease-out),visibility var(--t-panel)}
 
 /* media: slow scale inside a clipped frame. 900ms is deliberate */
 .media{overflow:hidden}
@@ -440,6 +439,13 @@ p.local-seo{max-width:70ch;margin:0 auto;text-align:center;font-size:.95rem;line
 /* footer headings: same look as before, correct heading order for screen readers */
 .site-footer .foot-brand{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;line-height:1.15;letter-spacing:.5px;color:var(--gold);font-size:1.5rem;margin-bottom:14px}
 .site-footer .foot-h{font-family:'Montserrat';font-size:.7rem;letter-spacing:2px;line-height:1.75;text-transform:uppercase;color:var(--gold);margin-bottom:14px;font-weight:600}
-/* dropdowns become focusable the instant they open (visibility flips first, fades after) */
-.drop{transition:opacity var(--t-panel) var(--ease-out),transform var(--t-panel) var(--ease-out),visibility 0s linear var(--t-panel)}
-.main-nav li:hover>.drop,.main-nav li:focus-within>.drop,.main-nav li.open>.drop{transition-delay:0s}
+/* desktop dropdowns become focusable the instant they open (visibility flips first, fades after) */
+@media(min-width:901px){
+  .drop{transition:opacity var(--t-panel) var(--ease-out),transform var(--t-panel) var(--ease-out),visibility 0s linear var(--t-panel)}
+  .main-nav li:hover>.drop,.main-nav li.open>.drop{transition-delay:0s}
+}
+/* result message after a no-JavaScript form post (/contact/#enquiry-sent) */
+.form-note{display:none}
+.form-note:target{display:block;font-weight:600}
+.form-note.ok{color:var(--forest)}
+.form-note.err{color:var(--burgundy)}

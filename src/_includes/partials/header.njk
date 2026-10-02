@@ -17,7 +17,7 @@
           </ul>
         </li>
           {%- endif %}
-        {%- elif item.link | linkIsLive %}
+        {%- elif item.link and item.label and (item.link | linkIsLive) %}
         <li{% if item.link == page.url %} class="current"{% endif %}><a href="{{ item.link }}"{% if item.link == page.url %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
         {%- endif %}
       {%- endfor %}

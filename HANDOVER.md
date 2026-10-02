@@ -12,7 +12,7 @@ first commit on `main` if you need the history.
 | Page weight | Photos are real files: WebP + JPEG, responsive `srcset`, lazy loading, dimensions set. | HTML 10–23KB per page (was 250–850KB) |
 | `&amp;` double-escaping | Gone (titles, descriptions, alt text). | |
 | Google Fonts | Loaded via `preconnect` + `<link>` in the head, not CSS `@import`. | |
-| Enquiry form | Wired to Tekmatix through a Cloudflare Pages Function. Option values added, routing tags per enquiry type, honeypot spam trap, no-JS fallback, GA4/Meta lead events. | Tested against a mock Tekmatix API: contact upsert, tags and note all correct |
+| Enquiry form | Wired to Tekmatix through a Cloudflare Pages Function. Option values and a required topic choice, routing tags per enquiry type, note written before tags (so workflows see the message), phone retried without the number if Tekmatix rejects it, honeypot (logged, not silently dropped), optional Turnstile, no-JS fallback, GA4/Meta lead events. | Tested against a mock Tekmatix API, including the failure paths |
 | Discovery-call CTAs | Open the enquiry form with the right topic preselected (`/contact/?type=…#enquire`). | |
 | Ascension calendar | Soul Mastery Alignment Call (`7EiIsiDaO3oyu3OXTsjP`) embedded on the Ascension page. | |
 | Cross-site links | Hidden while `wellnessSiteLive` is `false` (Dawn's decision). One switch brings them back. | |
@@ -38,8 +38,11 @@ first commit on `main` if you need the history.
 3. **Soul Mastery Sanctuary link.** Hidden with the wellness links because its page doesn't
    exist yet. The homepage card heading still reads "Three ways in" above two cards. Give the
    Sanctuary a live page (or a Tekmatix funnel URL) and it comes back.
-4. **Analytics IDs.** Paste the GA4 and Meta Pixel IDs into Site settings when available.
-5. **Legal pages** still show "Draft for review". Remove the note once reviewed.
+4. **Spam protection.** Add Cloudflare Turnstile keys (optional, steps in the deploy guide)
+   before any Tekmatix confirmation email goes out, so bots can't trigger mail from the
+   sending domain.
+5. **Analytics IDs.** Paste the GA4 and Meta Pixel IDs into Site settings when available.
+6. **Legal pages** still show "Draft for review". Remove the note once reviewed.
 
 ## Open: Dawn's call (not changed, flagged)
 

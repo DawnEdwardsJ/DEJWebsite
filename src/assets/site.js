@@ -1,6 +1,7 @@
 /* dawnedwards-jones.com: navigation, motion and the enquiry form. No libraries. */
 (function () {
   var d = document;
+  window.ndReady = true; // tells the head failsafe that this script loaded
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* ---- mobile menu ---- */
@@ -26,12 +27,16 @@
     });
   }
   d.querySelectorAll(".drop-toggle").forEach(function (btn) {
+    var li = btn.parentElement;
     btn.addEventListener("click", function () {
-      var li = btn.parentElement;
       var open = !li.classList.contains("open");
       closeDrops(li);
       li.classList.toggle("open", open);
       btn.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    // close when keyboard focus moves on past the dropdown
+    li.addEventListener("focusout", function (e) {
+      if (e.relatedTarget && !li.contains(e.relatedTarget)) closeDrops();
     });
   });
   d.addEventListener("click", function (e) {
@@ -98,8 +103,12 @@
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
         if (!e.isIntersecting) return;
-        e.target.style.transitionDelay = (e.target.dataset.delay || 0) + "ms";
-        e.target.classList.add("in");
+        var el = e.target;
+        var delay = parseInt(el.dataset.delay || 0, 10);
+        el.style.transitionDelay = delay + "ms";
+        el.classList.add("in");
+        // clear the stagger afterwards so hover effects respond instantly
+        window.setTimeout(function () { el.style.transitionDelay = ""; }, delay + 700);
         e.target.querySelectorAll(".count[data-count]").forEach(countUp);
         io.unobserve(e.target);
       });
@@ -124,8 +133,6 @@
       status.textContent = kind === "ok" ? form.dataset.success : form.dataset.error;
       status.className = "fine form-status " + kind;
     }
-    if (params.get("enquiry") === "sent") show("ok");
-    if (params.get("enquiry") === "error") show("err");
 
     form.addEventListener("submit", function (e) {
       e.preventDefault();

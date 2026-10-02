@@ -57,6 +57,16 @@ Each enquiry type adds tags (`b2b-enquiry` / `b2c-enquiry` plus a topic tag such
 notifications and any confirmation email. Confirm the authenticated sending domain before
 switching a confirmation email on.
 
+### Spam protection (recommended before any confirmation email is switched on)
+
+The form has a hidden honeypot field. For stronger protection, add Cloudflare Turnstile
+(free): Cloudflare → Turnstile → add the site → copy the **site key** into Pages CMS → Site
+settings → "Cloudflare Turnstile site key", and add the **secret key** to the Pages project
+as `TURNSTILE_SECRET_KEY`. Both are optional, and the form works without them.
+
+If Tekmatix can't be reached, the function logs the full enquiry so it can be followed up
+by hand. Turn on Workers Logs for the Pages project so those logs are kept.
+
 First deploy lands at `<project-name>.pages.dev`. Check the 14 pages there before touching DNS.
 
 ---

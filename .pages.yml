@@ -320,10 +320,10 @@ content:
               - { name: heading, component: heading }
               - { name: intro, component: intro }
               - { name: message_placeholder, label: Hint inside the message box, type: string }
-              - { name: button_label, label: Button text, type: string }
+              - { name: button_label, label: Button text, type: string, required: true }
               - { name: fine_print, label: Small print, type: text }
-              - { name: success_message, label: Message after sending, type: text }
-              - { name: error_message, label: Message if sending fails, type: text }
+              - { name: success_message, label: Message after sending, type: text, required: true }
+              - { name: error_message, label: Message if sending fails, type: text, required: true }
           - name: calendar
             label: Booking calendar (Tekmatix)
             fields:
@@ -353,6 +353,7 @@ content:
         type: boolean
         description: "Turn on once newdawnwellness.health has its new pages. Every link to that site (menu, footer, buttons) reappears."
       - { name: wellnessUrl, type: string, hidden: true }
+      - { name: turnstileSiteKey, label: "Cloudflare Turnstile site key (spam protection, optional)", type: string }
       - name: analytics
         label: Analytics
         type: object
