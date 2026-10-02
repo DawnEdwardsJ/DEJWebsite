@@ -1,0 +1,11 @@
+{%- from "macros.njk" import buttons, fig -%}
+<section class="hero"><div class="wrap"><div class="hero-split">
+<div class="hcopy">
+{%- if s.kicker %}<div class="kicker">{{ s.kicker | mdi | safe }}</div>{% endif -%}
+<h1 class="line-mask"><span>{{ s.heading | mdi | safe }}</span></h1>
+{%- if s.text %}<p class="lead">{{ s.text | mdi | safe }}</p>{% endif -%}
+{{ buttons(s.buttons) }}
+{%- if s.credentials %}<div class="hero-cred">{{ s.credentials | mdi | safe }}</div>{% endif -%}
+</div>
+{{ fig(s.photo, s.photo_alt, s.tone, s.photo_position, "(max-width: 900px) 94vw, 46vw", "hfig", true) }}
+</div></div></section>

@@ -1,0 +1,8 @@
+{%- from "macros.njk" import head, bg -%}
+<section {{ bg(s) }} id="{{ s.anchor or 'book' }}"><div class="wrap">
+{{ head(s) }}
+<div class="calendar-embed reveal">
+<iframe src="https://api.leadconnectorhq.com/widget/booking/{{ s.calendar_id }}" title="{{ s.frame_title or 'Book a call with Dawn' }}" id="{{ s.calendar_id }}_cal" scrolling="no" loading="lazy"></iframe>
+</div>
+<script src="https://link.msgsndr.com/js/form_embed.js" defer></script>
+</div></section>

@@ -1,0 +1,11 @@
+{%- from "macros.njk" import head, bg -%}
+<section {{ bg(s) }}><div class="wrap">
+{{ head(s) }}
+<div class="story">
+{%- for c in s.chapters -%}
+<div class="chapter reveal"><div class="cnum">{{ c.label | mdi | safe }}</div><h3>{{ c.heading | mdi | safe }}</h3>
+{%- if c.lead %}<p class="lead">{{ c.lead | mdi | safe }}</p>{% endif -%}
+{{ c.body | md | safe }}</div>
+{%- endfor -%}
+</div>
+</div></section>

@@ -1,0 +1,9 @@
+{%- from "macros.njk" import head, bg -%}
+<section {{ bg(s) }}><div class="wrap">
+{{ head(s) }}
+<div class="grid">
+{%- for q in s.quotes -%}
+<div class="quote-card reveal" data-delay="{{ (loop.index0 % 4) * 70 }}"><div class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>{{ q.quote | mdi | safe }}</p><cite>{{ q.cite | mdi | safe }}</cite></div>
+{%- endfor -%}
+</div>
+</div></section>

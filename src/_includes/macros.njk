@@ -1,0 +1,35 @@
+{#- Shared building blocks used by the section templates. -#}
+
+{%- macro buttons(list, center=false, small=false, cls="") -%}
+{%- set live = list | usable | liveLinks %}
+{%- if live.length -%}
+<div class="btn-row{% if center %} center{% endif %}{% if cls %} {{ cls }}{% endif %}">
+{%- for b in live -%}
+<a class="btn btn-{{ b.style or 'gold' }}{% if b.sheen %} sheen{% endif %}{% if small %} btn-sm{% endif %}" href="{{ b.link }}">{{ b.label | mdi | safe }}</a>
+{%- endfor -%}
+</div>
+{%- endif -%}
+{%- endmacro %}
+
+{%- macro head(s) -%}
+{%- if s.heading or s.kicker or s.intro -%}
+<div class="sec-head reveal">
+{%- if s.kicker %}<div class="kicker">{{ s.kicker | mdi | safe }}</div>{% endif -%}
+{%- if s.heading %}<h2>{{ s.heading | mdi | safe }}</h2>{% endif -%}
+{%- if s.intro %}<p>{{ s.intro | mdi | safe }}</p>{% endif -%}
+</div>
+{%- endif -%}
+{%- endmacro %}
+
+{#- A photo panel. With no photo it falls back to the coloured panel with a caption. -#}
+{%- macro fig(photo, alt, tone="gold", pos="", sizes="(max-width: 900px) 90vw, 560px", cls="", eager=false) -%}
+{%- if photo -%}
+<div class="fig {{ tone or 'gold' }} has-img media{% if cls %} {{ cls }}{% endif %}"><img class="ph" src="{{ photo }}" alt="{{ alt }}" sizes="{{ sizes }}"{% if pos %} style="object-position:{{ pos }}"{% endif %}{% if eager %} loading="eager" fetchpriority="high"{% endif %}></div>
+{%- else -%}
+<div class="fig {{ tone or 'gold' }}{% if cls %} {{ cls }}{% endif %}">{{ alt }}</div>
+{%- endif -%}
+{%- endmacro %}
+
+{%- macro bg(s, extra="") -%}
+class="sec{% if s.background and s.background != 'none' %} {{ s.background }}{% endif %}{% if extra %} {{ extra }}{% endif %}"
+{%- endmacro %}

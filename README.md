@@ -1,104 +1,89 @@
 # dawnedwards-jones.com
 
-The personal-brand and authority site for **Dawn Edwards-Jones** — author, speaker, and
+The personal-brand and authority site for **Dawn Edwards-Jones**: author, speaker, and
 founder of New Dawn Wellness.
 
-Static site. 14 pages. No framework, no runtime, no database. Deploys to Cloudflare Pages.
+Static site, 14 pages, built with [Eleventy](https://www.11ty.dev/). The output is plain
+HTML, CSS and images, with no framework, runtime or database. It deploys to Cloudflare
+Pages. Day-to-day text and photo edits happen in [Pages CMS](https://pagescms.org) (see
+`docs/EDITING-GUIDE.md`), which commits to this repo.
 
-**Read `CLAUDE.md` before editing anything.** It covers the brand constraints, the voice,
-and — importantly — the fact that the HTML in `src/` is generated output rather than source.
-`HANDOVER.md` is the prioritised punch list of what still needs doing before launch.
+**Read `CLAUDE.md` before changing anything.** It covers the brand constraints and the voice.
+`HANDOVER.md` lists what is done and what is still open before launch.
 
 ## Repo layout
 
 ```
 .
-├── CLAUDE.md               Instructions and constraints — read first
-├── HANDOVER.md             Prioritised punch list to final release
-├── README.md               This file
+├── CLAUDE.md                  Instructions and constraints. Read first
+├── HANDOVER.md                Launch checklist and status
+├── .pages.yml                 Pages CMS editor configuration
+├── eleventy.config.js         Build configuration (Markdown, image optimisation)
+├── functions/api/enquiry.js   Cloudflare Pages Function: contact form → Tekmatix
 ├── docs/
+│   ├── EDITING-GUIDE.md       Plain-English guide for whoever edits the site
 │   ├── DEPLOY-CLOUDFLARE.md   Hosting, DNS and deploy procedure
-│   └── DAWN-TO-SUPPLY.md      The five things only Dawn can provide
-├── src/                    Deployable site root (publish this directory)
-│   ├── *.html              14 pages
-│   ├── assets/style.css    Shared stylesheet
-│   ├── logos/              9 client logos
-│   ├── og-image.jpg        Social share image
-│   ├── robots.txt
-│   └── sitemap.xml
-└── generator/
-    ├── build_sites.py      Python generator that produced src/
-    └── photos/             29 original photographs at full quality
+│   ├── DAWN-TO-SUPPLY.md      Things only Dawn can provide or decide
+│   ├── ELEVATION-FRAMEWORK.md Phasing and review gates for the upgrade work
+│   └── UPGRADE-PROMPT.md      Motion and craft specification
+└── src/                       Site source
+    ├── pages/*.md             The 14 pages. All copy lives in the front matter
+    ├── _data/site.json        Menu, footer, contact details, analytics, wellness switch
+    ├── _data/logos.json       Client logo strip
+    ├── _data/enquiry.json     Enquiry types and the Tekmatix tags each one gets
+    ├── _includes/layouts/     Page shell (head, header, footer)
+    ├── _includes/partials/    Header and footer, shared by every page
+    ├── _includes/sections/    One template per section type (hero, split, cards…)
+    ├── assets/style.css       The stylesheet, including the motion system
+    ├── assets/site.js         Navigation, scroll reveal, form handling (~3KB, no libraries)
+    ├── images/photos/         Original photographs at full quality
+    └── images/logos/          Client logos
 ```
 
-## The 14 pages
+## How a page is made
 
-| File | Purpose |
-|---|---|
-| `index.html` | Homepage |
-| `about.html` | Dawn's story |
-| `philosophy.html` | Method and approach |
-| `start-here.html` | Orientation / audience router |
-| `speaking.html` | Keynote speaking (B2B) |
-| `corporate-workshops.html` | Corporate workshops and wellbeing days (B2B) |
-| `menopause-policy.html` | Menopause policy advisory and implementation (B2B) |
-| `soul-mastery-ascension.html` | 1:1 premium coaching (B2C) |
-| `calm-to-chaos.html` | Soul-led business coaching (B2C) |
-| `podcast.html` | The Adawning Podcast |
-| `book.html` | Dawn's book |
-| `contact.html` | Enquiry form — 56 CTAs across the site point here |
-| `privacy.html` | Privacy policy |
-| `terms.html` | Terms |
+Each file in `src/pages/` is a list of **sections** in its front matter:
+
+```yaml
+sections:
+  - type: hero
+    kicker: "Keynote Speaking"
+    heading: "A voice that lands — and lasts."
+    buttons:
+      - { label: "Enquire about speaking", link: "/contact/", style: gold }
+  - type: logos
+  - type: cards
+    background: cream
+    ...
+```
+
+`type` picks a template from `src/_includes/sections/`. The header and footer are shared, so
+changing the menu means editing `src/_data/site.json`, one file.
+
+Images referenced in content (e.g. `/images/photos/group1.jpg`) are resized at build time
+into WebP and JPEG at several widths, with `srcset`, `width`/`height` and lazy loading added
+automatically. Upload the original and let the build handle the rest.
 
 ## Running it locally
 
-`src/` is plain static files, so any static server works:
-
 ```bash
-cd src
-python3 -m http.server 8000
-# → http://localhost:8000
+npm install
+npm start          # http://localhost:8080, rebuilds as you save
+npm run build      # writes the finished site to _site/
 ```
 
-Opening the files directly with `file://` mostly works, but relative asset paths and the
-dropdown nav behave more predictably over HTTP. Use the server.
-
-## Rebuilding from the generator
-
-```bash
-cd generator
-python3 build_sites.py
-```
-
-Two things to know before you run that:
-
-1. It builds **both** this site and New Dawn Wellness. Only the Dawn Edwards-Jones half
-   matters here; the wellness half is dead weight in this repo.
-2. It **overwrites the HTML**, and it base64-inlines every photograph into the output, which
-   is why pages are 250–850KB. This is `HANDOVER.md` item 2 — the architecture decision that
-   most other work depends on.
-
-Until that decision is made, treat `build_sites.py` as the source of truth and `src/` as
-disposable build output.
+The contact form posts to a Cloudflare Function, which doesn't run under `npm start`. To
+test it locally, use `npx wrangler pages dev _site` after a build.
 
 ## Deploying
 
-Cloudflare Pages, auto-deploying from the `main` branch of this repo, publish directory
-`src`, no build command. Domain is registered at GoDaddy. Full procedure, DNS records and
-the newdawnpilates.com redirect plan are in `docs/DEPLOY-CLOUDFLARE.md`.
+Cloudflare Pages builds from `main`: build command `npm run build`, output directory
+`_site`. Every pull request gets a preview URL. Full procedure, the one secret the contact
+form needs, and the DNS steps are in `docs/DEPLOY-CLOUDFLARE.md`.
 
-Pull requests get automatic preview URLs, which is the right way to show Dawn a change
-before it goes live.
+## History
 
-## Before you launch
-
-Three things block launch, all detailed in `HANDOVER.md`:
-
-1. The enquiry form submits to nothing. 56 CTAs lead to a dead end.
-2. The generator architecture question needs Dawn's decision.
-3. The top nav on all 14 pages links to six `newdawnwellness.health` pages that don't exist yet.
-
-## Scope
-
-In scope: this site. Out of scope: the New Dawn Wellness site (separate repo, separate
-launch), rewriting Dawn's approved copy, and changing the brand colours or fonts.
+The site was originally produced by a single Python generator that also built the New Dawn
+Wellness site and inlined every photo into the HTML (pages were 250–850KB). That generator
+and its output are preserved in the first commit on `main`. The copy was carried across word
+for word and checked by an automated text comparison against the original pages.

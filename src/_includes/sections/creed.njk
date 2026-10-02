@@ -1,0 +1,9 @@
+{%- from "macros.njk" import head, bg -%}
+<section {{ bg(s) }}><div class="wrap">
+{{ head(s) }}
+<div class="creed">
+{%- for c in s.beliefs -%}
+<div class="cline reveal"><div class="cbelief">{{ c.belief | mdi | safe }}</div>{% if c.text %}<div class="csub">{{ c.text | mdi | safe }}</div>{% endif %}</div>
+{%- endfor -%}
+</div>
+</div></section>

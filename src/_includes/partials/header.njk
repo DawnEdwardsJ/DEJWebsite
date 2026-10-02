@@ -1,0 +1,28 @@
+<header class="site-header">
+  <div class="nav-inner">
+    <a class="brand" href="/"><img src="{{ site.logo }}" alt="" height="44" eleventy:ignore><span class="wtext">{{ site.name }}<small>{{ site.tagline }}</small></span></a>
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">&#9776;</button>
+    <nav class="main-nav" id="main-nav" aria-label="Main">
+      <ul>
+      {%- for item in site.nav %}
+        {%- if item.children %}
+          {%- set kids = item.children | liveLinks %}
+          {%- if kids.length %}
+        <li class="has-drop{% if kids | containsUrl(page.url) %} current{% endif %}">
+          <button class="drop-toggle" type="button" aria-expanded="false">{{ item.label }}</button>
+          <ul class="drop">
+            {%- for k in kids %}
+            <li><a href="{{ k.link }}"{% if k.link == page.url %} aria-current="page"{% endif %}>{{ k.label }}</a></li>
+            {%- endfor %}
+          </ul>
+        </li>
+          {%- endif %}
+        {%- elif item.link | linkIsLive %}
+        <li{% if item.link == page.url %} class="current"{% endif %}><a href="{{ item.link }}"{% if item.link == page.url %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
+        {%- endif %}
+      {%- endfor %}
+        <li><a class="nav-cta" href="{{ site.navButton.link }}">{{ site.navButton.label }}</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
