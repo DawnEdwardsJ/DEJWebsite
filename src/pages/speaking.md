@@ -46,6 +46,18 @@ sections:
       - "Women’s events & networks"
       - "Panels, workshops & webinars"
 
+  - type: testimonials
+    background: beige
+    kicker: "In their words"
+    heading: "What organisers and audiences say."
+    quotes:
+      - quote: "Dawn is such a natural speaker. In her talk about menopause she was warm, empathetic and empowering. I looked around at the other ladies in the room and could see how engaged they were and how much value Dawn was providing for them."
+        cite: "— Kirsty Foster · Social Mums Club"
+      - quote: "It was evident that she had grasped our target audience and the goals we aimed to achieve, resulting in content that was not only relevant but also personalised to our company’s needs. Dawn’s expertise shone through, ensuring an engaging and insightful experience for all participants."
+        cite: "— Jenifer Hasbun · General Manager, Shared Services, Corporate Protection Australia"
+      - quote: "She created a welcoming and open environment where everyone felt comfortable in sharing their experiences… I left feeling empowered, and equipped with extra tools and insights to navigate this phase of life with confidence."
+        cite: "— Talia Read · Social Mums Club"
+
   - type: cta_band
     background: ivory
     line: "Let’s create a room your audience won’t forget."

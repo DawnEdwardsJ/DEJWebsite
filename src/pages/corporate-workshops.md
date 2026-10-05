@@ -40,6 +40,18 @@ sections:
       - "Build a genuinely caring culture"
       - "Practical tools people actually use"
 
+  - type: testimonials
+    background: beige
+    kicker: "In their words"
+    heading: "What workplaces say."
+    quotes:
+      - quote: "She ran an extremely professional, yet relatable session… Since the session, we’ve had feedback from our staff that this was one of the best sessions we’ve had in our wellness program so far. I would highly recommend a corporate wellness session from Dawn … to any organisation that advocates for their employees’ health and wellbeing."
+        cite: "— Maddy · HR Officer, organisation advocating for healthcare professionals"
+      - quote: "Dawn & Narelle were not only expert facilitators but also genuinely caring individuals who were invested in our well-being… I left the Wellness Retreat feeling rejuvenated, inspired, and connected to myself and nature."
+        cite: "— Caroline · Administrator, Maybanke Association Inc. · Team-building half-day retreat"
+      - quote: "Dawn was a great speaker and shared very useful, valuable information beyond the basic repeated information about menopause. A great holistic approach to preventing symptoms of menopause."
+        cite: "— Workplace menopause workshop attendee"
+
   - type: cta_band
     background: ivory
     line: "Ready to support the women who hold your organisation together?"
