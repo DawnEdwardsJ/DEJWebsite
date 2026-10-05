@@ -47,8 +47,8 @@ sections:
     quotes:
       - quote: "She ran an extremely professional, yet relatable session… Since the session, we’ve had feedback from our staff that this was one of the best sessions we’ve had in our wellness program so far. I would highly recommend a corporate wellness session from Dawn … to any organisation that advocates for their employees’ health and wellbeing."
         cite: "— Maddy · HR Officer, organisation advocating for healthcare professionals"
-      - quote: "Dawn & Narelle were not only expert facilitators but also genuinely caring individuals who were invested in our well-being… I left the Wellness Retreat feeling rejuvenated, inspired, and connected to myself and nature."
-        cite: "— Caroline · Administrator, Maybanke Association Inc. · Team-building half-day retreat"
+      - quote: "This was a team-building event, and it was truly an amazing experience… Dawn was not only an expert facilitator but also genuinely caring and invested in our well-being… I left the Wellness Retreat feeling rejuvenated, inspired, and connected to myself and nature."
+        cite: "— Caroline · Administrator, Maybanke Association Inc. · Half-day wellness retreat"
       - quote: "Dawn was a great speaker and shared very useful, valuable information beyond the basic repeated information about menopause. A great holistic approach to preventing symptoms of menopause."
         cite: "— Workplace menopause workshop attendee"
 
