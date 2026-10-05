@@ -6,9 +6,9 @@ sections:
     dark: true
     kicker: "For Workplaces"
     heading: "Menopause Policy Advisory & Implementation."
-    text: "I work alongside your leadership to shape a meaningful workplace menopause policy — then help you put it into practice, so it becomes lived culture, not a document in a drawer."
+    text: "I work alongside your leadership to shape a meaningful workplace menopause policy, then help you put it into practice so it becomes lived culture, not a document in a drawer."
     buttons:
-      - { label: "Book a discovery call", link: "/contact/?type=menopause-policy-advisory#enquire", style: gold }
+      - { label: "Discuss your organisation", link: "/contact/?type=menopause-policy-advisory#enquire", style: gold }
     photo: /images/photos/dawn-portrait-smile.jpg
     photo_alt: "Dawn Edwards-Jones smiling, holding a cup"
     photo_position: center 30%
@@ -37,13 +37,15 @@ sections:
       - "Policy shaped to your organisation"
       - "Manager and staff education"
       - "Practical implementation and follow-through"
-    buttons:
-      - { label: "Start the conversation", link: "/contact/?type=menopause-policy-advisory#enquire", style: gold }
 
   - type: cta_band
     background: ivory
     line: "Let’s build a workplace where women don’t have to suffer in silence."
     buttons:
-      - { label: "Enquire now", link: "/contact/?type=menopause-policy-advisory#enquire", style: gold }
-      - { label: "See workshops", link: "/corporate-workshops/", style: ghost }
+      - { label: "Discuss your organisation", link: "/contact/?type=menopause-policy-advisory#enquire", style: gold }
+
+  - type: crosslink
+    text: "Looking for workshops, wellbeing sessions, or menopause policy advisory for your team or organisation?"
+    link: /corporate-workshops/
+    link_label: "Explore our Corporate Workshops →"
 ---

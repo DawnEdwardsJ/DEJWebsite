@@ -144,7 +144,8 @@ p.local-seo{max-width:70ch;margin:0 auto;text-align:center;font-size:.95rem;line
 .nd-form .row-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 @media(max-width:600px){.nd-form .row-2{grid-template-columns:1fr}}
 
-@media(max-width:900px){
+/* the menu folds into the side panel below 1260px, where the full row no longer fits */
+@media(max-width:1260px){
   .nav-toggle{display:block}
   .main-nav{position:fixed;top:73px;right:0;width:min(320px,86%);height:calc(100vh - 73px);background:#fff;
     border-left:1px solid var(--beige);padding:16px;overflow-y:auto;transform:translateX(105%);transition:.3s;box-shadow:-10px 0 40px rgba(25,43,83,.12)}
@@ -155,6 +156,8 @@ p.local-seo{max-width:70ch;margin:0 auto;text-align:center;font-size:.95rem;line
     max-height:0;overflow:hidden;padding:0 0 0 14px;transition:.25s}
   .main-nav li.open>.drop{max-height:500px;padding:4px 0 10px 14px}
   .nav-cta{margin:12px 0 0;text-align:center}
+}
+@media(max-width:900px){
   .split,.two{grid-template-columns:1fr}
   .foot-grid{grid-template-columns:1fr}
   .hero-split{grid-template-columns:1fr}
@@ -332,7 +335,7 @@ p.local-seo{max-width:70ch;margin:0 auto;text-align:center;font-size:.95rem;line
 .drop-toggle:hover{color:var(--accent-deep)}
 .current>.drop-toggle{color:var(--accent-deep);font-weight:600}
 .main-nav li.open>.drop{opacity:1;visibility:visible;transform:translateY(0)}
-@media(max-width:900px){.drop-toggle{width:100%;text-align:left}}
+@media(max-width:1260px){.drop-toggle{width:100%;text-align:left}}
 
 /* accessibility */
 .skip-link{position:absolute;left:12px;top:-60px;z-index:200;background:var(--navy);color:var(--cream);padding:10px 18px;border-radius:999px;font-size:.8rem}
@@ -452,7 +455,7 @@ p.local-seo{max-width:70ch;margin:0 auto;text-align:center;font-size:.95rem;line
 .site-footer .foot-brand{font-family:var(--serif);font-weight:500;line-height:1.15;letter-spacing:.5px;color:var(--gold);font-size:1.5rem;margin-bottom:14px}
 .site-footer .foot-h{font-family:var(--sans);font-size:.7rem;letter-spacing:2px;line-height:1.75;text-transform:uppercase;color:var(--gold);margin-bottom:14px;font-weight:600}
 /* desktop dropdowns become focusable the instant they open (visibility flips first, fades after) */
-@media(min-width:901px){
+@media(min-width:1261px){
   .drop{transition:opacity var(--t-panel) var(--ease-out),transform var(--t-panel) var(--ease-out),visibility 0s linear var(--t-panel)}
   .main-nav li:hover>.drop,.main-nav li.open>.drop{transition-delay:0s}
 }
@@ -496,7 +499,7 @@ html{scroll-padding-top:96px}
 .drop{background:var(--ivory);box-shadow:var(--shadow-lift)}
 .nd-form input,.nd-form select,.nd-form textarea{border-radius:var(--r-panel);background:var(--ivory)}
 .optin input[type=email]{border-radius:var(--r-pill)}
-@media(max-width:900px){.main-nav{background:var(--ivory)}}
+@media(max-width:1260px){.main-nav{background:var(--ivory)}}
 
 /* deep sections share the same text treatment */
 .sec.forest .manifesto p,.sec.olive .manifesto p{color:var(--cream)}
@@ -527,14 +530,14 @@ html{scroll-padding-top:96px}
 .drop-toggle svg{width:10px;height:6px;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;opacity:.65;
   transition:transform var(--t-panel) var(--ease-out),opacity var(--t-hover) var(--ease-out)}
 .has-drop.open>.drop-toggle svg{transform:rotate(180deg);opacity:1}
-@media(min-width:901px){.main-nav li.has-drop:hover>.drop-toggle svg{transform:rotate(180deg);opacity:1}}
-@media(max-width:900px){
+@media(min-width:1261px){.main-nav li.has-drop:hover>.drop-toggle svg{transform:rotate(180deg);opacity:1}}
+@media(max-width:1260px){
   .main-nav .has-drop{flex-wrap:wrap}
   .main-nav .drop-link{flex:1}
   .drop-toggle{width:auto;min-width:48px;min-height:44px;padding:10px 14px;justify-content:center}
   .main-nav .has-drop>.drop{flex-basis:100%}
 }
-@media(max-width:900px){.main-nav .drop{box-shadow:none;background:transparent;border-radius:0}}
+@media(max-width:1260px){.main-nav .drop{box-shadow:none;background:transparent;border-radius:0}}
 
 /* ================= SIGNATURE MOTION (chosen in the Motion Lab, Oct 2026) =================
    All built on the shared tokens; everything collapses under prefers-reduced-motion. */
@@ -579,11 +582,11 @@ html{scroll-padding-top:96px}
 .nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
 .nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0;transform:scaleX(.3)}
 .nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
-@media(max-width:900px){
+@media(max-width:1260px){
   .main-nav>ul>li{opacity:0;transform:translateX(14px);transition:opacity 450ms var(--ease-out),transform 550ms var(--ease-out)}
   .main-nav.open>ul>li{opacity:1;transform:none;transition-delay:calc(var(--i) * 40ms + 90ms)}
 }
-@media(min-width:901px){
+@media(min-width:1261px){
   .drop li{opacity:0;transform:translateY(5px);transition:opacity 320ms var(--ease-out),transform 420ms var(--ease-out)}
   .main-nav li:hover>.drop li,.main-nav li.open>.drop li{opacity:1;transform:none;transition-delay:calc(var(--i) * 35ms + 40ms)}
 }
@@ -682,10 +685,44 @@ p,li,cite,.quote-card p{text-wrap:pretty}
 .optin input[type=email]:focus{outline:2px solid transparent;border-color:var(--gold);box-shadow:0 0 0 4px rgba(244,162,97,.32)}
 .optin input::placeholder{color:rgba(25,43,83,.64);opacity:1}
 
+/* ================= EMBEDDED TEKMATIX FORMS ================= */
+.embed-layout{max-width:720px;margin:0 auto}
+.embed-layout.has-photo{max-width:1080px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,4vw,56px);align-items:start}
+.embed-fig{min-height:420px;height:100%}
+.embed-card{background:var(--ivory);border:1px solid var(--beige);border-radius:var(--r-panel);box-shadow:var(--shadow-soft);padding:clamp(14px,2.4vw,26px)}
+.embed-card iframe{display:block;width:100%;border:0;background:transparent}
+.embed-note{text-align:center;margin:28px auto 0;font-size:.95rem;max-width:none}
+.embed-note a{color:var(--navy);text-decoration:underline;text-decoration-color:rgba(238,124,25,.55);text-underline-offset:3px}
+.embed-note a:hover{text-decoration-color:var(--orange)}
+@media(max-width:900px){.embed-layout.has-photo{grid-template-columns:1fr}.embed-fig{min-height:300px;max-height:420px}}
+
+/* opt-in text can run to two paragraphs */
+.optin .optin-text p{margin:0 auto 1em;max-width:640px}
+.optin .optin-text p:last-child{margin-bottom:0}
+
+/* a door with two links (e.g. podcast or book) */
+.door-two .go-row{margin-top:auto;display:flex;flex-wrap:wrap;gap:10px 26px}
+.door-two .go{margin-top:0}
+.door-two .go:hover{color:var(--orange)}
+.door-two:hover .go{color:var(--accent-deep)}
+.door-two .go:hover .arrow{transform:translateX(5px)}
+
+/* small line under a call-to-action band */
+.cta-note{margin:22px auto 0;font-size:.95rem;max-width:none}
+.cta-note a{color:var(--navy);text-decoration:underline;text-decoration-color:rgba(238,124,25,.55);text-underline-offset:3px;transition:text-decoration-color var(--t-hover) var(--ease-out)}
+.cta-note a:hover{text-decoration-color:var(--orange)}
+.cta-band .cta-note{text-align:center}
+
 /* the closed phone menu is fully hidden: no shadow at the screen edge, no tabbing into it */
-@media(max-width:900px){
-  .main-nav{visibility:hidden;transition:transform .3s,visibility 0s linear .3s}
-  .main-nav.open{visibility:visible;transition-delay:0s}
+/* closed, it is taken out of the page entirely, so it can't widen the page on phones
+   (an off-screen panel let the page drift sideways); it still slides in and out */
+@media(max-width:1260px){
+  .main-nav{display:none;visibility:hidden;transition:transform .3s,visibility 0s linear .3s,display .3s allow-discrete}
+  .main-nav.open{display:block;visibility:visible;transition-delay:0s}
+  @starting-style{
+    .main-nav.open{transform:translateX(105%)}
+    .main-nav.open>ul>li{opacity:0;transform:translateX(14px)}
+  }
   .drop{transition:max-height .25s,padding .25s,visibility 0s linear .25s}
   .main-nav li:not(.open)>.drop,.main-nav:not(.open) .drop{visibility:hidden}
   .main-nav li.open>.drop{transition-delay:0s}

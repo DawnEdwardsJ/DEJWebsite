@@ -1,0 +1,15 @@
+{%- from "macros.njk" import head, bg, fig -%}
+{#- A form built in Tekmatix, embedded as-is so its workflow (tags, emails) runs.
+    With a photo, the photo sits beside the form. -#}
+{%- set src = "https://" + (s.form_domain or "adawning.newdawnwellness.health") -%}
+<section {{ bg(s, "form-embed") }}{% if s.anchor %} id="{{ s.anchor }}"{% endif %}><div class="wrap">
+{{ head(s) }}
+<div class="embed-layout{% if s.photo %} has-photo{% endif %} reveal">
+{%- if s.photo %}{{ fig(s.photo, s.photo_alt, s.tone, s.photo_position, "(max-width: 900px) 88vw, 440px", "embed-fig") }}{% endif %}
+<div class="embed-card">
+<iframe src="{{ src }}/widget/form/{{ s.form_id }}" style="width:100%;height:{{ s.start_height or 520 }}px;border:none;border-radius:8px" id="inline-{{ s.form_id }}" data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow" data-trigger-value="" data-activation-type="alwaysActivated" data-activation-value="" data-deactivation-type="neverDeactivate" data-deactivation-value="" data-form-name="{{ s.form_name }}" data-height="undefined" data-layout-iframe-id="inline-{{ s.form_id }}" data-form-id="{{ s.form_id }}" data-cookie-consent="true" data-cookie-consent-provider="auto" title="{{ s.form_name or 'Form' }}" loading="lazy"></iframe>
+</div>
+</div>
+{%- if s.note %}<p class="embed-note">{{ s.note | mdi | safe }}</p>{% endif %}
+<script src="{{ src }}/js/form_embed.js" defer></script>
+</div></section>

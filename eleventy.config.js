@@ -27,8 +27,12 @@ export default function (eleventyConfig) {
   eleventyConfig.on("eleventy.before", () => {
     site = JSON.parse(fs.readFileSync("src/_data/site.json", "utf8"));
   });
+  // Individual pages that are already live there (funnels and sales pages) can be
+  // listed in wellnessLiveLinks; those links show even while the switch is off.
+  const bare = (u) => String(u).split(/[?#]/)[0].replace(/\/+$/, "");
   const isLive = (href) =>
-    !href || site.wellnessSiteLive || !String(href).startsWith(site.wellnessUrl);
+    !href || site.wellnessSiteLive || !String(href).startsWith(site.wellnessUrl) ||
+    (site.wellnessLiveLinks || []).some((u) => u && bare(u) === bare(href));
   eleventyConfig.addFilter("linkIsLive", isLive);
   eleventyConfig.addFilter("liveLinks", (items, key = "link") =>
     Array.isArray(items) ? items.filter((it) => isLive(it?.[key])) : []

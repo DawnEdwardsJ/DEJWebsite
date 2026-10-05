@@ -55,6 +55,19 @@ already chosen, use `/contact/?type=keynote-speaking#enquire`. The topic options
 `menopause-policy-implementation`, `soul-mastery-ascension`, `calm-to-chaos`,
 `podcast-guest`, `media` and `other`.
 
+**Embed a Tekmatix form**
+Add a **Form (Tekmatix)** section and paste the form ID: the code after `/widget/form/` in
+the embed code Tekmatix gives you. Give it a section ID like `enquire` if buttons should jump
+to it (`/contact/#enquire`). Add a photo to show it beside the form. The form's look (fonts,
+colours, button) is set inside Tekmatix.
+
+**Two links on one door**
+On Start Here, a door can carry a second link (**Second link text** and **Second link**),
+like the podcast and book door.
+
+**A small line under a call-to-action band**
+Use **Small line underneath**. Links work: `[Find your way in →](/start-here/)`.
+
 **Reorder or add sections**
 Drag sections up and down in the list, or use **Add** to insert a new one. Pick the kind of
 section from the list (photo + text, cards, testimonials, and so on).
@@ -63,6 +76,10 @@ section from the list (photo + text, cards, testimonials, and so on).
 When newdawnwellness.health has its new pages, go to Site settings and tick **New Dawn
 Wellness site is live**. Every hidden menu item, footer link and button pointing there
 comes back at once.
+
+Some pages on that site already work (the meditation opt-in, the Ascension and Sanctuary
+sales pages). They're listed under **New Dawn Wellness pages already live**, and links to
+them show even while the switch is off. Add a page's full address there once it's live.
 
 **Add analytics**
 Site settings → Analytics → paste the Google Analytics ID (starts `G-`) and/or the Meta

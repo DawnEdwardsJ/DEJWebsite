@@ -6,9 +6,7 @@ sections:
   - type: hero_photo
     kicker: "The Adawning"
     heading: "What we believe."
-    text: "Everything I teach — on stage, in the studio and one to one — comes back to a few simple truths. This is the ground it all stands on."
-    buttons:
-      - { label: "Find your way in", link: "/start-here/", style: ghost }
+    text: "Everything I teach — on stage, in the studio and one-to-one — comes back to a few simple truths. This is the ground it all stands on."
     photo: /images/photos/dawn-white-linen-namaste.jpg
     photo_alt: "Dawn standing in cream linen, hands at her heart"
     tone: beige
@@ -30,7 +28,7 @@ sections:
       - belief: "Softness isn’t weakness."
         text: "Calm is a form of strength. The steadiest presence in the room is rarely the loudest one."
       - belief: "Healing isn’t selfish."
-        text: "Coming back to yourself is what makes you able to hold everyone else — without disappearing in the process."
+        text: "Coming back to yourself is what lets you hold everyone else — without disappearing in the process."
       - belief: "Your nervous system isn’t the enemy."
         text: "It has been protecting you. The work isn’t to override it — it’s to help it feel safe again."
       - belief: "You deserve support *before* breaking point."
@@ -66,11 +64,5 @@ sections:
   - type: cta_band
     line: "There’s a door here for wherever you are."
     buttons:
-      - { label: "Find your way in", link: "/start-here/", style: gold }
-      - { label: "Listen to the podcast", link: "/podcast/", style: ghost }
-
-  - type: crosslink
-    text: "Want to see how this becomes real, in a room?"
-    link: https://newdawnwellness.health
-    link_label: "Visit New Dawn Wellness →"
+      - { label: "Find your way in →", link: "/start-here/", style: gold }
 ---

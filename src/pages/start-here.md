@@ -6,8 +6,6 @@ sections:
     kicker: "The Adawning"
     heading: "Start here."
     text: "The Adawning is a movement helping women come home to themselves — in their bodies, their lives and their work. It’s one philosophy with a few different doors. Wherever you are right now, there’s a way in for you. Choose the one that fits — you can always come back for the others."
-    buttons:
-      - { label: "New to me? Start with the podcast", link: "/podcast/", style: ghost }
 
   - type: doorways
     kicker: "Find your door"
@@ -20,13 +18,13 @@ sections:
         link: https://newdawnwellness.health
         link_label: "Visit the studio"
       - intent: "I want to come home to myself"
-        title: "Soul Mastery Sanctuary"
-        text: "My online group — ongoing coaching and a community of women doing the deeper emotional, identity and nervous-system work together. Prefer 1:1? Soul Mastery Ascension is the private version."
-        link: https://newdawnwellness.health/soul-mastery-sanctuary.html
+        title: "Soul Mastery — Personal Coaching"
+        text: "My coaching work for women ready to transform from the inside out — through ongoing group coaching and community, or private 1:1 work with Dawn. Soul Mastery Sanctuary is the group coaching; Soul Mastery Ascension is the private 1:1 version."
+        link: /soul-mastery-ascension/
         link_label: "Step inside"
       - intent: "I want to grow my business from calm"
-        title: "Soul-Led Business Coaching"
-        text: "Build something meaningful without burning out — grounded strategy and nervous-system-first leadership for women in business."
+        title: "Calm to Chaos — Business Coaching"
+        text: "Grow something meaningful without sacrificing yourself — with grounded strategy and a nervous-system-first approach to building a soul-led business."
         link: /calm-to-chaos/
         link_label: "Explore coaching"
       - intent: "I want to support the women on my team"
@@ -44,6 +42,8 @@ sections:
         text: "No commitment, no pressure. Begin with The Adawning podcast or my book, and simply come as you are."
         link: /podcast/
         link_label: "Listen to the podcast"
+        link2: /book/
+        link2_label: "Or read my book"
 
   - type: split
     background: cream
@@ -64,13 +64,7 @@ sections:
 
   - type: cta_band
     background: ivory
-    line: "Not sure which door is yours? Tell me where you are — I’ll point you the right way."
+    line: "Not sure which door is yours? Tell me where you are — I’ll point you to the right way."
     buttons:
       - { label: "Start a conversation", link: "/contact/", style: gold }
-      - { label: "Read the book", link: "/book/", style: ghost }
-
-  - type: crosslink
-    text: "Looking for Pilates, yoga, healing or events in Cleveland?"
-    link: https://newdawnwellness.health
-    link_label: "Visit New Dawn Wellness →"
 ---

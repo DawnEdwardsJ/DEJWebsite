@@ -5,7 +5,7 @@ sections:
   - type: hero_photo
     kicker: "Business Coaching"
     heading: "Calm to Chaos."
-    text: "Soul-led business coaching for women who want to grow something meaningful without sacrificing themselves to do it. Grounded strategy, nervous-system first."
+    text: "Soul-led business coaching for women who want to grow something meaningful without sacrificing themselves. Grounded strategy, nervous-system first."
     buttons:
       - { label: "Enquire", link: "/contact/?type=calm-to-chaos#enquire", style: gold }
     photo: /images/photos/dawn-journaling-wide.jpg
@@ -20,12 +20,10 @@ sections:
     heading: "Build from calm, not chaos."
     body: "Most business advice runs on urgency and hustle. I help you build the opposite way — sustainable growth rooted in clarity, self-leadership and a regulated nervous system, so your business supports your life instead of consuming it."
     ticks:
-      - "Clarity over busy-work"
+      - "Clarity over busywork"
       - "Aligned, invitation-based selling"
       - "Systems that protect your energy"
       - "Leadership from safety, not survival"
-    buttons:
-      - { label: "Start a conversation", link: "/contact/?type=calm-to-chaos#enquire", style: gold }
 
   - type: cta_band
     background: cream

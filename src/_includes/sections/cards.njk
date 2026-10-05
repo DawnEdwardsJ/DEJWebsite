@@ -1,6 +1,6 @@
 {%- from "macros.njk" import head, bg, buttons -%}
 {%- set items = s.cards | liveLinks("button_link") -%}
-<section {{ bg(s) }}><div class="wrap">
+<section {{ bg(s) }}{% if s.anchor %} id="{{ s.anchor }}"{% endif %}><div class="wrap">
 {{ head(s) }}
 <div class="grid">
 {%- for c in items -%}

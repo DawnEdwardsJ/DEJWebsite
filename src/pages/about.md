@@ -6,7 +6,7 @@ sections:
   - type: hero_photo
     kicker: "About Dawn"
     heading: "Hi, I’m Dawn."
-    text: "Author, keynote speaker, self-leadership coach and founder of New Dawn Wellness and The Adawning. I help women stop abandoning themselves and lead their lives from calm."
+    text: "Author, keynote speaker, self-leadership coach and founder of New Dawn Wellness and The Adawning. I help women stop abandoning themselves and lead their lives from a place of calm."
     buttons:
       - { label: "Work with me", link: "/soul-mastery-ascension/", style: ghost }
     photo: /images/photos/nd-dawn-event.jpg
@@ -31,7 +31,9 @@ sections:
         body: |-
           I went from being a wife to a widow overnight. And the life I’d built my plans around simply… stopped.
 
-          I learned resilience the hard way — not as a concept, but as the thing that gets you out of bed when getting out of bed is the only goal you can manage. I rebuilt, slowly, because there was no other option. But I carried that loss in my body long after I’d learned to function again.
+          I learned resilience the hard way — not as a concept, but as the thing that gets you out of bed when getting out of bed is the only goal you can manage.
+
+          I rebuilt, slowly, because there was no other option. But I carried that loss in my body long after I’d learned to function again.
       - label: "03 · Starting again"
         heading: "In time, I began again — on the other side of the world."
         body: |-
@@ -43,9 +45,13 @@ sections:
         body: |-
           Menopause, trauma and years of quietly running on empty caught up with me all at once. The old strategy — try harder, manage it, push through — stopped working. If anything, it made everything worse.
 
-          I did all the “right” things. More discipline. More routines. More willpower. And I still felt exhausted, anxious and disconnected from myself.
+          I did all the “right” things. More discipline. More routines. More willpower.
 
-          That was when the truth finally landed: I wasn’t failing. I was unsupported. My nervous system had been in survival mode for so long that no amount of effort could think its way out.
+          And I still felt exhausted, anxious and disconnected from myself.
+
+          That was when the truth finally landed: I wasn’t failing. I was unsupported.
+
+          My nervous system had been in survival mode for so long that no amount of effort could think its way out.
       - label: "05 · The turning point"
         heading: "What changed everything wasn’t a course or a cure."
         body: |-
@@ -57,7 +63,7 @@ sections:
         body: |-
           I built the space I’d needed all along — somewhere women could put down what they carry, come back to their bodies, and remember who they are underneath the roles and the responsibility.
 
-          Today I bring that lived experience to stages, boardrooms and private clients. I speak, I coach, I lead retreats, and I hold a community of women doing this work together.
+          Today I bring that lived experience to stages, boardrooms and private clients. I speak, coach, lead retreats, and hold a community of women doing this work together.
 
           Because I know what it costs to hold everything alone — and I know what becomes possible when you finally don’t have to. No woman should have to choose between her success and her wellbeing. My work exists so she doesn’t have to.
 
@@ -68,7 +74,7 @@ sections:
     tone: beige
     kicker: "Retreats"
     heading: "Sixteen retreats and counting."
-    body: "I’ve designed and led over 16 retreats — from Thailand and Bali to Queensland, alongside intimate day retreats closer to home. Each one is built to do what modern life rarely allows: fully switch off, come back to your body, and remember who you are underneath everything you carry."
+    body: "I’ve designed and led over 16 retreats — from Thailand and Bali to Queensland — plus intimate day retreats closer to home. Each one is built to do what modern life rarely allows: fully switch off, reconnect with your body, and remember who you are underneath everything you carry."
     buttons:
       - { label: "Explore retreats →", link: "https://newdawnwellness.health/retreats.html", style: gold }
 
@@ -85,6 +91,12 @@ sections:
   - type: cta_band
     line: "Everything I do points women back to themselves."
     buttons:
-      - { label: "Bring Dawn to your event", link: "/contact/", style: gold }
-      - { label: "Read the book", link: "/book/", style: ghost }
+      - { label: "Work with us through Group or 1:1 Coaching", link: "/soul-mastery-ascension/", style: gold }
+      - { label: "Bring us to your event", link: "/speaking/", style: ghost }
+    note: "Unsure where to start? [Find your way in →](/start-here/)"
+
+  - type: crosslink
+    text: "Want to see how this becomes real, in a room?"
+    link: https://newdawnwellness.health
+    link_label: "Visit New Dawn Wellness →"
 ---

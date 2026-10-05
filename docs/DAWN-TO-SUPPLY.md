@@ -16,15 +16,17 @@ CMS for editing (content stays as plain files in this repo). Done.
 ## 2. Decision — the cross-site nav links ✅ decided 2 October 2026
 
 Dawn chose to hide them until New Dawn Wellness is live, so this site can launch first. They
-are switched off by `wellnessSiteLive` in Site settings, not deleted. The Soul Mastery
-Sanctuary links are hidden too, because their page doesn't exist yet. **Still needed: a live
-URL for the Sanctuary**, so the homepage's "Three ways in" has its third door back.
+are switched off by `wellnessSiteLive` in Site settings, not deleted. Pages there that already
+work (the New Dawn Reset opt-in, the Ascension and Sanctuary sales pages) are listed under
+"New Dawn Wellness pages already live" and show now. ✅ Sanctuary resolved 5 October 2026.
 
 ---
 
-## 2a. A Tekmatix Private Integration token (new)
+## 2a. A Tekmatix Private Integration token — no longer blocking
 
-**Blocks:** the enquiry form actually delivering leads.
+Since 5 October the Contact page embeds the VA's Tekmatix enquiry form, whose workflow
+handles tags and emails, so no token is needed to launch. The token below is only needed if
+the site's own custom form is ever brought back.
 
 The form is built and tested. It needs one token: Tekmatix → Settings → Private
 Integrations → create one with contacts view/edit access, then paste it into Cloudflare as
@@ -50,9 +52,11 @@ working. The site is built to win corporate enquiries and right now that would b
 
 ---
 
-## 4. The homepage lead magnet — what is "the guide"?
+## 4. The homepage lead magnet — ✅ resolved 5 October 2026
 
-**Blocks:** wiring the homepage email capture.
+The homepage now offers the existing New Dawn Reset meditation
+(https://newdawnwellness.health/meditation/newdawnreset), per the VA. Swap it if a dedicated
+"3-minute reset" or a B2B magnet is made later. The original note follows for history.
 
 The homepage has an email field and a button reading **"Send me the guide"**. There is no
 guide. No PDF, no named asset, nothing specified anywhere in the repo.

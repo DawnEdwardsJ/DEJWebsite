@@ -8,8 +8,7 @@ sections:
     heading: "Support the women who hold it all together."
     text: "Practical, grounded workshops that help your people manage stress, navigate menopause and lead themselves — reframing wellbeing as performance, retention and care."
     buttons:
-      - { label: "Enquire for your team", link: "/contact/?type=corporate-workshop#enquire", style: gold }
-      - { label: "Book a discovery call", link: "/contact/?type=corporate-workshop#enquire", style: ghost }
+      - { label: "Discuss your organisation", link: "/contact/?type=corporate-workshop#enquire", style: gold }
     photo: /images/photos/group2.jpg
     photo_alt: "Dawn leading a wellbeing workshop for a room of women"
     tone: navy
@@ -40,15 +39,12 @@ sections:
       - "Support women through midlife transitions"
       - "Build a genuinely caring culture"
       - "Practical tools people actually use"
-    buttons:
-      - { label: "Book a discovery call", link: "/contact/?type=corporate-workshop#enquire", style: gold }
 
   - type: cta_band
     background: ivory
     line: "Ready to support the women who hold your organisation together?"
     buttons:
-      - { label: "Enquire now", link: "/contact/?type=corporate-workshop#enquire", style: gold }
-      - { label: "Book a discovery call", link: "/contact/?type=corporate-workshop#enquire", style: ghost }
+      - { label: "Discuss your organisation", link: "/contact/?type=corporate-workshop#enquire", style: gold }
 
   - type: crosslink
     text: "Want to embed lasting change in your organisation?"

@@ -31,7 +31,7 @@ sections:
     heading: "For the woman ready to lead herself."
     body: "This is for high-functioning women who are done managing their lives from the outside and ready to transform from the inside. Places are intentionally limited so each woman gets my full attention."
     buttons:
-      - { label: "Apply to work together", link: "/contact/?type=soul-mastery-ascension#enquire", style: gold }
+      - { label: "Apply to work together →", link: "https://newdawnwellness.health/soul-mastery-ascension/info", style: gold }
 
   - type: calendar
     background: cream
@@ -44,6 +44,6 @@ sections:
 
   - type: crosslink
     text: "Not ready for 1:1? The Sanctuary is the group version — same work, in community."
-    link: https://newdawnwellness.health/soul-mastery-sanctuary.html
+    link: https://newdawnwellness.health/soul-sanctuary
     link_label: "Explore Soul Mastery Sanctuary →"
 ---

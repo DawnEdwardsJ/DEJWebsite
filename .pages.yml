@@ -142,6 +142,7 @@ content:
             label: Cards
             fields:
               - { name: background, component: background }
+              - { name: anchor, label: "Section ID (for links like /#ways)", type: string }
               - { name: kicker, component: kicker }
               - { name: heading, component: heading }
               - { name: intro, component: intro }
@@ -254,8 +255,9 @@ content:
               - { name: background, component: background }
               - { name: kicker, component: kicker }
               - { name: heading, component: heading }
-              - { name: text, label: Text, type: text }
+              - { name: text, label: "Text (leave a blank line between paragraphs)", type: text }
               - { name: button_label, label: Button text, type: string }
+              - { name: button_link, label: Button link, type: string, description: "The opt-in page (e.g. the Tekmatix meditation page). Leave empty to show the old email box." }
               - { name: fine_print, label: Small print, type: string }
           - name: cta_band
             label: Call-to-action band
@@ -263,6 +265,7 @@ content:
               - { name: background, component: background }
               - { name: line, label: Line, type: text }
               - { name: buttons, component: buttons }
+              - { name: note, label: "Small line underneath (optional, links allowed)", type: string }
           - name: crosslink
             label: Cross-link strip
             fields:
@@ -286,6 +289,8 @@ content:
                   - { name: text, label: Text, type: text }
                   - { name: link_label, label: Link text, type: string }
                   - { name: link, label: Link, type: string }
+                  - { name: link2_label, label: Second link text (optional), type: string }
+                  - { name: link2, label: Second link (optional), type: string }
           - name: creed
             label: Beliefs list
             fields:
@@ -328,6 +333,23 @@ content:
               - { name: fine_print, label: Small print, type: text }
               - { name: success_message, label: Message after sending, type: text, required: true }
               - { name: error_message, label: Message if sending fails, type: text, required: true }
+          - name: form_embed
+            label: Form (Tekmatix)
+            fields:
+              - { name: background, component: background }
+              - { name: anchor, label: "Section ID (for links like /contact/#enquire)", type: string }
+              - { name: kicker, component: kicker }
+              - { name: heading, component: heading }
+              - { name: intro, component: intro }
+              - { name: form_id, label: Tekmatix form ID, type: string, required: true, description: "The code after /widget/form/ in the embed code Tekmatix gives you." }
+              - { name: form_name, label: Form name (screen readers), type: string }
+              - { name: form_domain, label: Form domain, type: string, hidden: true }
+              - { name: start_height, label: "Starting height in pixels (the form then sizes itself)", type: number }
+              - { name: photo, component: photo }
+              - { name: photo_alt, component: photo_alt }
+              - { name: photo_position, component: photo_position }
+              - { name: tone, component: tone }
+              - { name: note, label: "Small line under the form (optional, links allowed)", type: string }
           - name: calendar
             label: Booking calendar (Tekmatix)
             fields:
@@ -357,6 +379,11 @@ content:
         type: boolean
         description: "Turn on once newdawnwellness.health has its new pages. Every link to that site (menu, footer, buttons) reappears."
       - { name: wellnessUrl, type: string, hidden: true }
+      - name: wellnessLiveLinks
+        label: New Dawn Wellness pages already live
+        type: string
+        list: true
+        description: "Full web addresses of pages on newdawnwellness.health that already work (opt-ins, sales pages). Links to these show even while the switch above is off."
       - { name: turnstileSiteKey, label: "Cloudflare Turnstile site key (spam protection, optional)", type: string }
       - name: analytics
         label: Analytics

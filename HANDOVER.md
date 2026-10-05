@@ -1,6 +1,6 @@
 # HANDOVER — dawnedwards-jones.com
 
-Status as of 2 October 2026, after the Eleventy rebuild. The original punch list is in the
+Status as of 5 October 2026: Eleventy rebuild, VA amendments and the corporate-visibility pass. The original punch list is in the
 first commit on `main` if you need the history.
 
 ## Done
@@ -23,6 +23,11 @@ first commit on `main` if you need the history.
 | Premium details | Self-hosted fonts with preload and metric-matched fallbacks (no font jump, no Google request); instant page loads via prerender-on-hover; header holds still between pages; blurred photo previews with fade-in; branded share card per page; anchor links clear the sticky header. | |
 | Signature motion | Chosen by Dawn from the Motion Lab: line-by-line headlines, drawn hairlines, photo unveil, scroll-lit quotes, menu morph and cascade, rolling buttons, reading line on long pages, footer curtain. Dropdown family names now link to their main page. | CLS 0, performance 98–99, keyboard and reduced-motion tests pass |
 | Finishing | Typography: balanced headlines, no stranded last words, hanging quote marks on pull quotes, steady even-width numbers, hairlines both sides of centred labels. Form: calm inline messages instead of browser bubbles, softer focus, menu-style chevron, warm autofill, breathing button while sending, confirmation panel with a drawn tick. Closed phone menu fully hidden (no edge shadow, not reachable by Tab). | Copy diff clean, performance 98–99, keyboard tests pass |
+| VA amendments (5 Oct) | Copy and links aligned to the VA's Google Doc: "Soul Mastery — Personal Coaching" replaces the separate Sanctuary/Ascension entries, Calm to Chaos added to the menu and homepage, Spotify link, Ascension and Sanctuary sales pages, New Dawn Reset meditation replaces the missing "3-minute reset" guide, single "New Dawn Wellness" menu link (still hidden), duplicate "Book a discovery call" buttons removed. | Rendered-text diff: only the intended changes |
+| Tekmatix forms | New **Form (Tekmatix)** section embeds forms built in Tekmatix, so their workflows (tags, notification and confirmation emails) run. Contact uses the VA's enquiry form (`0lb2NPRSWjokp4p5Gwmz`); the Book page uses the expression-of-interest form (`9zXeSEijemsL6rSnomfn`). The custom form and `functions/api/enquiry.js` stay in the repo, unused, if Dawn ever wants them back. | |
+| Live wellness pages | `wellnessLiveLinks` in Site settings lists pages on newdawnwellness.health that already work (meditation opt-in, Ascension and Sanctuary sales pages). Those links show while the rest of the wellness site stays hidden. | |
+| Corporate visibility | Homepage hero repositioned ("Keynote Speaker · Menopause & Women's Wellbeing · Podcaster · Retreat Host", first button "Book Dawn to speak"); Menopause at Work flagship section on the homepage; corporate door in "Three ways in"; menu family renamed "Speaking & Corporate"; one primary action per page ("Book Dawn to speak" / "Discuss your organisation" / "Listen on Spotify"); four recent episodes featured on the podcast page; structured data leads with menopause and women's wellbeing. | |
+| Layout fixes (5 Oct) | On phones the hidden side menu widened the page by about 330px (sideways drift, in-page links landing short); it is now removed from the page when closed and still slides in. The full desktop menu no longer cramps between 900 and 1260px wide; tablets get the folded menu. | Phone width 390 = 390, keyboard and tap menu tests pass |
 | Bugs fixed on the way | Outline buttons invisible on navy bands; hero photo squashed beside text on phones; footer column wrapping; off-centre opt-in small print; three placeholder panels replaced with real photos. | |
 
 ### Lighthouse (mobile, simulated throttling)
@@ -34,21 +39,46 @@ first commit on `main` if you need the history.
 
 ## Open: before launch
 
-1. **Tekmatix token.** Create the Private Integration and add `TEKMATIX_API_TOKEN` in
-   Cloudflare (steps in `docs/DEPLOY-CLOUDFLARE.md`). Until then the form asks people to email.
-   Then build the Tekmatix workflows on the tags in `src/_data/enquiry.json`.
-2. **Homepage lead magnet.** The "Send me the guide" form (3-Minute Nervous System Reset)
-   still collects nothing, because no guide exists. Dawn decides: supply the guide, or remove the section.
-3. **Soul Mastery Sanctuary link.** Hidden with the wellness links because its page doesn't
-   exist yet. The homepage card heading still reads "Three ways in" above two cards. Give the
-   Sanctuary a live page (or a Tekmatix funnel URL) and it comes back.
-4. **Spam protection.** Add Cloudflare Turnstile keys (optional, steps in the deploy guide)
-   before any Tekmatix confirmation email goes out, so bots can't trigger mail from the
-   sending domain.
-5. **Analytics IDs.** Paste the GA4 and Meta Pixel IDs into Site settings when available.
-6. **Legal pages** still show "Draft for review". Remove the note once reviewed.
+1. **Check the two Tekmatix forms on the preview.** They can't be loaded from the build
+   sandbox, so the first real look is on the preview link: the enquiry form on Contact and the
+   expression-of-interest form on The Adawning Book. Style them to the brand inside Tekmatix
+   (Montserrat, navy text, gold button, no bright white).
+2. **Analytics IDs.** Paste the GA4 and Meta Pixel IDs into Site settings when available.
+3. **Legal pages** still show "Draft for review". Remove the note once reviewed.
+4. **Production branch.** Switch the Cloudflare production branch and the GitHub default
+   branch to `main` before attaching dawnedwards-jones.com.
+
+## Open: content only Dawn can supply (5 Oct)
+
+- **Corporate and speaking testimonials** (named, with role and organisation) to sit on
+  Speaking and Corporate. They didn't come through with the VA's doc.
+- **Speaking and workshop photos.** The Drive folders were found (75 speaking photos, 11
+  workshop events) but the build sandbox can't download from Drive. Upload chosen ones
+  through Pages CMS → Media, or attach them as files in the chat. Same for the newer shoot
+  (animal-print kimono, desk with laptop): the desk shots suit Calm to Chaos.
+- **Speaker kit:** short and long bio, headshots, talk descriptions, AV needs, a one-page
+  speaker sheet PDF. A page is ready to build once these exist.
+- **Retreats & Experiences:** past retreat proof, imagery, and either the next retreat or an
+  expression-of-interest form. The About page's "Explore retreats" button stays hidden until
+  then (the interim newdawnpilates.com/events link wasn't used, because it lists studio classes).
+- **Socials:** the footer links go to the studio's @newdawnpilates accounts. A LinkedIn
+  profile matters most for corporate buyers.
+- **Programme name:** the site says "Calm to Chaos" everywhere; an advisor flagged a
+  "Chaos to Calm" inconsistency elsewhere. Confirm the name and it's one sweep.
 
 ## Open: Dawn's call (not changed, flagged)
+
+- **New copy needing approval (5 Oct):** homepage hero sentence ("I help women and workplaces
+  navigate midlife, menopause and change with greater wellbeing, confidence and choice.") and
+  kicker; the Menopause at Work section's label and lead line ("Flagship keynote & workshop",
+  "The conversation most workplaces still aren't having well."); the corporate card text in
+  "Three ways in"; button labels "Book Dawn to speak", "Discuss your organisation", "Listen on
+  Spotify", "Keep me updated"; podcast "Recent episodes / A few places to start." and the
+  one-line episode summaries (taken from the episode descriptions); the homepage page title.
+- **Sections the VA's doc doesn't include** (kept): Start Here "You don't have to have it
+  figured out" and Philosophy "None of this is theory".
+- **Start Here** says "Six ways in" but shows five while the studio door is hidden. Given the
+  authority-brand direction, the suggestion is to drop the studio door and say "Five ways in".
 
 - **Colour contrast.** Orange `#ee7c19` and olive-gold `#a9993e` used as small text (kickers,
   card titles, the tagline, nav current state) measure 1.9–2.8:1 on ivory, cream and beige.

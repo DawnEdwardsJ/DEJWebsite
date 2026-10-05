@@ -97,9 +97,11 @@ edit `_site/`, it is rebuilt every time).
 - **Pages CMS** (`.pages.yml`) is how Dawn's VA edits text and photos. It only preserves
   fields declared in `.pages.yml`, so **any new field you add to a section template must
   also be added to `.pages.yml`**, or the CMS will silently drop it on the next save.
-- **Contact form** posts to `functions/api/enquiry.js` (Cloudflare Pages Function), which
-  upserts the contact in Tekmatix, adds tags from `src/_data/enquiry.json`, and attaches the
-  message as a note. It needs the `TEKMATIX_API_TOKEN` secret in Cloudflare.
+- **Contact form** (since 5 Oct 2026): the Contact page embeds the VA's Tekmatix enquiry
+  form (`form_embed` section, form `0lb2NPRSWjokp4p5Gwmz`); its Tekmatix workflow does the
+  tagging and emails. The Book page embeds the expression-of-interest form
+  (`9zXeSEijemsL6rSnomfn`). The older custom form (`enquiry_form` section posting to
+  `functions/api/enquiry.js`, needs `TEKMATIX_API_TOKEN`) is kept but unused.
 - **Motion** follows `docs/UPGRADE-PROMPT.md`: tokens and the reduced-motion guard are in
   `src/assets/style.css`, behaviour in `src/assets/site.js`. No animation libraries. Sheen
   is used on two elements; the third is reserved for the speaker-kit download button.
@@ -115,8 +117,16 @@ edit `_site/`, it is rebuilt every time).
   from `data-missing` / `data-invalid` attributes in `enquiry_form.njk` (site.js sets
   `novalidate`, so without JavaScript the browser's own validation still applies).
 - **Links to `newdawnwellness.health` are hidden automatically** while
-  `wellnessSiteLive` is `false` in `site.json`. Leave those links in the content; flipping the
+  `wellnessSiteLive` is `false` in `site.json`, except pages listed in `wellnessLiveLinks`
+  (already-live funnels and sales pages). Leave those links in the content; flipping the
   switch brings them all back.
+- **Positioning (Oct 2026):** this is the Dawn Edwards-Jones authority brand (speaker,
+  podcaster, retreat host, corporate and women's wellbeing voice), not New Dawn Wellness 2.0.
+  Pilates, yoga, classes and studio events belong on the wellness site. Every page has one
+  primary next step: Speaking → "Book Dawn to speak", Corporate/Menopause → "Discuss your
+  organisation", Podcast → "Listen on Spotify". Menopause at Work is the flagship.
+- **Menu breakpoint** is 1260px (the full row needs that width); below it the menu folds into
+  the side panel, which is `display:none` when closed so it can't widen the page on phones.
 
 - **Design system** (palette values unchanged, usage rules only): light sections alternate
   ivory/cream with no repeats; beige for quote bands; deep colours by meaning (navy =
@@ -155,9 +165,8 @@ Live calendars relevant to this site:
 `Free 15 Minute Consult` (`zUZ27bXMmnGOu9O4lnKP`) exists but is **inactive** — do not use
 it without asking Dawn to reactivate it.
 
-There is **no corporate or speaking discovery calendar yet.** The "Book a discovery call"
-CTAs on the corporate workshops and menopause policy pages currently open the enquiry form
-with the right topic preselected. When Dawn creates the calendar, add a `calendar` section.
+There is **no corporate or speaking discovery calendar yet.** The "Discuss your organisation"
+CTAs on the corporate workshops and menopause policy pages currently open the enquiry form. When Dawn creates the calendar, add a `calendar` section.
 See `docs/DAWN-TO-SUPPLY.md`.
 
 Relevant products: Soul Mastery Ascension `6a18178e5e7d1e7aef6b9acc`,
