@@ -50,13 +50,15 @@ first commit on `main` if you need the history.
 
 ## Open: content only Dawn can supply (5 Oct)
 
-- **Corporate and speaking testimonials:** ✅ added 5 Oct from the VA's linked doc ("Speaking
-  Gig - Client Testimonial"): three on Speaking, three on Corporate Workshops, three on the
-  homepage under "On the stage", and Kirsty Foster's line in the strip under the hero.
-  Excerpts are verbatim (… marks a cut). Maddy (HR Officer) is attributed without her
-  organisation, per the note in that doc. Headings "In the room / What organisations and
-  audiences say.", "What organisers and audiences say." and "What workplaces say." are new
-  and need approval.
+- **Corporate and speaking testimonials:** ✅ from the VA's linked doc ("Speaking Gig - Client
+  Testimonial", Maybanke wording as amended by Dawn). Only six exist, so nothing repeats:
+  Corporate Workshops has all four workplace ones (Maddy, Jenifer Hasbun, Caroline/Maybanke,
+  workplace attendee), Speaking has the two talk/workshop ones (Kirsty Foster, Talia Read),
+  and the homepage strip under the hero carries Kirsty's opening line (the Speaking card uses
+  her later sentences). Excerpts are verbatim (… marks a cut; "jouney" typo fixed). Maddy is
+  attributed without her organisation, per the note in that doc. New headings needing
+  approval: "What workplaces say." and "What audiences say." More named corporate
+  testimonials would let the homepage carry a proof band again without repeats.
 - **Speaking and workshop photos.** The Drive folders were found (75 speaking photos, 11
   workshop events) but the build sandbox can't download from Drive. Upload chosen ones
   through Pages CMS → Media, or attach them as files in the chat. Same for the newer shoot

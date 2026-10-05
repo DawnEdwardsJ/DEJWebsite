@@ -45,8 +45,10 @@ sections:
     kicker: "In their words"
     heading: "What workplaces say."
     quotes:
-      - quote: "She ran an extremely professional, yet relatable session… Since the session, we’ve had feedback from our staff that this was one of the best sessions we’ve had in our wellness program so far. I would highly recommend a corporate wellness session from Dawn … to any organisation that advocates for their employees’ health and wellbeing."
+      - quote: "Dawn presented a Menopause workshop and information session to our organisation as part of our 2025 Wellness program. She ran an extremely professional, yet relatable session… Since the session, we’ve had feedback from our staff that this was one of the best sessions we’ve had in our wellness program so far… I would highly recommend a corporate wellness session from Dawn … to any organisation that advocates for their employees’ health and wellbeing."
         cite: "— Maddy · HR Officer, organisation advocating for healthcare professionals"
+      - quote: "Dawn’s professionalism and experience made our session a breeze to navigate. It was evident that she had grasped our target audience and the goals we aimed to achieve, resulting in content that was not only relevant but also personalised to our company’s needs. Dawn’s expertise shone through, ensuring an engaging and insightful experience for all participants."
+        cite: "— Jenifer Hasbun · General Manager, Shared Services, Corporate Protection Australia"
       - quote: "This was a team-building event, and it was truly an amazing experience… Dawn was not only an expert facilitator but also genuinely caring and invested in our well-being… I left the Wellness Retreat feeling rejuvenated, inspired, and connected to myself and nature."
         cite: "— Caroline · Administrator, Maybanke Association Inc. · Half-day wellness retreat"
       - quote: "Dawn was a great speaker and shared very useful, valuable information beyond the basic repeated information about menopause. A great holistic approach to preventing symptoms of menopause."

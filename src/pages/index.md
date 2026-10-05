@@ -135,18 +135,6 @@ sections:
       - { number: "16+", label: "Retreats led — Bali, Thailand & QLD" }
       - { number: "2,000+", label: "Largest stage" }
 
-  - type: testimonials
-    background: ivory
-    kicker: "In the room"
-    heading: "What organisations and audiences say."
-    quotes:
-      - quote: "Since the session, we’ve had feedback from our staff that this was one of the best sessions we’ve had in our wellness program so far."
-        cite: "— Maddy · HR Officer, organisation advocating for healthcare professionals"
-      - quote: "It was evident that she had grasped our target audience and the goals we aimed to achieve, resulting in content that was not only relevant but also personalised to our company’s needs."
-        cite: "— Jenifer Hasbun · General Manager, Shared Services, Corporate Protection Australia"
-      - quote: "Dawn was a great speaker and shared very useful, valuable information beyond the basic repeated information about menopause."
-        cite: "— Workplace menopause workshop attendee"
-
   - type: cards
     background: cream
     kicker: "For you"

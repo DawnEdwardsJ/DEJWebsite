@@ -707,6 +707,10 @@ p,li,cite,.quote-card p{text-wrap:pretty}
 .door-two:hover .go{color:var(--accent-deep)}
 .door-two .go:hover .arrow{transform:translateX(5px)}
 
+/* two or four testimonials sit two-up */
+.grid.grid-2{grid-template-columns:repeat(2,minmax(0,1fr));max-width:980px;margin-inline:auto}
+@media(max-width:760px){.grid.grid-2{grid-template-columns:1fr}}
+
 /* longer attributions (name · role, organisation) wrap with their own tight leading */
 .quote-card cite{display:block;line-height:1.7}
 
