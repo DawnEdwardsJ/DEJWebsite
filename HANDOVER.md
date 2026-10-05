@@ -23,7 +23,7 @@ first commit on `main` if you need the history.
 | Premium details | Self-hosted fonts with preload and metric-matched fallbacks (no font jump, no Google request); instant page loads via prerender-on-hover; header holds still between pages; blurred photo previews with fade-in; branded share card per page; anchor links clear the sticky header. | |
 | Signature motion | Chosen by Dawn from the Motion Lab: line-by-line headlines, drawn hairlines, photo unveil, scroll-lit quotes, menu morph and cascade, rolling buttons, reading line on long pages, footer curtain. Dropdown family names now link to their main page. | CLS 0, performance 98–99, keyboard and reduced-motion tests pass |
 | Finishing | Typography: balanced headlines, no stranded last words, hanging quote marks on pull quotes, steady even-width numbers, hairlines both sides of centred labels. Form: calm inline messages instead of browser bubbles, softer focus, menu-style chevron, warm autofill, breathing button while sending, confirmation panel with a drawn tick. Closed phone menu fully hidden (no edge shadow, not reachable by Tab). | Copy diff clean, performance 98–99, keyboard tests pass |
-| VA amendments (5 Oct) | Copy and links aligned to the VA's Google Doc: "Soul Mastery — Personal Coaching" replaces the separate Sanctuary/Ascension entries, Calm to Chaos added to the menu and homepage, Spotify link, Ascension and Sanctuary sales pages, New Dawn Reset meditation replaces the missing "3-minute reset" guide, single "New Dawn Wellness" menu link (still hidden), duplicate "Book a discovery call" buttons removed. | Rendered-text diff: only the intended changes |
+| VA amendments (5 Oct) | Copy and links aligned to the VA's Google Doc: "Soul Mastery — Personal Coaching" replaces the separate Sanctuary/Ascension entries, Chaos to Calm (formerly mislabelled Calm to Chaos) added to the menu and homepage, Spotify link, Ascension and Sanctuary sales pages, New Dawn Reset meditation replaces the missing "3-minute reset" guide, single "New Dawn Wellness" menu link (still hidden), duplicate "Book a discovery call" buttons removed. | Rendered-text diff: only the intended changes |
 | Tekmatix forms | New **Form (Tekmatix)** section embeds forms built in Tekmatix, so their workflows (tags, notification and confirmation emails) run. Contact uses the VA's enquiry form (`0lb2NPRSWjokp4p5Gwmz`); the Book page uses the expression-of-interest form (`9zXeSEijemsL6rSnomfn`). The custom form and `functions/api/enquiry.js` stay in the repo, unused, if Dawn ever wants them back. | |
 | Live wellness pages | `wellnessLiveLinks` in Site settings lists pages on newdawnwellness.health that already work (meditation opt-in, Ascension and Sanctuary sales pages). Those links show while the rest of the wellness site stays hidden. | |
 | Corporate visibility | Homepage hero repositioned ("Keynote Speaker · Menopause & Women's Wellbeing · Podcaster · Retreat Host", first button "Book Dawn to speak"); Menopause at Work flagship section on the homepage; corporate door in "Three ways in"; menu family renamed "Speaking & Corporate"; one primary action per page ("Book Dawn to speak" / "Discuss your organisation" / "Listen on Spotify"); four recent episodes featured on the podcast page; structured data leads with menopause and women's wellbeing. | |
@@ -55,7 +55,7 @@ first commit on `main` if you need the history.
 - **Speaking and workshop photos.** The Drive folders were found (75 speaking photos, 11
   workshop events) but the build sandbox can't download from Drive. Upload chosen ones
   through Pages CMS → Media, or attach them as files in the chat. Same for the newer shoot
-  (animal-print kimono, desk with laptop): the desk shots suit Calm to Chaos.
+  (animal-print kimono, desk with laptop): the desk shots suit Chaos to Calm.
 - **Speaker kit:** short and long bio, headshots, talk descriptions, AV needs, a one-page
   speaker sheet PDF. A page is ready to build once these exist.
 - **Retreats & Experiences:** past retreat proof, imagery, and either the next retreat or an
@@ -63,8 +63,8 @@ first commit on `main` if you need the history.
   then (the interim newdawnpilates.com/events link wasn't used, because it lists studio classes).
 - **Socials:** the footer links go to the studio's @newdawnpilates accounts. A LinkedIn
   profile matters most for corporate buyers.
-- **Programme name:** the site says "Calm to Chaos" everywhere; an advisor flagged a
-  "Chaos to Calm" inconsistency elsewhere. Confirm the name and it's one sweep.
+- **Programme name:** ✅ confirmed "Chaos to Calm" (5 Oct). Renamed everywhere; the page moved
+  to `/chaos-to-calm/` and the old `/calm-to-chaos/` address redirects there.
 
 ## Open: Dawn's call (not changed, flagged)
 

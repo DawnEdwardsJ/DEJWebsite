@@ -4,7 +4,9 @@
 /about.html                    /about/                    301
 /philosophy.html               /philosophy/               301
 /soul-mastery-ascension.html   /soul-mastery-ascension/   301
-/calm-to-chaos.html            /calm-to-chaos/            301
+/calm-to-chaos.html            /chaos-to-calm/            301
+/calm-to-chaos/                /chaos-to-calm/            301
+/calm-to-chaos                 /chaos-to-calm/            301
 /speaking.html                 /speaking/                 301
 /corporate-workshops.html      /corporate-workshops/      301
 /menopause-policy.html         /menopause-policy/         301

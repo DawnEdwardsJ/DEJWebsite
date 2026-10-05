@@ -52,7 +52,7 @@ Each button has text, a link and a style. Links to pages on this site look like
 `/contact/` or `/speaking/`. To send someone straight to the enquiry form with a topic
 already chosen, use `/contact/?type=keynote-speaking#enquire`. The topic options are
 `keynote-speaking`, `corporate-workshop`, `menopause-policy-advisory`,
-`menopause-policy-implementation`, `soul-mastery-ascension`, `calm-to-chaos`,
+`menopause-policy-implementation`, `soul-mastery-ascension`, `chaos-to-calm`,
 `podcast-guest`, `media` and `other`.
 
 **Embed a Tekmatix form**

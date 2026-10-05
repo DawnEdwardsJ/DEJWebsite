@@ -145,10 +145,10 @@ sections:
         text: "My deeper coaching work for women ready to transform from the inside out — through ongoing group coaching and community, or private 1:1 work with Dawn."
         button_label: "Explore Soul Mastery"
         button_link: /soul-mastery-ascension/
-      - title: "Calm to Chaos — Business Coaching"
+      - title: "Chaos to Calm — Business Coaching"
         text: "Soul-led business coaching for women who want to grow something meaningful without sacrificing themselves — with grounded strategy and a nervous-system-first approach."
-        button_label: "Explore Calm to Chaos"
-        button_link: /calm-to-chaos/
+        button_label: "Explore Chaos to Calm"
+        button_link: /chaos-to-calm/
 
   - type: testimonials
     background: beige

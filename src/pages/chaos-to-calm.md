@@ -1,13 +1,13 @@
 ---
-title: "Calm to Chaos | Soul-Led Business Coaching with Dawn Edwards-Jones"
-description: "Calm to Chaos — soul-led business coaching for women building businesses without burning out. Grounded strategy and nervous-system-first leadership."
+title: "Chaos to Calm | Soul-Led Business Coaching with Dawn Edwards-Jones"
+description: "Chaos to Calm — soul-led business coaching for women building businesses without burning out. Grounded strategy and nervous-system-first leadership."
 sections:
   - type: hero_photo
     kicker: "Business Coaching"
-    heading: "Calm to Chaos."
+    heading: "Chaos to Calm."
     text: "Soul-led business coaching for women who want to grow something meaningful without sacrificing themselves. Grounded strategy, nervous-system first."
     buttons:
-      - { label: "Enquire", link: "/contact/?type=calm-to-chaos#enquire", style: gold }
+      - { label: "Enquire", link: "/contact/?type=chaos-to-calm#enquire", style: gold }
     photo: /images/photos/dawn-journaling-wide.jpg
     photo_alt: "Dawn journaling at home, warm and approachable"
     tone: burgundy
@@ -29,5 +29,5 @@ sections:
     background: cream
     line: "Your business should feel like ease, not another thing holding you together."
     buttons:
-      - { label: "Enquire now", link: "/contact/?type=calm-to-chaos#enquire", style: gold }
+      - { label: "Enquire now", link: "/contact/?type=chaos-to-calm#enquire", style: gold }
 ---

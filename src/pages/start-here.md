@@ -23,9 +23,9 @@ sections:
         link: /soul-mastery-ascension/
         link_label: "Step inside"
       - intent: "I want to grow my business from calm"
-        title: "Calm to Chaos — Business Coaching"
+        title: "Chaos to Calm — Business Coaching"
         text: "Grow something meaningful without sacrificing yourself — with grounded strategy and a nervous-system-first approach to building a soul-led business."
-        link: /calm-to-chaos/
+        link: /chaos-to-calm/
         link_label: "Explore coaching"
       - intent: "I want to support the women on my team"
         title: "Corporate Workshops & Wellbeing"

@@ -16,7 +16,7 @@ Two audiences, in priority order:
 1. **B2B** — corporate decision-makers, HR and wellbeing leads, event organisers, media.
    They arrive for keynote speaking, corporate workshops, or menopause policy advisory.
 2. **B2C** — women looking for premium 1:1 coaching (Soul Mastery Ascension) or
-   soul-led business coaching (Calm to Chaos).
+   soul-led business coaching (Chaos to Calm).
 
 If a change would make the site better for studio clients looking for Pilates classes,
 it belongs on the wellness site, not here.
