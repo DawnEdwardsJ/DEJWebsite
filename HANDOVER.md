@@ -61,8 +61,9 @@ first commit on `main` if you need the history.
 - **Retreats & Experiences:** past retreat proof, imagery, and either the next retreat or an
   expression-of-interest form. The About page's "Explore retreats" button stays hidden until
   then (the interim newdawnpilates.com/events link wasn't used, because it lists studio classes).
-- **Socials:** the footer links go to the studio's @newdawnpilates accounts. A LinkedIn
-  profile matters most for corporate buyers.
+- **Socials:** ✅ LinkedIn added first in the footer and in the structured data (5 Oct).
+  Facebook and Instagram still go to the studio's @newdawnpilates accounts; swap or remove
+  them once Dawn decides (personal accounts, or LinkedIn only).
 - **Programme name:** ✅ confirmed "Chaos to Calm" (5 Oct). Renamed everywhere; the page moved
   to `/chaos-to-calm/` and the old `/calm-to-chaos/` address redirects there.
 

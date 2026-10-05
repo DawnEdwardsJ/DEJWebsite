@@ -438,7 +438,7 @@ content:
           - name: label
             label: Network
             type: select
-            options: { values: [Facebook, Instagram] }
+            options: { values: [LinkedIn, Facebook, Instagram] }
           - { name: link, label: Link, type: string }
 
   - name: logos
