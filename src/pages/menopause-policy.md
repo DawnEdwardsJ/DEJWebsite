@@ -25,9 +25,9 @@ sections:
 
   - type: split
     background: cream
-    photo: /images/photos/nd-dawn-event.jpg
-    photo_alt: "Dawn at a women’s event — composed and present."
-    photo_position: center 20%
+    photo: /images/photos/dawn-event-portrait.jpg
+    photo_alt: "Dawn at a women’s wellbeing event, smiling between sessions"
+    photo_position: center 30%
     tone: gold
     kicker: "Why it matters"
     heading: "A policy is only as good as its practice."

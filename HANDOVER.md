@@ -66,6 +66,16 @@ first commit on `main` if you need the history.
   folders (75 speaking photos, 11 workshop events) can be added the same way: attach them as
   files in the chat, or upload through Pages CMS → Media. The newer shoot (animal-print kimono,
   desk with laptop) still needs sending as files; the desk shots suit Chaos to Calm.
+- **Photo library:** every photo Dawn sends as a file is kept in `src/images/photos/` (the
+  Pages CMS media library), used or not, so the VA can pick it for any section. Photos pasted
+  into the chat arrive as previews only and can't be saved; send them as attachments. The
+  wellness site is a separate repo, so its photos need copying there (or into Tekmatix media)
+  when that build starts.
+- **Pilates-banner photo retired (6 Oct):** `nd-dawn-event.jpg` shows a "New Dawn Pilates and
+  Yoga" banner with the old phone and admin email, so it's off-brand here. About's hero now
+  uses the cream-linen hand-on-heart portrait; Menopause Policy's "A policy is only as good as
+  its practice" uses the event portrait (also beside the Contact form, a temporary repeat
+  until a new corporate-feeling portrait arrives as a file).
 - **Speaker kit:** short and long bio, headshots, talk descriptions, AV needs, a one-page
   speaker sheet PDF. A page is ready to build once these exist.
 - **Retreats & Experiences:** past retreat proof, imagery, and either the next retreat or an

@@ -9,8 +9,9 @@ sections:
     text: "Author, keynote speaker, self-leadership coach and founder of New Dawn Wellness and The Adawning. I help women stop abandoning themselves and lead their lives from a place of calm."
     buttons:
       - { label: "Work with me", link: "/soul-mastery-ascension/", style: ghost }
-    photo: /images/photos/nd-dawn-event.jpg
-    photo_alt: "Dawn at a women’s event — composed and present."
+    photo: /images/photos/dawn-linen-hand-on-heart.jpg
+    photo_alt: "Dawn in cream linen, hand resting on her heart"
+    photo_position: center 25%
     tone: burgundy
 
   - type: story
