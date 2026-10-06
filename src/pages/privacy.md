@@ -3,7 +3,7 @@ readingLine: true
 layout: layouts/legal.njk
 title: "Privacy Policy | Dawn Edwards-Jones"
 description: "How Dawn Edwards-Jones collects, uses, stores and protects your personal information, and how to access or correct it."
-note: "**Draft for review.** This policy has been prepared for Dawn Edwards-Jones and is awaiting final review. Last updated 1 October 2026."
+note: "Last updated 6 October 2026."
 sections:
   - type: hero
     kicker: "Legal"

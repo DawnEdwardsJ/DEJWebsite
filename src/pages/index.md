@@ -53,7 +53,7 @@ sections:
     tone: navy
     kicker: "Flagship keynote & workshop"
     heading: "Menopause at Work."
-    lead: "The conversation most workplaces still aren’t having well."
+    lead: "The conversation most workplaces still aren’t doing well."
     body: "Unsupported stress and menopause cost organisations in absence, turnover and lost performance. I help you get ahead of it — with sessions that are warm and human, not clinical or preachy."
     ticks:
       - "Reduce absence and turnover"

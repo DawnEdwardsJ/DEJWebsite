@@ -10,7 +10,7 @@ sections:
   - type: doorways
     kicker: "Find your door"
     heading: "Where would you like to begin?"
-    intro: "Six ways in — the same work, met wherever you are."
+    intro: "Five ways in — the same work, met wherever you are."
     doors:
       - intent: "I want to feel better in my body"
         title: "New Dawn Wellness"

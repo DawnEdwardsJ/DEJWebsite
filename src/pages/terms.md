@@ -3,7 +3,7 @@ readingLine: true
 layout: layouts/legal.njk
 title: "Terms & Conditions | Dawn Edwards-Jones"
 description: "The terms that apply to speaking engagements, corporate workshops, advisory work and coaching with Dawn Edwards-Jones."
-note: "**Draft for review.** These terms have been prepared for Dawn Edwards-Jones and are awaiting final review. Last updated 1 October 2026."
+note: "Last updated 6 October 2026."
 sections:
   - type: hero
     kicker: "Legal"

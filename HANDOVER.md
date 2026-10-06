@@ -44,7 +44,8 @@ first commit on `main` if you need the history.
    expression-of-interest form on The Adawning Book. Style them to the brand inside Tekmatix
    (Montserrat, navy text, gold button, no bright white).
 2. **Analytics IDs.** Paste the GA4 and Meta Pixel IDs into Site settings when available.
-3. **Legal pages** still show "Draft for review". Remove the note once reviewed.
+3. **Legal pages:** ✅ approved by Dawn (6 Oct); the draft note is gone and both show
+   "Last updated 6 October 2026".
 4. **Production branch.** Switch the Cloudflare production branch and the GitHub default
    branch to `main` before attaching dawnedwards-jones.com.
 
@@ -89,7 +90,8 @@ first commit on `main` if you need the history.
 
 ## Open: Dawn's call (not changed, flagged)
 
-- **New copy needing approval (5 Oct):** homepage hero sentence ("I help women and workplaces
+- **New copy:** ✅ approved by Dawn (6 Oct), with one change: the Menopause at Work lead
+  now reads "…still aren't doing well." Covered: homepage hero sentence ("I help women and workplaces
   navigate midlife, menopause and change with greater wellbeing, confidence and choice.") and
   kicker; the Menopause at Work section's label and lead line ("Flagship keynote & workshop",
   "The conversation most workplaces still aren't having well."); the corporate card text in
@@ -98,8 +100,9 @@ first commit on `main` if you need the history.
   one-line episode summaries (taken from the episode descriptions); the homepage page title.
 - **Sections the VA's doc doesn't include** (kept): Start Here "You don't have to have it
   figured out" and Philosophy "None of this is theory".
-- **Start Here** says "Six ways in" but shows five while the studio door is hidden. Given the
-  authority-brand direction, the suggestion is to drop the studio door and say "Five ways in".
+- **Start Here** now says "Five ways in" (approved 6 Oct). The studio door is still in the
+  content, hidden by the wellness switch; when that switch flips, remove the door or change
+  the line back to "Six".
 
 - **Colour contrast.** Orange `#ee7c19` and olive-gold `#a9993e` used as small text (kickers,
   card titles, the tagline, nav current state) measure 1.9–2.8:1 on ivory, cream and beige.
@@ -111,9 +114,10 @@ first commit on `main` if you need the history.
   (About → Retreats, Corporate Workshops → "Wellbeing is a business issue", Menopause
   Policy → "A policy is only as good as its practice"). They now use real photos. Swap in the
   CMS if Dawn prefers others.
-- **New copy needing approval:** the Ascension calendar section heading ("Book a Soul
-  Mastery Alignment Call.", "30 minutes, by Zoom or phone, Monday to Friday.") and the
-  form's success/failure messages, plus the form's inline prompts ("Please add your first
+- **New copy:** ✅ the Ascension calendar section heading (approved 6 Oct): "Book a Soul
+  Mastery Alignment Call.", "30 minutes, by Zoom or phone, Monday to Friday." Still needing
+  approval if the built-in enquiry form is brought back: its success/failure messages and
+  inline prompts ("Please add your first
   name.", "Please add your email address.", "That email address looks incomplete.",
   "Please choose what this is about."), which live in `src/_includes/sections/enquiry_form.njk`.
 
