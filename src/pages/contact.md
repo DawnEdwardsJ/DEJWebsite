@@ -16,9 +16,9 @@ sections:
     form_id: 0lb2NPRSWjokp4p5Gwmz
     form_name: "Corporate Website - Enquiry Form"
     start_height: 820
-    photo: /images/photos/dawn-journaling-wide.jpg
-    photo_alt: "Dawn journaling at home, warm and approachable"
-    photo_position: 70% center
+    photo: /images/photos/dawn-event-portrait.jpg
+    photo_alt: "Dawn smiling at a speaking event"
+    photo_position: center 30%
     tone: gold
     note: "Or email me directly at [contact@newdawnwellness.health](mailto:contact@newdawnwellness.health)"
 ---

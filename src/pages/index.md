@@ -47,8 +47,9 @@ sections:
 
   - type: split
     background: navy
-    photo: /images/photos/group2.jpg
-    photo_alt: "Dawn leading a wellbeing workshop for a room of women"
+    photo: /images/photos/dawn-speaking-workshop.jpg
+    photo_alt: "Dawn speaking at a workshop, microphone in hand, the room listening"
+    photo_position: 62% center
     tone: navy
     kicker: "Flagship keynote & workshop"
     heading: "Menopause at Work."

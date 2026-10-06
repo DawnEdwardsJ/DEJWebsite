@@ -59,10 +59,13 @@ first commit on `main` if you need the history.
   attributed without her organisation, per the note in that doc. New headings needing
   approval: "What workplaces say." and "What audiences say." More named corporate
   testimonials would let the homepage carry a proof band again without repeats.
-- **Speaking and workshop photos.** The Drive folders were found (75 speaking photos, 11
-  workshop events) but the build sandbox can't download from Drive. Upload chosen ones
-  through Pages CMS → Media, or attach them as files in the chat. Same for the newer shoot
-  (animal-print kimono, desk with laptop): the desk shots suit Chaos to Calm.
+- **Speaking photos:** ✅ four from Dawn (6 Oct) are in: the "Your body knows" talk shot as the
+  Speaking hero, the microphone close-up beside "What you get", the wide workshop shot in the
+  homepage Menopause at Work section (cropped to remove another practitioner's pull-up banner),
+  and an event portrait beside the Contact form (cropped to remove bins). More from the Drive
+  folders (75 speaking photos, 11 workshop events) can be added the same way: attach them as
+  files in the chat, or upload through Pages CMS → Media. The newer shoot (animal-print kimono,
+  desk with laptop) still needs sending as files; the desk shots suit Chaos to Calm.
 - **Speaker kit:** short and long bio, headshots, talk descriptions, AV needs, a one-page
   speaker sheet PDF. A page is ready to build once these exist.
 - **Retreats & Experiences:** past retreat proof, imagery, and either the next retreat or an
