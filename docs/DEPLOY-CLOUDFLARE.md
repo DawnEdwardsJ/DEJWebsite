@@ -92,7 +92,9 @@ First deploy lands at `<project-name>.pages.dev`. Check the 14 pages there befor
 
 ## 3. Point the domain
 
-The domain is registered at **GoDaddy**. Two routes.
+The domain is registered at **GoDaddy**. The site runs as a Cloudflare **Worker**, and a
+Worker custom domain needs the domain's DNS on Cloudflare, so **Route A is required**. Route B
+only applies to the Pages alternative. Turn off DNSSEC at GoDaddy before changing nameservers.
 
 ### Route A — move DNS to Cloudflare (recommended)
 
