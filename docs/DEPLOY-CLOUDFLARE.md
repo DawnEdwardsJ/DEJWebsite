@@ -184,8 +184,8 @@ Design or structural changes (Claude Code or a developer):
 
 ```
 edit a branch → open a PR
-  → Cloudflare builds a preview at <hash>.<project>.pages.dev
-  → Dawn reviews the preview → merge to main → live in under a minute
+  → Cloudflare builds a preview (link in its comment on the PR)
+  → Dawn reviews the preview and approves → Claude merges to main → live in about a minute
 ```
 
 Pages CMS setup, once: sign in at app.pagescms.org with GitHub, install the Pages CMS GitHub

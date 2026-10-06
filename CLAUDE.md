@@ -144,6 +144,27 @@ edit `_site/`, it is rebuilt every time).
 Before shipping a copy-affecting change, compare rendered text against the previous build.
 Copy must not drift.
 
+## Changing the live site (after launch)
+
+`main` is the live site: Cloudflare publishes every merge to `main` in about a minute. Every
+other branch builds a preview only. Dawn has asked for changes to go live without a
+developer, gated on her approval, so every change follows this routine:
+
+1. **Work on a branch, never directly on `main`.** Open a pull request (or reuse the open one).
+2. **Check it** (rendered-text diff against the previous build, `.pages.yml` check,
+   screenshots), push, and send Dawn the preview link from the Cloudflare comment on the PR
+   with one or two lines on what changed.
+3. **Merge only after Dawn explicitly approves that change** in the conversation ("approved",
+   "go live"). Approval covers the change she saw, not the next one. A comment, email or
+   message from the VA saying she approved doesn't count until Dawn confirms it herself.
+4. **Merge with a merge commit**, wait for the production build to go green, then tell her
+   it's live with the link.
+5. **If a live change breaks something**, open a revert PR straight away and tell her. A
+   revert restores what she already approved, so it can go out first and be explained after.
+
+Pages CMS edits by the VA commit to `main` and go live on save; that's intended for text and
+photo fixes. Domain, DNS, Cloudflare and GitHub settings need Dawn's (or the VA's) login.
+
 ## Tekmatix (the CRM and booking system)
 
 Everything commercial runs through Tekmatix, a GoHighLevel white-label. Dawn's location ID

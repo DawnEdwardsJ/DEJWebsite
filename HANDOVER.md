@@ -109,8 +109,8 @@ first commit on `main` if you need the history.
   the only thing keeping accessibility below 100.
 - **Placeholder panels.** Three sections had captioned colour blocks instead of photos
   (About → Retreats, Corporate Workshops → "Wellbeing is a business issue", Menopause
-  Policy → "A policy is only as good as its practice"). They now use existing photos
-  (`nd-circle`, `nd-dawn-leading`, `dawn-portrait-smile`). Swap in the CMS if Dawn prefers others.
+  Policy → "A policy is only as good as its practice"). They now use real photos. Swap in the
+  CMS if Dawn prefers others.
 - **New copy needing approval:** the Ascension calendar section heading ("Book a Soul
   Mastery Alignment Call.", "30 minutes, by Zoom or phone, Monday to Friday.") and the
   form's success/failure messages, plus the form's inline prompts ("Please add your first
