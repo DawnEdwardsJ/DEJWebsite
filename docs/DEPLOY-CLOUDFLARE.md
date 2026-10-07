@@ -92,37 +92,38 @@ First deploy lands at `<project-name>.pages.dev`. Check the 14 pages there befor
 
 ## 3. Point the domain
 
-The domain is registered at **GoDaddy**. The site runs as a Cloudflare **Worker**, and a
+The domain is registered at **Porkbun** (moved from GoDaddy). Its DNS moved to Cloudflare on
+6–7 October 2026, so Route A below is done. The site runs as a Cloudflare **Worker**, and a
 Worker custom domain needs the domain's DNS on Cloudflare, so **Route A is required**. Route B
-only applies to the Pages alternative. Turn off DNSSEC at GoDaddy before changing nameservers.
+only applies to the Pages alternative. Turn off DNSSEC at the registrar before changing nameservers.
 
 ### Route A — move DNS to Cloudflare (recommended)
 
 Add the domain as a site in Cloudflare, let it scan existing records, then change the
-nameservers at GoDaddy to the two Cloudflare gives you. Propagation is usually under an hour,
+nameservers at the registrar to the two Cloudflare gives you. Propagation is usually under an hour,
 occasionally up to 24.
 
 Why this is better: apex-domain support without CNAME flattening workarounds, automatic TLS,
 caching and analytics, and redirect rules you can configure in one place. It also means
 future DNS changes happen where the hosting lives rather than split across two providers.
 
-Before you switch nameservers, copy every existing GoDaddy record across — especially **MX
+Before you switch nameservers, copy every existing record across — especially **MX
 and TXT records**. If `dawnedwards-jones.com` has email on it, missing an MX record silently
 breaks mail. Check SPF, DKIM and DMARC TXT records too.
 
 Then in Pages → Custom domains, add `dawnedwards-jones.com` and `www.dawnedwards-jones.com`.
 Cloudflare creates the records and issues the certificate itself.
 
-### Route B — keep DNS at GoDaddy
+### Route B — keep DNS at the registrar (Pages only)
 
-Add the custom domain in Pages, then at GoDaddy:
+Add the custom domain in Pages, then at the registrar:
 
 | Type | Name | Value |
 |---|---|---|
 | CNAME | `www` | `<project-name>.pages.dev` |
 | A or forward | `@` | per the values Pages displays |
 
-GoDaddy does not support CNAME at the apex, so the root domain needs either their forwarding
+Most registrars do not support CNAME at the apex, so the root domain needs either their forwarding
 feature or the A records Cloudflare shows you. Workable, more fiddly, fewer features. Route A
 unless there's a reason.
 
