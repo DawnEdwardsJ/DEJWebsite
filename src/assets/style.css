@@ -1,5 +1,16 @@
+/* ---- Fonts: self-hosted (no third-party request). Cormorant Garamond + Montserrat, SIL OFL.
+   The "Fallback" faces are local system fonts resized to the same metrics, so text
+   doesn't jump when the real fonts arrive. */
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:300 400;font-display:swap;src:url(/assets/fonts/cormorant-garamond-italic-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:300 400;font-display:swap;src:url(/assets/fonts/cormorant-garamond-italic.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:300 600;font-display:swap;src:url(/assets/fonts/cormorant-garamond-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:300 600;font-display:swap;src:url(/assets/fonts/cormorant-garamond.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:300 600;font-display:swap;src:url(/assets/fonts/montserrat-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:300 600;font-display:swap;src:url(/assets/fonts/montserrat.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Cormorant Garamond Fallback';src:local('Georgia');ascent-override:104.5482%;descent-override:32.4733%;size-adjust:88.3803%}
+@font-face{font-family:'Montserrat Fallback';src:local('Arial'),local('ArialMT');ascent-override:85.7923%;descent-override:22.2457%;line-gap-override:0%;size-adjust:112.8307%}
+:root{--serif:'Cormorant Garamond','Cormorant Garamond Fallback',Georgia,serif;--sans:'Montserrat','Montserrat Fallback',Arial,sans-serif}
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
 :root{
   --navy:#192b53; --forest:#374a34; --cream:#ffead1; --ivory:#fdf8f2;
   --gold:#f4a261; --orange:#ee7c19; --beige:#e9cba7; --burgundy:#502a1f;
@@ -7,9 +18,9 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Montserrat',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+body{font-family:var(--sans);
   color:var(--navy);background:var(--ivory);line-height:1.75;font-weight:300;font-size:17px}
-h1,h2,h3,h4{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;line-height:1.15;letter-spacing:.5px}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.15;letter-spacing:.5px}
 h1{font-size:clamp(2.4rem,5vw,4rem)}
 h2{font-size:clamp(1.9rem,3.5vw,2.9rem)}
 h3{font-size:1.4rem}
@@ -18,9 +29,9 @@ p{margin-bottom:1.1em;max-width:64ch}
 img{max-width:100%;display:block}
 .wrap{width:min(1160px,90%);margin:0 auto}
 .kicker{font-size:.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--accent-deep);font-weight:600;margin-bottom:18px}
-.say{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.5rem;color:var(--navy);line-height:1.4}
-.btn{display:inline-block;font-family:'Montserrat';font-size:.8rem;letter-spacing:1.5px;text-transform:uppercase;
-  font-weight:600;padding:15px 32px;border-radius:999px;transition:.25s;cursor:pointer;border:1.5px solid var(--accent)}
+.say{font-family:var(--serif);font-style:italic;font-size:1.5rem;color:var(--navy);line-height:1.4}
+.btn{display:inline-block;font-family:var(--sans);font-size:.8rem;letter-spacing:1.5px;text-transform:uppercase;
+  font-weight:600;padding:15px 32px;border-radius:999px;cursor:pointer;border:1.5px solid var(--accent)}
 .btn-gold{background:var(--accent);color:var(--navy)}
 .btn-gold:hover{background:var(--accent-deep);border-color:var(--accent-deep);color:#fff}
 .btn-ghost{background:transparent;color:var(--navy);border-color:var(--navy)}
@@ -33,8 +44,8 @@ img{max-width:100%;display:block}
 .nav-inner{width:min(1240px,94%);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 0}
 .brand{display:flex;align-items:center;gap:12px}
 .brand img{height:44px;width:auto;mix-blend-mode:multiply}
-.brand .wtext{font-family:'Cormorant Garamond',serif;font-size:1.15rem;letter-spacing:1px;color:var(--navy);line-height:1.05}
-.brand .wtext small{display:block;font-family:'Montserrat';font-size:.56rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent-deep);font-weight:600}
+.brand .wtext{font-family:var(--serif);font-size:1.15rem;letter-spacing:1px;color:var(--navy);line-height:1.05}
+.brand .wtext small{display:block;font-family:var(--sans);font-size:.56rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent-deep);font-weight:600}
 .main-nav>ul{list-style:none;display:flex;align-items:center;gap:4px}
 .main-nav a{font-size:.82rem;letter-spacing:.4px;font-weight:400;padding:10px 14px;display:block;white-space:nowrap;color:var(--navy);transition:.2s}
 .main-nav>ul>li>a:hover{color:var(--accent-deep)}
@@ -42,7 +53,7 @@ img{max-width:100%;display:block}
 .main-nav .has-drop>a::after{content:" \25BE";font-size:.6em;opacity:.6}
 .drop{list-style:none;position:absolute;top:100%;left:0;min-width:230px;background:#fff;border:1px solid var(--beige);
   border-radius:12px;box-shadow:0 16px 40px rgba(25,43,83,.14);padding:8px;opacity:0;visibility:hidden;transform:translateY(8px);transition:.2s}
-.main-nav li:hover>.drop, .main-nav li:focus-within>.drop{opacity:1;visibility:visible;transform:translateY(0)}
+.main-nav li:hover>.drop{opacity:1;visibility:visible;transform:translateY(0)}
 .drop a{border-radius:8px;font-size:.8rem;padding:9px 12px}
 .drop a:hover{background:var(--cream);color:var(--accent-deep)}
 .nav-cta{background:var(--accent);color:var(--navy)!important;border-radius:999px;font-weight:600!important;
@@ -72,7 +83,7 @@ img{max-width:100%;display:block}
 .card h3{margin-bottom:10px;color:var(--accent-deep)}
 .sec.navy .card h3,.sec.forest .card h3{color:var(--gold)}
 .card p{font-size:.95rem;margin-bottom:0}
-.card .price{font-family:'Cormorant Garamond';font-size:1.8rem;color:var(--navy);margin:6px 0}
+.card .price{font-family:var(--serif);font-size:1.8rem;color:var(--navy);margin:6px 0}
 .imgph{background:repeating-linear-gradient(135deg,rgba(233,203,167,.35),rgba(233,203,167,.35) 12px,rgba(255,234,209,.5) 12px,rgba(255,234,209,.5) 24px);
   border:1px dashed var(--olive-gold);border-radius:16px;min-height:280px;display:flex;align-items:center;justify-content:center;
   text-align:center;color:var(--burgundy);font-size:.78rem;letter-spacing:1px;padding:20px;font-style:italic}
@@ -83,10 +94,7 @@ img{max-width:100%;display:block}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:30px}
 .trusted{text-align:center}
 .trusted .label{font-size:.7rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent-deep);margin-bottom:38px}
-.logo-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:38px 64px;max-width:960px;margin:0 auto}
-.logo-row img{height:46px;max-height:46px;width:auto;max-width:150px;object-fit:contain;filter:grayscale(1);opacity:.55;transition:.3s}
-.logo-row img:hover{filter:grayscale(0);opacity:1;transform:translateY(-2px)}
-@media(max-width:640px){.logo-row{gap:28px 40px}.logo-row img{height:38px;max-height:38px;max-width:120px}}
+
 .faq-item{border-bottom:1px solid var(--beige);padding:22px 0;max-width:820px;margin:0 auto}
 .faq-item h3{color:var(--navy);margin-bottom:8px}
 .faq-item p{margin-bottom:0;font-size:.98rem}
@@ -97,14 +105,14 @@ img{max-width:100%;display:block}
 ul.ticks{list-style:none;max-width:60ch}
 ul.ticks li{padding:8px 0 8px 30px;position:relative}
 ul.ticks li::before{content:"\2713";position:absolute;left:0;color:var(--accent-deep);font-weight:700}
-p.attrib{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.2rem;color:var(--olive-gold);margin-top:8px}
+p.attrib{font-family:var(--serif);font-style:italic;font-size:1.2rem;color:var(--olive-gold);margin-top:8px}
 p.local-seo{max-width:70ch;margin:0 auto;text-align:center;font-size:.95rem;line-height:1.8;color:var(--olive-gold);letter-spacing:.3px}
 
 /* ---- footer ---- */
 .site-footer{background:var(--navy);color:var(--cream);padding:64px 0 30px}
 .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:40px}
 .site-footer h4{color:var(--gold);font-size:1.5rem;margin-bottom:14px}
-.site-footer h5{font-family:'Montserrat';font-size:.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;font-weight:600}
+.site-footer h5{font-family:var(--sans);font-size:.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;font-weight:600}
 .site-footer a{color:rgba(255,234,209,.82)}
 .site-footer a:hover{color:var(--gold)}
 .site-footer ul{list-style:none}
@@ -121,22 +129,23 @@ p.local-seo{max-width:70ch;margin:0 auto;text-align:center;font-size:.95rem;line
 .foot-legal a{color:rgba(255,234,209,.6);text-decoration:underline;text-underline-offset:3px}
 .legal-doc{max-width:760px;margin:0 auto}
 .legal-doc h2{font-size:1.5rem;margin:34px 0 12px}
-.legal-doc h3{font-family:'Montserrat';font-size:.95rem;font-weight:600;margin:22px 0 8px}
+.legal-doc h3{font-family:var(--sans);font-size:.95rem;font-weight:600;margin:22px 0 8px}
 .legal-doc p,.legal-doc li{font-size:.95rem;line-height:1.75;margin-bottom:12px}
 .legal-doc ul{padding-left:22px;margin-bottom:16px}
 .legal-note{background:var(--cream);border-left:3px solid var(--gold);padding:18px 22px;margin-bottom:30px;font-size:.9rem}
 .nd-form{max-width:620px;margin:0 auto;display:grid;gap:16px}
-.nd-form label{font-family:'Montserrat';font-size:.74rem;letter-spacing:1.4px;text-transform:uppercase;
+.nd-form label{font-family:var(--sans);font-size:.74rem;letter-spacing:1.4px;text-transform:uppercase;
   font-weight:600;color:var(--navy);display:block;margin-bottom:6px}
 .nd-form input,.nd-form select,.nd-form textarea{width:100%;padding:13px 15px;border:1px solid rgba(25,43,83,.22);
-  border-radius:3px;font-family:'Montserrat';font-size:.95rem;background:#fff;color:var(--ink)}
+  border-radius:3px;font-family:var(--sans);font-size:.95rem;background:#fff;color:var(--ink)}
 .nd-form input:focus,.nd-form select:focus,.nd-form textarea:focus{outline:2px solid var(--gold);border-color:var(--gold)}
 .nd-form textarea{min-height:130px;resize:vertical}
 .nd-form .fine{font-size:.78rem;color:rgba(44,36,24,.66);line-height:1.6}
 .nd-form .row-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 @media(max-width:600px){.nd-form .row-2{grid-template-columns:1fr}}
 
-@media(max-width:900px){
+/* the menu folds into the side panel below 1260px, where the full row no longer fits */
+@media(max-width:1260px){
   .nav-toggle{display:block}
   .main-nav{position:fixed;top:73px;right:0;width:min(320px,86%);height:calc(100vh - 73px);background:#fff;
     border-left:1px solid var(--beige);padding:16px;overflow-y:auto;transform:translateX(105%);transition:.3s;box-shadow:-10px 0 40px rgba(25,43,83,.12)}
@@ -147,6 +156,8 @@ p.local-seo{max-width:70ch;margin:0 auto;text-align:center;font-size:.95rem;line
     max-height:0;overflow:hidden;padding:0 0 0 14px;transition:.25s}
   .main-nav li.open>.drop{max-height:500px;padding:4px 0 10px 14px}
   .nav-cta{margin:12px 0 0;text-align:center}
+}
+@media(max-width:900px){
   .split,.two{grid-template-columns:1fr}
   .foot-grid{grid-template-columns:1fr}
   .hero-split{grid-template-columns:1fr}
@@ -179,7 +190,7 @@ p.local-seo{max-width:70ch;margin:0 auto;text-align:center;font-size:.95rem;line
 .hero.warm .kicker{color:var(--burgundy)}
 /* gradient image panels (colour, not grey placeholders) */
 .fig{position:relative;border-radius:14px;min-height:300px;display:flex;align-items:flex-end;justify-content:flex-start;
-  text-align:left;color:rgba(253,248,242,.9);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;
+  text-align:left;color:rgba(253,248,242,.9);font-family:var(--serif);font-style:italic;font-size:1rem;
   padding:24px;box-shadow:0 22px 52px rgba(80,42,31,.16);overflow:hidden}
 .fig::after{content:"";position:absolute;inset:14px;border:1px solid rgba(253,248,242,.4);border-radius:8px;pointer-events:none}
 .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit;z-index:0}
@@ -193,29 +204,29 @@ p.local-seo{max-width:70ch;margin:0 auto;text-align:center;font-size:.95rem;line
 .fig.beige{background:linear-gradient(150deg,var(--beige),var(--gold));color:var(--burgundy)}
 /* pull quote band */
 .pullquote{background:var(--beige);text-align:center;padding:clamp(56px,8vw,96px) 0}
-.pullquote blockquote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.8rem,3.6vw,2.6rem);
+.pullquote blockquote{font-family:var(--serif);font-style:italic;font-size:clamp(1.8rem,3.6vw,2.6rem);
   font-weight:400;max-width:24ch;margin:0 auto;line-height:1.35;color:var(--burgundy)}
 .pullquote cite{display:block;margin-top:20px;font-style:normal;font-size:.7rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--olive-gold)}
 /* the method steps */
 .method-steps{max-width:780px;margin:0 auto}
 .method-step{display:grid;grid-template-columns:auto 1fr;gap:32px;padding:28px 0;border-top:1px solid rgba(255,234,209,.18);align-items:start}
 .method-step:last-child{border-bottom:1px solid rgba(255,234,209,.18)}
-.method-step .stage{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:2.4rem;color:var(--gold);line-height:1;min-width:54px}
+.method-step .stage{font-family:var(--serif);font-style:italic;font-size:2.4rem;color:var(--gold);line-height:1;min-width:54px}
 .method-step .q{font-size:.68rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--olive-gold);margin-bottom:8px}
 .method-step h3{font-size:1.7rem;color:var(--ivory);margin-bottom:4px}
 .method-step p{color:rgba(255,234,209,.82);margin:0}
 /* stats row */
 .stats{display:flex;gap:44px;flex-wrap:wrap;margin-top:20px}
-.stats div{font-family:'Cormorant Garamond',serif}
+.stats div{font-family:var(--serif)}
 .stats b{display:block;font-size:2.4rem;color:var(--accent-deep);font-weight:500;line-height:1}
-.stats span{font-size:.68rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--olive-gold);font-family:'Montserrat',sans-serif}
+.stats span{font-size:.68rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--olive-gold);font-family:var(--sans)}
 .sec.navy .stats b,.sec.forest .stats b,.hero.dark .stats b{color:var(--gold)}
 .sec.navy .stats span,.sec.forest .stats span,.hero.dark .stats span{color:var(--gold)}
 /* feature cards w/ highlighted middle */
 .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:12px;text-align:left}
 .feature{border-radius:14px;padding:40px 32px;background:var(--cream);border:1px solid var(--beige);transition:transform .35s,box-shadow .35s;box-shadow:0 14px 34px rgba(80,42,31,.06)}
 .feature:hover{transform:translateY(-8px);box-shadow:0 26px 54px rgba(80,42,31,.14)}
-.feature .num{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--olive-gold)}
+.feature .num{font-family:var(--serif);font-style:italic;font-size:1.05rem;color:var(--olive-gold)}
 .feature h3{font-size:1.7rem;margin:8px 0 12px;color:var(--navy)}
 .feature p{font-size:.95rem;margin-bottom:16px}
 .feature ul{list-style:none;margin-bottom:18px}
@@ -228,21 +239,21 @@ p.local-seo{max-width:70ch;margin:0 auto;text-align:center;font-size:.95rem;line
 /* testimonial cards */
 .quote-card{background:var(--ivory);border-radius:14px;padding:34px 32px;border:1px solid rgba(169,153,62,.25);box-shadow:0 16px 40px rgba(80,42,31,.08)}
 .quote-card .stars{color:var(--gold);margin-bottom:12px;letter-spacing:3px}
-.quote-card p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.2rem;line-height:1.5;color:var(--navy);margin-bottom:14px}
+.quote-card p{font-family:var(--serif);font-style:italic;font-size:1.2rem;line-height:1.5;color:var(--navy);margin-bottom:14px}
 .quote-card cite{font-style:normal;font-size:.66rem;letter-spacing:2px;text-transform:uppercase;color:var(--burgundy)}
 /* trust strip (credibility above the fold) */
 .trust{background:var(--beige);border-top:1px solid rgba(169,153,62,.25);border-bottom:1px solid rgba(169,153,62,.25)}
 .trust .wrap{display:flex;align-items:center;justify-content:center;gap:clamp(22px,4vw,60px);flex-wrap:wrap;padding:20px 0;text-align:center}
 .trust .ti{display:flex;flex-direction:column;gap:5px;align-items:center;max-width:420px}
 .trust .stars{color:var(--gold);letter-spacing:3px;font-size:1rem}
-.trust .rate{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--navy)}
+.trust .rate{font-family:var(--serif);font-size:1.05rem;color:var(--navy)}
 .trust .rate b{font-weight:600}
-.trust .tq{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.12rem;line-height:1.45;color:var(--navy)}
+.trust .tq{font-family:var(--serif);font-style:italic;font-size:1.12rem;line-height:1.45;color:var(--navy)}
 .trust cite{font-style:normal;font-size:.62rem;letter-spacing:2px;text-transform:uppercase;color:var(--burgundy)}
-.trust .tmark{font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--olive-gold);font-family:'Montserrat',sans-serif;line-height:1.5}
+.trust .tmark{font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--olive-gold);font-family:var(--sans);line-height:1.5}
 /* lead-magnet opt-in */
 .optin form{display:flex;gap:10px;flex-wrap:wrap;max-width:520px;margin:20px auto 0;justify-content:center}
-.optin input[type=email]{flex:1;min-width:230px;padding:14px 20px;border-radius:40px;border:1px solid var(--olive-gold);background:var(--ivory);font-family:'Montserrat',sans-serif;font-size:.9rem;color:var(--navy)}
+.optin input[type=email]{flex:1;min-width:230px;padding:14px 20px;border-radius:40px;border:1px solid var(--olive-gold);background:var(--ivory);font-family:var(--sans);font-size:.9rem;color:var(--navy)}
 .optin input[type=email]:focus{outline:none;border-color:var(--gold)}
 .optin .fine{font-size:.72rem;color:rgba(253,248,242,.7);margin-top:12px;text-align:center}
 /* hero split with figure */
@@ -251,12 +262,12 @@ p.local-seo{max-width:70ch;margin:0 auto;text-align:center;font-size:.95rem;line
 .hero-split .hcopy{padding:clamp(24px,3.5vw,52px) 0;display:flex;flex-direction:column;justify-content:center}
 .hero-split .hfig{position:relative;overflow:hidden;min-height:340px}
 .hero-split .hfig .note{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;
-  color:rgba(80,42,31,.55);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;padding:0 14%}
+  color:rgba(80,42,31,.55);font-family:var(--serif);font-style:italic;font-size:1.05rem;padding:0 14%}
 .hero-split .hfig::after{content:"";position:absolute;inset:16px;border:1px solid rgba(253,248,242,.5)}
 .hero-cred{margin-top:26px;font-size:.66rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--olive-gold);border-top:1px solid var(--beige);padding-top:18px}
 @media(max-width:900px){.hero-split .hcopy{padding:44px 0}.hero-split .hfig{order:-1}}
 .hero-split .hcopy h1 em,.hero h1 em{font-style:italic;color:var(--orange);font-weight:400}
-.hcopy h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.6rem,5.4vw,4.1rem);line-height:1.02;color:var(--navy);font-weight:600;letter-spacing:-.5px}
+.hcopy h1{font-family:var(--serif);font-size:clamp(2.6rem,5.4vw,4.1rem);line-height:1.02;color:var(--navy);font-weight:600;letter-spacing:-.5px}
 .hcopy>p{font-size:1.08rem;color:var(--ink);max-width:44ch;margin-top:20px;line-height:1.7}
 .hcopy .btn-row{margin-top:30px}
 /* ---- Start Here: ecosystem doorways ---- */
@@ -264,7 +275,7 @@ p.local-seo{max-width:70ch;margin:0 auto;text-align:center;font-size:.95rem;line
 .door{display:flex;flex-direction:column;background:#fff;border:1px solid var(--beige);border-radius:16px;
   padding:34px 32px;transition:transform .35s,box-shadow .35s,border-color .35s;box-shadow:0 14px 34px rgba(80,42,31,.05)}
 .door:hover{transform:translateY(-6px);box-shadow:0 26px 54px rgba(80,42,31,.13);border-color:var(--gold)}
-.door .intent{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.5rem;color:var(--olive-gold);line-height:1.2;margin-bottom:8px}
+.door .intent{font-family:var(--serif);font-style:italic;font-size:1.5rem;color:var(--olive-gold);line-height:1.2;margin-bottom:8px}
 .door h3{font-size:1.55rem;color:var(--navy);margin-bottom:10px}
 .door p{font-size:.95rem;margin-bottom:20px}
 .door .go{margin-top:auto;font-size:.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--accent-deep);font-weight:600}
@@ -273,9 +284,9 @@ p.local-seo{max-width:70ch;margin:0 auto;text-align:center;font-size:.95rem;line
 
 /* ---- manifesto (short-line belief block) ---- */
 .manifesto{max-width:720px;margin:0 auto;text-align:center}
-.manifesto p{font-family:'Cormorant Garamond',serif;font-size:clamp(1.35rem,2.7vw,1.95rem);line-height:1.45;color:var(--navy);margin-bottom:20px}
+.manifesto p{font-family:var(--serif);font-size:clamp(1.35rem,2.7vw,1.95rem);line-height:1.45;color:var(--navy);margin-bottom:20px}
 .manifesto p.list{font-size:clamp(1.1rem,2vw,1.4rem);color:var(--burgundy);line-height:1.7}
-.manifesto p.small{font-family:'Montserrat',sans-serif;font-size:1.05rem;line-height:1.8;color:var(--ink);max-width:56ch;margin:0 auto 20px}
+.manifesto p.small{font-family:var(--sans);font-size:1.05rem;line-height:1.8;color:var(--ink);max-width:56ch;margin:0 auto 20px}
 .manifesto em{font-style:italic;color:var(--olive-gold)}
 .sec.navy .manifesto p,.sec.burgundy .manifesto p{color:var(--cream)}
 .sec.navy .manifesto p.small,.sec.burgundy .manifesto p.small{color:rgba(253,248,242,.85)}
@@ -285,7 +296,7 @@ p.local-seo{max-width:70ch;margin:0 auto;text-align:center;font-size:.95rem;line
 .creed{max-width:780px;margin:0 auto}
 .creed .cline{padding:28px 0;border-bottom:1px solid var(--beige)}
 .creed .cline:last-child{border-bottom:0}
-.creed .cbelief{font-family:'Cormorant Garamond',serif;font-size:clamp(1.5rem,3vw,2.1rem);line-height:1.25;color:var(--navy)}
+.creed .cbelief{font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.1rem);line-height:1.25;color:var(--navy)}
 .creed .cbelief em{font-style:italic;color:var(--olive-gold)}
 .creed .csub{margin-top:10px;font-size:1rem;line-height:1.75;color:var(--ink);max-width:62ch}
 
@@ -293,8 +304,448 @@ p.local-seo{max-width:70ch;margin:0 auto;text-align:center;font-size:.95rem;line
 .story{max-width:720px;margin:0 auto}
 .story .chapter{margin-bottom:50px}
 .story .chapter:last-child{margin-bottom:0}
-.story .cnum{font-family:'Montserrat',sans-serif;font-size:.7rem;letter-spacing:3px;text-transform:uppercase;color:var(--olive-gold);font-weight:600;margin-bottom:10px}
+.story .cnum{font-family:var(--sans);font-size:.7rem;letter-spacing:3px;text-transform:uppercase;color:var(--olive-gold);font-weight:600;margin-bottom:10px}
 .story h3{font-size:clamp(1.55rem,3vw,2.1rem);color:var(--navy);margin-bottom:16px;line-height:1.2}
 .story p{font-size:1.06rem;line-height:1.85;color:var(--ink);margin-bottom:18px}
 .story p:last-child{margin-bottom:0}
 .story p.lead{font-size:1.22rem;line-height:1.7;color:var(--navy)}
+
+/* ================= SITE BUILD ADDITIONS (Eleventy rebuild) =================
+   Classes below replace inline styles the old generator wrote into the HTML.
+   Values are identical to what was inline. No colour values changed. */
+.hero .lead{margin-top:18px;font-size:1.15rem}
+.hcopy>p.lead{margin-top:16px;font-size:1.15rem}
+.btn-row.center{justify-content:center}
+.btn.btn-sm{padding:9px 20px;font-size:.7rem}
+.card .card-text{margin-bottom:16px}
+.cta-band.after-grid{margin-top:8px}
+.cta-band.after-manifesto{margin-top:14px}
+.method-close{text-align:center;margin-top:46px}
+.method-close .say{color:var(--gold);max-width:34ch;margin:0 auto}
+.method-close .btn-row{margin-top:22px}
+.split-lead{font-size:1.18rem}
+.optin .optin-text{max-width:640px;margin:0 auto}
+.foot-blurb{font-size:.9rem;color:rgba(255,234,209,.8);max-width:40ch}
+.foot-contact{font-size:.82rem;margin-top:14px;color:rgba(255,234,209,.7)}
+
+/* dropdown toggles are buttons now (keyboard + screen reader friendly) */
+.drop-toggle{font:inherit;font-size:.82rem;letter-spacing:.4px;font-weight:400;padding:10px 14px;display:block;white-space:nowrap;
+  color:var(--navy);background:none;border:0;cursor:pointer;transition:color var(--t-hover) var(--ease-out)}
+.drop-toggle::after{content:" \25BE";font-size:.6em;opacity:.6}
+.drop-toggle:hover{color:var(--accent-deep)}
+.current>.drop-toggle{color:var(--accent-deep);font-weight:600}
+.main-nav li.open>.drop{opacity:1;visibility:visible;transform:translateY(0)}
+@media(max-width:1260px){.drop-toggle{width:100%;text-align:left}}
+
+/* accessibility */
+.skip-link{position:absolute;left:12px;top:-60px;z-index:200;background:var(--navy);color:var(--cream);padding:10px 18px;border-radius:999px;font-size:.8rem}
+.skip-link:focus{top:12px}
+:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
+.hero.dark :focus-visible,.sec.navy :focus-visible,.sec.forest :focus-visible,.sec.burgundy :focus-visible,
+.sec.olive :focus-visible,.site-footer :focus-visible{outline-color:var(--gold)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+/* enquiry form status + booking calendar */
+.form-status:empty{display:none}
+.form-status{font-weight:600}
+.form-status.ok{color:var(--forest)}
+.form-status.err{color:var(--burgundy)}
+.nd-form button[disabled]{opacity:.6;cursor:progress}
+.calendar-embed{max-width:860px;margin:0 auto;background:#fff;border:1px solid var(--beige);border-radius:16px;overflow:hidden}
+.calendar-embed iframe{display:block;width:100%;min-height:720px;border:0}
+
+/* ================= MOTION =================
+   One shared system. Expo-out easing, settled and never bouncy.
+   Spec: docs/UPGRADE-PROMPT.md. No animation library. */
+:root{
+  --ease-out:cubic-bezier(0.22,1,0.36,1);
+  --ease-smooth:cubic-bezier(0.65,0,0.35,1);
+  --t-hover:240ms;
+  --t-panel:420ms;
+  --t-reveal:620ms;
+  --t-line:820ms;
+  --t-sheen:2800ms;
+  --stagger:70ms;
+}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;
+    scroll-behavior:auto !important;
+  }
+}
+
+/* scroll reveal: sections and cards only, never body paragraphs.
+   Hidden only when JS is running, so nothing is lost without it. */
+.js .reveal{opacity:0;transform:translateY(22px);
+  transition:opacity var(--t-reveal) var(--ease-out),transform var(--t-reveal) var(--ease-out)}
+.js .reveal.in{opacity:1;transform:none}
+
+/* hero headline: one-time mask reveal on load, h1 only */
+.line-mask{overflow:hidden;padding:.1em .2em .16em;margin:-.1em -.2em -.16em}
+.line-mask>span{display:block;animation:line-rise var(--t-line) var(--ease-out) both}
+@keyframes line-rise{from{transform:translateY(105%)}}
+
+/* sticky nav condenses past 80px (desktop only; mobile header stays fixed height) */
+.site-header{transition:background var(--t-panel) var(--ease-out),box-shadow var(--t-panel) var(--ease-out)}
+.nav-inner{transition:padding var(--t-panel) var(--ease-out)}
+@media(min-width:901px){
+  .site-header.condensed{background:rgba(253,248,242,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(25,43,83,.08)}
+  .site-header.condensed .nav-inner{padding-block:10px}
+}
+.main-nav a{transition:color var(--t-hover) var(--ease-out),background var(--t-hover) var(--ease-out)}
+
+/* media: slow scale inside a clipped frame. 900ms is deliberate */
+.media{overflow:hidden}
+.media img{transition:transform 900ms var(--ease-out)}
+.media:hover img{transform:scale(1.045)}
+
+/* buttons lift, never grow */
+.btn{transition:background-color var(--t-hover) var(--ease-out),color var(--t-hover) var(--ease-out),
+  border-color var(--t-hover) var(--ease-out),transform var(--t-hover) var(--ease-out),box-shadow var(--t-hover) var(--ease-out)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px -8px rgba(238,124,25,.45)}
+.btn-ghost:hover{box-shadow:0 10px 24px -10px rgba(25,43,83,.35)}
+.card,.quote-card{transition:transform var(--t-panel) var(--ease-out),box-shadow var(--t-panel) var(--ease-out)}
+
+/* client logos: slow marquee, pauses on hover/focus, static row under reduced motion */
+.logo-marquee{display:flex;overflow:hidden;max-width:1100px;margin:0 auto;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.logo-track{list-style:none;display:flex;align-items:center;gap:64px;padding-right:64px;flex-shrink:0;
+  animation:marquee 55s linear infinite}
+.logo-marquee:hover .logo-track,.logo-marquee:focus-within .logo-track{animation-play-state:paused}
+@keyframes marquee{to{transform:translateX(-100%)}}
+.logo-item img{height:46px;max-height:46px;width:auto;max-width:150px;object-fit:contain;filter:grayscale(1);opacity:.55;
+  transition:filter var(--t-panel) var(--ease-out),opacity var(--t-panel) var(--ease-out)}
+.logo-item img:hover{filter:grayscale(0);opacity:1}
+@media(max-width:640px){.logo-track{gap:40px;padding-right:40px}.logo-item img{height:38px;max-height:38px;max-width:120px}}
+@media (prefers-reduced-motion: reduce){
+  .logo-marquee{-webkit-mask-image:none;mask-image:none}
+  .logo-track{animation:none !important;flex-wrap:wrap;justify-content:center;gap:38px 64px;padding-right:0;flex-shrink:1}
+  .logo-track-dup{display:none}
+}
+
+/* sheen: a slow, single sweep on hover. Max three elements site-wide.
+   Currently: homepage hero CTA, speaking hero CTA. Third reserved for the speaker-kit button. */
+.sheen{position:relative;overflow:hidden}
+.sheen::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.34) 50%,transparent 65%);transform:translateX(-120%)}
+.sheen:hover::after{animation:sheen var(--t-sheen) var(--ease-smooth)}
+@keyframes sheen{to{transform:translateX(120%)}}
+
+/* page transitions: cross-document View Transitions where supported, no slide-ins */
+@view-transition{navigation:auto}
+::view-transition-old(root),::view-transition-new(root){animation-duration:300ms;animation-timing-function:var(--ease-smooth)}
+@media (prefers-reduced-motion: reduce){@view-transition{navigation:none}}
+
+/* ---- layout fixes found during the rebuild (no colour values changed) ---- */
+/* outline buttons were navy-on-navy (invisible) on dark bands */
+.sec.navy .btn-ghost,.sec.forest .btn-ghost,.sec.burgundy .btn-ghost,.sec.olive .btn-ghost{color:var(--cream);border-color:var(--cream)}
+.sec.navy .btn-ghost:hover,.sec.forest .btn-ghost:hover,.sec.burgundy .btn-ghost:hover,.sec.olive .btn-ghost:hover{background:var(--cream);color:var(--navy)}
+/* footer has four columns, not three */
+@media(min-width:901px){.foot-grid{grid-template-columns:1.4fr 1fr 1fr 1fr}}
+/* opt-in fine print sat off-centre */
+.optin .fine{margin-left:auto;margin-right:auto}
+/* a lone card shouldn't stretch the full width */
+.grid:has(> :only-child){grid-template-columns:minmax(0,560px);justify-content:center}
+/* hero photo layouts squeezed side by side on phones: stack them */
+@media(max-width:900px){.hero-split{grid-template-columns:1fr;min-height:0}.hero-split .hfig{min-height:420px}}
+/* footer headings: same look as before, correct heading order for screen readers */
+.site-footer .foot-brand{font-family:var(--serif);font-weight:500;line-height:1.15;letter-spacing:.5px;color:var(--gold);font-size:1.5rem;margin-bottom:14px}
+.site-footer .foot-h{font-family:var(--sans);font-size:.7rem;letter-spacing:2px;line-height:1.75;text-transform:uppercase;color:var(--gold);margin-bottom:14px;font-weight:600}
+/* desktop dropdowns become focusable the instant they open (visibility flips first, fades after) */
+@media(min-width:1261px){
+  .drop{transition:opacity var(--t-panel) var(--ease-out),transform var(--t-panel) var(--ease-out),visibility 0s linear var(--t-panel)}
+  .main-nav li:hover>.drop,.main-nav li.open>.drop{transition-delay:0s}
+}
+/* result message after a no-JavaScript form post (/contact/#enquiry-sent) */
+.form-note{display:none}
+.form-note:target{display:block;font-weight:600}
+.form-note.ok{color:var(--forest)}
+.form-note.err{color:var(--burgundy)}
+
+/* ================= PREMIUM DETAILS ================= */
+/* the header stays put while page content crossfades between pages */
+.site-header{view-transition-name:site-header}
+::view-transition-group(site-header){animation-duration:var(--t-panel);animation-timing-function:var(--ease-out)}
+/* anchor links (e.g. /contact/#enquire) land below the sticky header */
+html{scroll-padding-top:96px}
+::selection{background:var(--beige);color:var(--navy)}
+/* text links inside body copy: quiet underline that warms on hover */
+.legal-doc a,.nd-form .fine a,.split p a,.story p a,.creed a{color:var(--navy);text-decoration:underline;text-decoration-thickness:1px;
+  text-decoration-color:rgba(238,124,25,.45);text-underline-offset:3px;transition:text-decoration-color var(--t-hover) var(--ease-out)}
+.legal-doc a:hover,.nd-form .fine a:hover,.split p a:hover,.story p a:hover,.creed a:hover{text-decoration-color:var(--orange)}
+.crosslink a{transition:color var(--t-hover) var(--ease-out),border-color var(--t-hover) var(--ease-out)}
+.crosslink a:hover{color:var(--navy);border-color:var(--navy)}
+.foot-legal a,.site-footer a{transition:color var(--t-hover) var(--ease-out)}
+
+/* ================= DESIGN SYSTEM: one card, two roundings, two shadows =================
+   No palette values change. Bright white surfaces move to ivory, per the brand guide. */
+:root{
+  --r-panel:14px; --r-pill:999px;
+  --shadow-soft:0 14px 34px rgba(80,42,31,.07);
+  --shadow-lift:0 24px 52px rgba(80,42,31,.14);
+}
+.card,.quote-card,.door,.feature,.fig,.calendar-embed,.drop{border-radius:var(--r-panel)}
+.card,.quote-card,.door{background:var(--ivory);border:1px solid var(--beige);box-shadow:var(--shadow-soft)}
+.feature{box-shadow:var(--shadow-soft)}
+.fig{box-shadow:var(--shadow-lift)}
+.sec.navy .card,.sec.forest .card,.sec.olive .card,.sec.burgundy .card{background:rgba(255,255,255,.06);border-color:rgba(255,234,209,.18);box-shadow:none}
+.sec.olive .card h3,.sec.burgundy .card h3{color:var(--gold)}
+/* things you can click lift on hover; things you can't, don't */
+.card:has(.btn):hover,.door:hover,.feature:hover{transform:translateY(-4px);box-shadow:var(--shadow-lift)}
+.door:hover{border-color:var(--gold)}
+.drop{background:var(--ivory);box-shadow:var(--shadow-lift)}
+.nd-form input,.nd-form select,.nd-form textarea{border-radius:var(--r-panel);background:var(--ivory)}
+.optin input[type=email]{border-radius:var(--r-pill)}
+@media(max-width:1260px){.main-nav{background:var(--ivory)}}
+
+/* deep sections share the same text treatment */
+.sec.forest .manifesto p,.sec.olive .manifesto p{color:var(--cream)}
+.sec.forest .manifesto p.small,.sec.olive .manifesto p.small{color:rgba(253,248,242,.85)}
+.sec.forest .manifesto em,.sec.olive .manifesto em{color:var(--gold)}
+.sec.forest .sec-head p,.sec.olive .sec-head p,.sec.burgundy .sec-head p{color:rgba(253,248,242,.85)}
+
+/* navy photo hero for the business pages */
+.hero.dark .hcopy h1{color:var(--cream)}
+.hero.dark .hcopy>p{color:rgba(255,234,209,.86)}
+.hero.dark h1 em{color:var(--gold)}
+.hero.dark .hero-cred{color:var(--gold);border-top-color:rgba(255,234,209,.18)}
+.hero.dark .fig{box-shadow:0 24px 52px rgba(0,0,0,.28)}
+
+/* blurred preview behind each photo, then a soft fade as the real photo arrives */
+.fig.has-img::before{content:"";position:absolute;inset:0;z-index:0;background:var(--lqip) var(--pos,center)/cover no-repeat;
+  filter:blur(14px);transform:scale(1.12)}
+.js .fig .ph[loading="lazy"]{opacity:0;transition:opacity 700ms var(--ease-out),transform 900ms var(--ease-out)}
+.js .fig .ph.is-loaded{opacity:1}
+
+/* ---- dropdown families: the name is a link, the chevron opens the list ---- */
+.main-nav .has-drop{display:flex;align-items:center}
+.main-nav .has-drop>a::after{content:none}
+.main-nav .drop-link{padding-right:4px}
+.current>.drop-link{color:var(--accent-deep)!important;font-weight:600}
+.drop-toggle{display:inline-flex;align-items:center;justify-content:center;padding:10px 10px 10px 2px;min-width:24px}
+.drop-toggle::after{content:none}
+.drop-toggle svg{width:10px;height:6px;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;opacity:.65;
+  transition:transform var(--t-panel) var(--ease-out),opacity var(--t-hover) var(--ease-out)}
+.has-drop.open>.drop-toggle svg{transform:rotate(180deg);opacity:1}
+@media(min-width:1261px){.main-nav li.has-drop:hover>.drop-toggle svg{transform:rotate(180deg);opacity:1}}
+@media(max-width:1260px){
+  .main-nav .has-drop{flex-wrap:wrap}
+  .main-nav .drop-link{flex:1}
+  .drop-toggle{width:auto;min-width:48px;min-height:44px;padding:10px 14px;justify-content:center}
+  .main-nav .has-drop>.drop{flex-basis:100%}
+}
+@media(max-width:1260px){.main-nav .drop{box-shadow:none;background:transparent;border-radius:0}}
+
+/* ================= SIGNATURE MOTION (chosen in the Motion Lab, Oct 2026) =================
+   All built on the shared tokens; everything collapses under prefers-reduced-motion. */
+
+/* 1. Headlines rise line by line (site.js splits the h1 into measured lines) */
+.js .line-mask{visibility:hidden}
+.js .line-mask.is-split{visibility:visible}
+.line-mask.is-split>span{animation:none;display:block}
+.line-mask.is-split .ln{display:block;overflow:hidden;padding:.08em .2em .16em;margin:-.08em -.2em -.16em}
+.line-mask.is-split .ln>span{display:block;animation:line-rise var(--t-line) var(--ease-out) backwards;animation-delay:calc(var(--i) * 95ms + 120ms)}
+.line-mask.no-anim .ln>span{animation:none}
+
+/* 2. Gold hairlines draw themselves; label letters settle into place */
+.kicker::before{transform-origin:left center}
+.js .reveal .kicker::before{transform:scaleX(0);transition:transform 800ms var(--ease-out) 100ms}
+.js .reveal.in .kicker::before{transform:none}
+.js .reveal .kicker{opacity:0;letter-spacing:5px;transition:opacity 900ms var(--ease-out) 220ms,letter-spacing 1100ms var(--ease-out) 220ms}
+.js .reveal.in .kicker{opacity:1;letter-spacing:3px}
+.hero .kicker::before{animation:draw-line 800ms var(--ease-out) backwards}
+.hero .kicker{animation:settle-letters 1100ms var(--ease-out) 120ms backwards}
+@keyframes draw-line{from{transform:scaleX(0)}}
+@keyframes settle-letters{from{opacity:0;letter-spacing:5px}}
+
+/* 3. Photos unveil from the bottom edge while the image settles */
+/* the frame (and its blurred preview) stays put; the sharp photo unveils inside it */
+.fig.has-img picture{position:absolute;inset:0;display:block;z-index:0}
+.js .reveal .fig.has-img picture{clip-path:inset(100% 0 0 0);transform:scale(1.14);
+  transition:clip-path 1300ms var(--ease-out) 160ms,transform 1900ms var(--ease-out) 160ms}
+.js .reveal.in .fig.has-img picture{clip-path:inset(0 0 0 0);transform:none}
+.hero .hfig.has-img picture{animation:unveil 1300ms var(--ease-out) 150ms backwards,settle-img 1900ms var(--ease-out) 150ms backwards}
+@keyframes unveil{from{clip-path:inset(100% 0 0 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes settle-img{from{transform:scale(1.14)}}
+
+/* 4. Pull quotes light up word by word as you scroll (site.js sets --lit per word) */
+.pullquote .w{opacity:var(--lit,1);transition:opacity 260ms linear}
+
+/* 5. Menu: the icon turns into a cross; items arrive one after another */
+.nav-toggle{position:relative;width:44px;height:44px;font-size:0;padding:0}
+.nav-toggle span{position:absolute;left:11px;right:11px;height:1.5px;border-radius:2px;background:var(--navy);
+  transition:transform 500ms var(--ease-out),opacity 300ms var(--ease-out)}
+.nav-toggle span:nth-child(1){top:15px}.nav-toggle span:nth-child(2){top:21px}.nav-toggle span:nth-child(3){top:27px}
+.nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0;transform:scaleX(.3)}
+.nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+@media(max-width:1260px){
+  .main-nav>ul>li{opacity:0;transform:translateX(14px);transition:opacity 450ms var(--ease-out),transform 550ms var(--ease-out)}
+  .main-nav.open>ul>li{opacity:1;transform:none;transition-delay:calc(var(--i) * 40ms + 90ms)}
+}
+@media(min-width:1261px){
+  .drop li{opacity:0;transform:translateY(5px);transition:opacity 320ms var(--ease-out),transform 420ms var(--ease-out)}
+  .main-nav li:hover>.drop li,.main-nav li.open>.drop li{opacity:1;transform:none;transition-delay:calc(var(--i) * 35ms + 40ms)}
+}
+
+/* 6. Buttons: the label rolls up on hover, arrows nudge, text links draw an underline */
+.btn,.nav-cta{display:inline-flex;align-items:center;justify-content:center;gap:.45em}
+.roll{display:inline-grid;overflow:hidden;line-height:1.3;padding-block:.06em;vertical-align:top}
+.roll>span{grid-area:1/1;transition:transform 520ms var(--ease-out)}
+.roll>span+span{transform:translateY(115%)}
+.btn:hover .roll>span:first-child,.nav-cta:hover .roll>span:first-child,.btn:focus-visible .roll>span:first-child{transform:translateY(-115%)}
+.btn:hover .roll>span+span,.nav-cta:hover .roll>span+span,.btn:focus-visible .roll>span+span{transform:none}
+.arrow{display:inline-block;transition:transform 420ms var(--ease-out)}
+.btn:hover .arrow,.door:hover .arrow,.crosslink a:hover .arrow{transform:translateX(5px)}
+.legal-doc a,.nd-form .fine a,.split p a,.story p a,.creed a,.crosslink a{text-decoration:none;border-bottom:0;padding-bottom:2px;
+  background:linear-gradient(var(--orange),var(--orange)) 0 100%/0 1px no-repeat,linear-gradient(rgba(80,42,31,.3),rgba(80,42,31,.3)) 0 100%/100% 1px no-repeat;
+  transition:background-size 550ms var(--ease-out),color var(--t-hover) var(--ease-out)}
+.legal-doc a:hover,.nd-form .fine a:hover,.split p a:hover,.story p a:hover,.creed a:hover,.crosslink a:hover{background-size:100% 1px,100% 1px}
+
+/* 7. Reading line on long pages: fills as you read (site.js sets the scale) */
+.read-line{position:absolute;left:0;bottom:-1px;height:2px;width:100%;background:var(--gold);transform-origin:left center;transform:scaleX(0);pointer-events:none}
+
+/* 8. Footer curtain (desktop): the page lifts away to reveal the footer resting beneath */
+@media(min-width:901px) and (min-height:640px){
+  main{position:relative;z-index:1;background:var(--ivory);border-radius:0 0 28px 28px;overflow:clip;
+    box-shadow:0 30px 60px -20px rgba(15,28,56,.45)}
+  .site-footer{position:sticky;bottom:0;z-index:0}
+}
+
+@media (prefers-reduced-motion: reduce){
+  .js .reveal .kicker,.js .reveal .kicker::before,.js .reveal .fig.has-img picture{transition:none}
+  .pullquote .w{opacity:1!important}
+}
+.nav-toggle,.drop-toggle,.btn,.nav-cta{-webkit-tap-highlight-color:transparent}
+/* numbers band: centred under its heading */
+.stats-center{justify-content:center;text-align:center;gap:clamp(32px,6vw,88px)}
+.stats-center>div{display:flex;flex-direction:column;align-items:center}
+
+/* ================= TYPOGRAPHY FINISHING ================= */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+/* headlines break into even lines; paragraphs never end on one stranded word */
+h1,h2,h3,h4,.say,.pullquote blockquote{text-wrap:balance}
+p,li,cite,.quote-card p{text-wrap:pretty}
+/* pull-quote marks hang just outside the words, so the words themselves sit centred */
+.hang-l{margin-left:-.4em}
+.hang-r{margin-right:-.4em}
+/* numbers: lining and even-width, so the count-up holds steady */
+.stats b,.count{font-variant-numeric:lining-nums tabular-nums}
+/* centred labels get a hairline on both sides, so the words sit on the centre line */
+.sec-head .kicker::after{content:"";width:26px;height:1px;background:currentColor;display:inline-block;margin-left:-3px;transform-origin:right center}
+.js .reveal .kicker::after{transform:scaleX(0);transition:transform 800ms var(--ease-out) 100ms}
+.js .reveal.in .kicker::after{transform:none}
+
+/* ================= FORM FINISHING ================= */
+.nd-form input,.nd-form select,.nd-form textarea{border-color:rgba(25,43,83,.2);caret-color:var(--orange);
+  transition:border-color var(--t-hover) var(--ease-out),box-shadow var(--t-hover) var(--ease-out)}
+.nd-form input:hover,.nd-form select:hover,.nd-form textarea:hover{border-color:rgba(25,43,83,.4)}
+.nd-form input:focus,.nd-form select:focus,.nd-form textarea:focus{outline:2px solid transparent;border-color:var(--navy);box-shadow:0 0 0 4px rgba(244,162,97,.28)}
+.nd-form ::placeholder{color:rgba(25,43,83,.64);opacity:1}
+.nd-form textarea{field-sizing:content;max-height:440px}
+/* the select gets the same fine chevron as the menu */
+.nd-form select{appearance:none;-webkit-appearance:none;padding-right:44px;cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%23192b53' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 18px center;background-size:10px 6px}
+.nd-form select:has(option[value=""]:checked){color:rgba(25,43,83,.64)}
+.nd-form option{color:var(--navy)}
+/* autofilled fields stay warm instead of turning browser blue */
+.nd-form input:-webkit-autofill{-webkit-text-fill-color:var(--navy);box-shadow:inset 0 0 0 100px #fff3e3;transition:background-color 9999s}
+.nd-form input:-webkit-autofill:focus{box-shadow:inset 0 0 0 100px #fff3e3,0 0 0 4px rgba(244,162,97,.28)}
+/* calm inline messages in place of the browser's bubbles (site.js) */
+.nd-form [aria-invalid="true"]{border-color:var(--burgundy)}
+.nd-form [aria-invalid="true"]:focus{box-shadow:0 0 0 4px rgba(80,42,31,.14)}
+.field-msg{display:block;margin-top:8px;font-size:.85rem;line-height:1.5;color:var(--burgundy);font-weight:400;animation:msg-in 360ms var(--ease-out)}
+.field-msg:empty{display:none}
+@keyframes msg-in{from{opacity:0;transform:translateY(-4px)}}
+/* while sending, the button label breathes */
+.nd-form button[disabled]{opacity:1}
+.nd-form .is-sending .roll{animation:breathe 1.2s var(--ease-smooth) infinite alternate}
+@keyframes breathe{to{opacity:.4}}
+/* sent: the form gives way to a quiet confirmation */
+.form-note .tick{display:none}
+.nd-form.is-sent>:not(#enquiry-sent),.nd-form:has(#enquiry-sent:target)>:not(#enquiry-sent){display:none}
+.nd-form.is-sent #enquiry-sent,.nd-form #enquiry-sent:target{display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center;
+  padding:clamp(40px,6vw,60px) 28px;background:var(--ivory);border:1px solid var(--beige);border-radius:var(--r-panel);box-shadow:var(--shadow-soft);
+  font-family:var(--serif);font-style:italic;font-size:1.5rem;font-weight:400;line-height:1.4;color:var(--navy);outline:none;
+  animation:panel-in 700ms var(--ease-out)}
+.nd-form.is-sent .tick,.nd-form #enquiry-sent:target .tick{display:block;width:52px;height:52px;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.tick circle{stroke:var(--gold);stroke-dasharray:139;stroke-dashoffset:139;animation:tick-draw 1000ms var(--ease-out) 150ms forwards}
+.tick path{stroke:var(--accent-deep);stroke-dasharray:30;stroke-dashoffset:30;animation:tick-draw 600ms var(--ease-out) 750ms forwards}
+@keyframes tick-draw{to{stroke-dashoffset:0}}
+@keyframes panel-in{from{opacity:0;transform:translateY(12px)}}
+/* not sent: a quiet note, never an alarm */
+.nd-form .form-status.err,.nd-form #enquiry-error:target{font-size:.9rem;font-weight:500;color:var(--burgundy);padding:14px 18px;
+  background:var(--ivory);border:1px solid var(--beige);border-left:3px solid var(--burgundy);border-radius:var(--r-panel);max-width:none}
+/* the guide sign-up matches */
+.optin input[type=email]{caret-color:var(--orange);transition:border-color var(--t-hover) var(--ease-out),box-shadow var(--t-hover) var(--ease-out)}
+.optin input[type=email]:focus{outline:2px solid transparent;border-color:var(--gold);box-shadow:0 0 0 4px rgba(244,162,97,.32)}
+.optin input::placeholder{color:rgba(25,43,83,.64);opacity:1}
+
+/* ================= EMBEDDED TEKMATIX FORMS ================= */
+.embed-layout{max-width:720px;margin:0 auto}
+.embed-layout.has-photo{max-width:1080px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,4vw,56px);align-items:start}
+.embed-fig{min-height:420px;height:100%}
+.embed-card{background:var(--ivory);border:1px solid var(--beige);border-radius:var(--r-panel);box-shadow:var(--shadow-soft);padding:clamp(14px,2.4vw,26px)}
+.embed-card iframe{display:block;width:100%;border:0;background:transparent}
+.embed-card{position:relative}
+.embed-card iframe{position:relative;z-index:1}
+.embed-skeleton{display:none}
+.js .embed-skeleton{display:flex;flex-direction:column;gap:18px;position:absolute;inset:clamp(14px,2.4vw,26px);padding:12px 8px;pointer-events:none;transition:opacity .4s var(--ease-out)}
+.embed-skeleton span{display:block;height:46px;border-radius:8px;background:var(--cream);animation:embedPulse 1.6s ease-in-out infinite}
+.embed-skeleton span.tall{height:120px}
+.embed-skeleton span.btn{width:44%;height:50px;border-radius:var(--r-pill);background:var(--beige)}
+.embed-card.loaded .embed-skeleton{opacity:0}
+@keyframes embedPulse{50%{opacity:.55}}
+@media(prefers-reduced-motion:reduce){.embed-skeleton span{animation:none}}
+.embed-note{text-align:center;margin:28px auto 0;font-size:.95rem;max-width:none}
+.embed-note a{color:var(--navy);text-decoration:underline;text-decoration-color:rgba(238,124,25,.55);text-underline-offset:3px}
+.embed-note a:hover{text-decoration-color:var(--orange)}
+@media(max-width:900px){.embed-layout.has-photo{grid-template-columns:1fr}.embed-fig{min-height:300px;max-height:420px}}
+
+/* opt-in text can run to two paragraphs */
+.optin .optin-text p{margin:0 auto 1em;max-width:640px}
+.optin .optin-text p:last-child{margin-bottom:0}
+
+/* a door with two links (e.g. podcast or book) */
+.door-two .go-row{margin-top:auto;display:flex;flex-wrap:wrap;gap:10px 26px}
+.door-two .go{margin-top:0}
+.door-two .go:hover{color:var(--orange)}
+.door-two:hover .go{color:var(--accent-deep)}
+.door-two .go:hover .arrow{transform:translateX(5px)}
+
+/* two or four testimonials sit two-up */
+.grid.grid-2{grid-template-columns:repeat(2,minmax(0,1fr));max-width:980px;margin-inline:auto}
+@media(max-width:760px){.grid.grid-2{grid-template-columns:1fr}}
+
+/* longer attributions (name · role, organisation) wrap with their own tight leading */
+.quote-card cite{display:block;line-height:1.7}
+
+/* small line under a call-to-action band */
+.cta-note{margin:22px auto 0;font-size:.95rem;max-width:none}
+.cta-note a{color:var(--navy);text-decoration:underline;text-decoration-color:rgba(238,124,25,.55);text-underline-offset:3px;transition:text-decoration-color var(--t-hover) var(--ease-out)}
+.cta-note a:hover{text-decoration-color:var(--orange)}
+.cta-band .cta-note{text-align:center}
+
+/* the closed phone menu is fully hidden: no shadow at the screen edge, no tabbing into it */
+/* closed, it is taken out of the page entirely, so it can't widen the page on phones
+   (an off-screen panel let the page drift sideways); it still slides in and out */
+@media(max-width:1260px){
+  .main-nav{display:none;visibility:hidden;transition:transform .3s,visibility 0s linear .3s,display .3s allow-discrete}
+  .main-nav.open{display:block;visibility:visible;transition-delay:0s}
+  @starting-style{
+    .main-nav.open{transform:translateX(105%)}
+    .main-nav.open>ul>li{opacity:0;transform:translateX(14px)}
+  }
+  .drop{transition:max-height .25s,padding .25s,visibility 0s linear .25s}
+  .main-nav li:not(.open)>.drop,.main-nav:not(.open) .drop{visibility:hidden}
+  .main-nav li.open>.drop{transition-delay:0s}
+}
+
+@media (prefers-reduced-motion: reduce){
+  .js .reveal .kicker::after{transition:none}
+  .nd-form .is-sending{opacity:.6}
+}

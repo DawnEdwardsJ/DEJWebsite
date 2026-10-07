@@ -1,0 +1,10 @@
+{%- from "macros.njk" import head, bg, buttons -%}
+<section {{ bg(s) }}><div class="wrap">
+{{ head(s) }}
+<div class="manifesto reveal">
+{%- for l in s.lines %}<p{% if l.style and l.style != 'normal' %} class="{{ l.style }}"{% endif %}>{{ l.text | mdi | safe }}</p>{% endfor -%}
+</div>
+{%- if (s.footer_button and [s.footer_button] | usable | liveLinks | length) %}
+<div class="cta-band after-manifesto">{{ buttons([s.footer_button], true) }}</div>
+{%- endif %}
+</div></section>

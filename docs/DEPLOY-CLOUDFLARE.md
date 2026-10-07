@@ -9,46 +9,82 @@ Cost: free tier covers this site comfortably. Unlimited bandwidth, 500 builds a 
 
 ---
 
-## 1. Put the repo on GitHub
+## 1. The repo
 
-```bash
-cd dawn-edwards-jones-site
-git init
-git add .
-git commit -m "Initial commit — dawnedwards-jones.com"
-git branch -M main
-git remote add origin git@github.com:<account>/dawnedwards-jones.git
-git push -u origin main
-```
+The site lives at `github.com/DawnEdwardsJ/DEJWebsite`. `main` is production. Changes arrive
+as pull requests from branches, each with a Cloudflare preview URL Dawn can check first.
 
-Private repo is fine — Cloudflare Pages reads private repos once authorised.
+Recommended: make the repo **private** (Settings → Change visibility). Cloudflare Pages and
+Pages CMS both work with private repos once authorised.
 
-Give Claude Code access at this level: push to branches, open pull requests. Do **not** give
-it direct push access to `main`. Every change should arrive as a PR with a preview URL Dawn
-can look at before it goes live.
-
-Suggested branch protection on `main`: require a pull request, no force pushes.
+Suggested branch protection on `main`: require a pull request, no force pushes. Pages CMS
+edits by the VA commit to `main` directly; that is intended for text and photo changes.
 
 ---
 
-## 2. Create the Pages project
+## 2. The Cloudflare project
 
-Cloudflare dashboard → Workers & Pages → Create → Pages → Connect to Git.
+**Current setup (2 October 2026): a Cloudflare _Worker_ named `dejwebsite`**, connected to
+this repo through Workers Builds. Everything it needs is in `wrangler.jsonc`:
+
+- the build runs automatically before each deploy (`npm run build`), so the dashboard's
+  build command can be left empty; the deploy command is the default `npx wrangler deploy`
+- the finished site in `_site/` is served as static assets, including `_headers`,
+  `_redirects` and the custom 404 page
+- `/api/*` is routed to `worker/index.js`, which runs the enquiry form handler
+
+Every branch push builds a preview version; production deploys from `main`. Turn on
+**Preview URLs** in the Worker's settings to get a shareable link for each pull request.
+
+The contact form secret goes in: Cloudflare → Workers & Pages → `dejwebsite` → Settings →
+**Variables and Secrets** → add `TEKMATIX_API_TOKEN` (type Secret). The same place takes the
+optional `TURNSTILE_SECRET_KEY`.
+
+### Alternative: a Pages project
+
+If you ever move to Cloudflare Pages instead: Workers & Pages → Create → Pages → Connect
+to Git → choose `DawnEdwardsJ/DEJWebsite`. Pages ignores `wrangler.jsonc` and uses the
+`functions/` folder for the form handler.
 
 | Setting | Value |
 |---|---|
-| Repository | the repo from step 1 |
 | Production branch | `main` |
-| Framework preset | None |
-| Build command | *(leave empty)* |
-| Build output directory | `src` |
+| Framework preset | Eleventy (or None) |
+| Build command | `npm run build` |
+| Build output directory | `_site` |
 | Root directory | *(leave empty)* |
 
-No build command is correct. `src/` is already finished HTML. Cloudflare just uploads it.
+Node 22 is picked up from `.nvmrc`. The `functions/` folder is detected automatically and
+becomes `/api/enquiry`. `_headers` (security and caching) and `_redirects` (old `.html`
+addresses → clean addresses) are copied into the output by the build.
 
-If `HANDOVER.md` item 2 is resolved by moving to Eleventy or Astro, this changes to a real
-build command (`npx @11ty/eleventy` or `npm run build`) and an output directory of `_site` or
-`dist`. Update this file when that happens.
+### The contact form secret
+
+The enquiry form needs one secret, or it tells visitors to email instead:
+
+1. Tekmatix → Settings → **Private Integrations** → create one named "Website enquiry
+   form" with scopes to **view and edit contacts** (contacts, contact tags, contact notes).
+   Copy the token.
+2. Cloudflare → the `dejwebsite` Worker (or Pages project) → Settings → **Variables and
+   Secrets** → add `TEKMATIX_API_TOKEN` (type: Secret) → redeploy.
+3. Submit a real test enquiry on the preview URL and confirm the contact appears in
+   Tekmatix with the `website-contact-dej` tag plus the topic tags (see
+   `src/_data/enquiry.json`).
+
+Each enquiry type adds tags (`b2b-enquiry` / `b2c-enquiry` plus a topic tag such as
+`speaking-enquiry`). Build Tekmatix workflows on those tags for pipeline placement,
+notifications and any confirmation email. Confirm the authenticated sending domain before
+switching a confirmation email on.
+
+### Spam protection (recommended before any confirmation email is switched on)
+
+The form has a hidden honeypot field. For stronger protection, add Cloudflare Turnstile
+(free): Cloudflare → Turnstile → add the site → copy the **site key** into Pages CMS → Site
+settings → "Cloudflare Turnstile site key", and add the **secret key** to the Pages project
+as `TURNSTILE_SECRET_KEY`. Both are optional, and the form works without them.
+
+If Tekmatix can't be reached, the function logs the full enquiry so it can be followed up
+by hand. Turn on Workers Logs for the Pages project so those logs are kept.
 
 First deploy lands at `<project-name>.pages.dev`. Check the 14 pages there before touching DNS.
 
@@ -56,42 +92,45 @@ First deploy lands at `<project-name>.pages.dev`. Check the 14 pages there befor
 
 ## 3. Point the domain
 
-The domain is registered at **GoDaddy**. Two routes.
+The domain is registered at **Porkbun** (moved from GoDaddy). Its DNS moved to Cloudflare on
+6–7 October 2026, so Route A below is done. The site runs as a Cloudflare **Worker**, and a
+Worker custom domain needs the domain's DNS on Cloudflare, so **Route A is required**. Route B
+only applies to the Pages alternative. Turn off DNSSEC at the registrar before changing nameservers.
 
 ### Route A — move DNS to Cloudflare (recommended)
 
 Add the domain as a site in Cloudflare, let it scan existing records, then change the
-nameservers at GoDaddy to the two Cloudflare gives you. Propagation is usually under an hour,
+nameservers at the registrar to the two Cloudflare gives you. Propagation is usually under an hour,
 occasionally up to 24.
 
 Why this is better: apex-domain support without CNAME flattening workarounds, automatic TLS,
 caching and analytics, and redirect rules you can configure in one place. It also means
 future DNS changes happen where the hosting lives rather than split across two providers.
 
-Before you switch nameservers, copy every existing GoDaddy record across — especially **MX
+Before you switch nameservers, copy every existing record across — especially **MX
 and TXT records**. If `dawnedwards-jones.com` has email on it, missing an MX record silently
 breaks mail. Check SPF, DKIM and DMARC TXT records too.
 
 Then in Pages → Custom domains, add `dawnedwards-jones.com` and `www.dawnedwards-jones.com`.
 Cloudflare creates the records and issues the certificate itself.
 
-### Route B — keep DNS at GoDaddy
+### Route B — keep DNS at the registrar (Pages only)
 
-Add the custom domain in Pages, then at GoDaddy:
+Add the custom domain in Pages, then at the registrar:
 
 | Type | Name | Value |
 |---|---|---|
 | CNAME | `www` | `<project-name>.pages.dev` |
 | A or forward | `@` | per the values Pages displays |
 
-GoDaddy does not support CNAME at the apex, so the root domain needs either their forwarding
+Most registrars do not support CNAME at the apex, so the root domain needs either their forwarding
 feature or the A records Cloudflare shows you. Workable, more fiddly, fewer features. Route A
 unless there's a reason.
 
 ### Pick one canonical host
 
 Either `dawnedwards-jones.com` or `www.dawnedwards-jones.com` — not both serving content.
-The canonical tags in `src/` point at the **non-www** form, so redirect `www` → apex and
+The canonical tags point at the **non-www** form, so redirect `www` → apex and
 leave the tags alone.
 
 ---
@@ -137,14 +176,23 @@ currently live and taking real traffic.
 
 ## 6. How updates work from here
 
+Text and photo edits (Dawn or her VA):
+
 ```
-Claude Code (or Dawn) edits a branch
-  → opens a PR
-  → Cloudflare builds a preview at <hash>.<project>.pages.dev
-  → Dawn reviews the preview
-  → merge to main
-  → live in under a minute
+Pages CMS (app.pagescms.org) → Save
+  → commit to main → Cloudflare rebuilds → live in about a minute
 ```
+
+Design or structural changes (Claude Code or a developer):
+
+```
+edit a branch → open a PR
+  → Cloudflare builds a preview (link in its comment on the PR)
+  → Dawn reviews the preview and approves → Claude merges to main → live in about a minute
+```
+
+Pages CMS setup, once: sign in at app.pagescms.org with GitHub, install the Pages CMS GitHub
+App on `DEJWebsite`, then add the VA under Collaborators by email.
 
 Rollback is one click in the Pages deployment history. Every deploy is kept, so a bad change
 is never more than a minute from being undone.

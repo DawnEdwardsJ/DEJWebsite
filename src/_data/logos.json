@@ -1,0 +1,14 @@
+{
+  "label": "Trusted to speak & work with",
+  "items": [
+    { "file": "/images/logos/redland-city-council.svg", "name": "Redland City Council" },
+    { "file": "/images/logos/qnmu-logo.png", "name": "Queensland Nurses & Midwives’ Union" },
+    { "file": "/images/logos/faith-lutheran.png", "name": "Faith Lutheran College" },
+    { "file": "/images/logos/corporate-protection.svg", "name": "Corporate Protection Australia" },
+    { "file": "/images/logos/redland-art-gallery.png", "name": "Redland Art Gallery" },
+    { "file": "/images/logos/maybanke.png", "name": "Maybanke Association" },
+    { "file": "/images/logos/kensho-pilates.png", "name": "Kensho Boutique Pilates" },
+    { "file": "/images/logos/ubx-birkdale.svg", "name": "UBX Birkdale" },
+    { "file": "/images/logos/bayside-women-in-business.png", "name": "Bayside Women in Business" }
+  ]
+}

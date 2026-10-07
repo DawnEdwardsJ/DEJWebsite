@@ -1,0 +1,14 @@
+{%- from "macros.njk" import head, bg -%}
+<section {{ bg(s) }}><div class="wrap">
+{{ head(s) }}
+<div class="doorways">
+{%- for d in s.doors | liveLinks -%}
+{%- set second = d.link2 and d.link2_label and (d.link2 | linkIsLive) -%}
+{%- if second %}
+<div class="door door-two reveal" data-delay="{{ (loop.index0 % 2) * 70 }}"><div class="intent">{{ d.intent | mdi | safe }}</div><h3>{{ d.title | mdi | safe }}</h3><p>{{ d.text | mdi | safe }}</p><span class="go-row"><a class="go" href="{{ d.link }}">{{ d.link_label | mdi | safe }}<span class="arrow" aria-hidden="true">&nbsp;→</span></a><a class="go" href="{{ d.link2 }}">{{ d.link2_label | mdi | safe }}<span class="arrow" aria-hidden="true">&nbsp;→</span></a></span></div>
+{%- else %}
+<a class="door reveal" data-delay="{{ (loop.index0 % 2) * 70 }}" href="{{ d.link }}"><div class="intent">{{ d.intent | mdi | safe }}</div><h3>{{ d.title | mdi | safe }}</h3><p>{{ d.text | mdi | safe }}</p><span class="go">{{ d.link_label | mdi | safe }}<span class="arrow" aria-hidden="true">&nbsp;→</span></span></a>
+{%- endif -%}
+{%- endfor -%}
+</div>
+</div></section>

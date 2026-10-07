@@ -1,0 +1,37 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://dawnedwards-jones.com/#person",
+  "name": "Dawn Edwards-Jones",
+  "url": "https://dawnedwards-jones.com",
+  "image": "https://dawnedwards-jones.com/og-image.jpg",
+  "jobTitle": "Keynote Speaker on Menopause & Women’s Wellbeing, Podcaster and Retreat Host",
+  "description": "Keynote speaker on menopause and women’s wellbeing, podcaster and retreat host, helping women and workplaces navigate midlife, menopause and change.",
+  "email": "contact@newdawnwellness.health",
+  "telephone": "+61 429 460 733",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Cleveland",
+    "addressRegion": "QLD",
+    "addressCountry": "AU"
+  },
+  "worksFor": {
+    "@type": "Organization",
+    "name": "New Dawn Wellness",
+    "url": "https://newdawnwellness.health"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/dawnedwardsjones",
+    "https://www.facebook.com/newdawnpilates",
+    "https://www.instagram.com/newdawnpilates/",
+    "https://newdawnwellness.health"
+  ],
+  "knowsAbout": [
+    "Menopause in the workplace",
+    "Women’s wellbeing",
+    "Midlife transition",
+    "Burnout prevention",
+    "Nervous system regulation",
+    "Self-leadership"
+  ]
+}

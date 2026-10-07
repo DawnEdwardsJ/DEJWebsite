@@ -1,0 +1,29 @@
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p class="foot-brand">{{ site.name }}</p>
+        <p class="foot-blurb">{{ site.footer.blurb | mdi | safe }}</p>
+        <p class="foot-contact"><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+        {%- if site.social.length %}
+        <div class="foot-social">
+          {%- for s in site.social %}
+          <a href="{{ s.link }}" aria-label="{{ s.label }}" rel="me noopener" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">{{ icons[s.label] | safe }}</svg></a>
+          {%- endfor %}
+        </div>
+        {%- endif %}
+      </div>
+      {%- for col in site.footer.columns %}
+      <div>
+        <h2 class="foot-h">{{ col.heading }}</h2>
+        <ul>
+          {%- for l in col.links | liveLinks %}
+          <li><a href="{{ l.link }}">{{ l.label }}</a></li>
+          {%- endfor %}
+        </ul>
+      </div>
+      {%- endfor %}
+    </div>
+    <div class="foot-bottom"><span>&copy; {{ "" | year }} {{ site.name }}</span><span class="foot-legal"><a href="/privacy/">Privacy Policy</a><a href="/terms/">Terms</a></span><span>{{ site.footer.tagline }}</span></div>
+  </div>
+</footer>

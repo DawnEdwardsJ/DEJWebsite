@@ -1,0 +1,10 @@
+---
+layout: layouts/base.njk
+---
+{%- for s in sections %}
+{%- include "sections/" + s.type + ".njk" %}
+{%- endfor %}
+<section class="sec"><div class="wrap"><div class="legal-doc">
+{%- if note %}<div class="legal-note">{{ note | mdi | safe }}</div>{% endif %}
+{{ content | safe }}
+</div></div></section>

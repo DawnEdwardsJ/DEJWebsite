@@ -1,0 +1,16 @@
+{
+  "locationId": "udrK047tPShRFKCOgu0a",
+  "source": "dawnedwards-jones.com",
+  "baseTags": ["website-contact-dej"],
+  "types": [
+    { "value": "keynote-speaking", "label": "Keynote speaking", "tags": ["b2b-enquiry", "speaking-enquiry"] },
+    { "value": "corporate-workshop", "label": "Corporate workshop or wellbeing day", "tags": ["b2b-enquiry", "corporate-enquiry"] },
+    { "value": "menopause-policy-advisory", "label": "Menopause policy advisory", "tags": ["b2b-enquiry", "menopause-policy"] },
+    { "value": "menopause-policy-implementation", "label": "Menopause policy implementation", "tags": ["b2b-enquiry", "menopause-policy"] },
+    { "value": "soul-mastery-ascension", "label": "Soul Mastery Ascension (1:1 coaching)", "tags": ["b2c-enquiry", "ascension-enquiry"] },
+    { "value": "chaos-to-calm", "label": "Chaos to Calm (business coaching)", "tags": ["b2c-enquiry", "chaos-to-calm"] },
+    { "value": "podcast-guest", "label": "Podcast guest or interview", "tags": ["podcast-guest"] },
+    { "value": "media", "label": "Media enquiry", "tags": ["media"] },
+    { "value": "other", "label": "Something else", "tags": ["general-enquiry"] }
+  ]
+}

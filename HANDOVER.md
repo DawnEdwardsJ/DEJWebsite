@@ -1,239 +1,128 @@
 # HANDOVER — dawnedwards-jones.com
 
-Punch list for final upgrades before launch. Every item below was verified against the
-files in `src/` on 2 October 2026, not assumed. Figures are real counts.
+Status as of 5 October 2026: Eleventy rebuild, VA amendments and the corporate-visibility pass. The original punch list is in the
+first commit on `main` if you need the history.
 
-## State of the build
+## Done
 
-Better than it looks. The content and SEO foundations are genuinely solid:
+| Item | What changed | Evidence |
+|---|---|---|
+| Generator question | Rebuilt on Eleventy with shared header/footer and section templates. Python generator retired. | `src/`, `eleventy.config.js` |
+| Copy | Carried across word for word. | Automated text diff of all 14 pages against the original: the only differences are the intended ones listed below |
+| Page weight | Photos are real files: WebP + JPEG, responsive `srcset`, lazy loading, dimensions set. | HTML 10–23KB per page (was 250–850KB) |
+| `&amp;` double-escaping | Gone (titles, descriptions, alt text). | |
+| Google Fonts | Loaded via `preconnect` + `<link>` in the head, not CSS `@import`. | |
+| Enquiry form | Wired to Tekmatix through a Cloudflare Pages Function. Option values and a required topic choice, routing tags per enquiry type, note written before tags (so workflows see the message), phone retried without the number if Tekmatix rejects it, honeypot (logged, not silently dropped), optional Turnstile, no-JS fallback, GA4/Meta lead events. | Tested against a mock Tekmatix API, including the failure paths |
+| Discovery-call CTAs | Open the enquiry form with the right topic preselected (`/contact/?type=…#enquire`). | |
+| Ascension calendar | Soul Mastery Alignment Call (`7EiIsiDaO3oyu3OXTsjP`) embedded on the Ascension page. | |
+| Cross-site links | Hidden while `wellnessSiteLive` is `false` (Dawn's decision). One switch brings them back. | |
+| Accessibility | Skip link, visible focus states, dropdowns are real buttons with `aria-expanded`, Escape closes menus, correct heading order, reduced-motion respected everywhere. | Keyboard-only and reduced-motion tests pass |
+| Motion | Token system, scroll reveal, hero mask, condensing nav, media scale, button lift, logo marquee, two sheens, View Transitions. No libraries. | |
+| VA editing | Pages CMS config for every page, section, setting and logo. | `.pages.yml`, `docs/EDITING-GUIDE.md` |
+| Design system | Colour rhythm with no repeated neighbours on any page (13 of 14 had them); photo heroes on all main pages, navy on the three B2B pages; one card style, two corner radii, two shadow depths; grain on every deep section; no bright-white surfaces. | Automated audit of section order |
+| Premium details | Self-hosted fonts with preload and metric-matched fallbacks (no font jump, no Google request); instant page loads via prerender-on-hover; header holds still between pages; blurred photo previews with fade-in; branded share card per page; anchor links clear the sticky header. | |
+| Signature motion | Chosen by Dawn from the Motion Lab: line-by-line headlines, drawn hairlines, photo unveil, scroll-lit quotes, menu morph and cascade, rolling buttons, reading line on long pages, footer curtain. Dropdown family names now link to their main page. | CLS 0, performance 98–99, keyboard and reduced-motion tests pass |
+| Finishing | Typography: balanced headlines, no stranded last words, hanging quote marks on pull quotes, steady even-width numbers, hairlines both sides of centred labels. Form: calm inline messages instead of browser bubbles, softer focus, menu-style chevron, warm autofill, breathing button while sending, confirmation panel with a drawn tick. Closed phone menu fully hidden (no edge shadow, not reachable by Tab). | Copy diff clean, performance 98–99, keyboard tests pass |
+| VA amendments (5 Oct) | Copy and links aligned to the VA's Google Doc: "Soul Mastery — Personal Coaching" replaces the separate Sanctuary/Ascension entries, Chaos to Calm (formerly mislabelled Calm to Chaos) added to the menu and homepage, Spotify link, Ascension and Sanctuary sales pages, New Dawn Reset meditation replaces the missing "3-minute reset" guide, single "New Dawn Wellness" menu link (still hidden), duplicate "Book a discovery call" buttons removed. | Rendered-text diff: only the intended changes |
+| Tekmatix forms | New **Form (Tekmatix)** section embeds forms built in Tekmatix, so their workflows (tags, notification and confirmation emails) run. Contact uses the VA's enquiry form (`0lb2NPRSWjokp4p5Gwmz`); the Book page uses the expression-of-interest form (`9zXeSEijemsL6rSnomfn`). The custom form and `functions/api/enquiry.js` stay in the repo, unused, if Dawn ever wants them back. | |
+| Live wellness pages | `wellnessLiveLinks` in Site settings lists pages on newdawnwellness.health that already work (meditation opt-in, Ascension and Sanctuary sales pages). Those links show while the rest of the wellness site stays hidden. | |
+| Corporate visibility | Homepage hero repositioned ("Keynote Speaker · Menopause & Women's Wellbeing · Podcaster · Retreat Host", first button "Book Dawn to speak"); Menopause at Work flagship section on the homepage; corporate door in "Three ways in"; menu family renamed "Speaking & Corporate"; one primary action per page ("Book Dawn to speak" / "Discuss your organisation" / "Listen on Spotify"); four recent episodes featured on the podcast page; structured data leads with menopause and women's wellbeing. | |
+| Layout fixes (5 Oct) | On phones the hidden side menu widened the page by about 330px (sideways drift, in-page links landing short); it is now removed from the page when closed and still slides in. The full desktop menu no longer cramps between 900 and 1260px wide; tablets get the folded menu. | Phone width 390 = 390, keyboard and tap menu tests pass |
+| Bugs fixed on the way | Outline buttons invisible on navy bands; hero photo squashed beside text on phones; footer column wrapping; off-centre opt-in small print; three placeholder panels replaced with real photos. | |
 
-- 14 pages, all with unique meta descriptions, canonical tags, Open Graph tags, Twitter
-  card tags, favicon references and JSON-LD structured data. All 14. No gaps.
-- `robots.txt` and `sitemap.xml` both present and correctly pointed at
-  `https://dawnedwards-jones.com`. Sitemap lists all 14 pages.
-- `og-image.jpg` present.
-- Dropdown navigation works, including a mobile toggle with a JS fallback.
-- 9 real client logos in `src/logos/` (Redland City Council, QNMU, Faith Lutheran, UBX
-  Birkdale, Kensho Pilates, Bayside Women in Business, Redland Art Gallery, Maybanke,
-  Corporate Protection) — real B2B credibility, already in place.
-- Copy is written, in Dawn's voice, and approved. Do not rewrite it.
+### Lighthouse (mobile, simulated throttling)
 
-The gaps are infrastructure, not content. Nothing here requires starting over.
+| | Performance | Accessibility | SEO | LCP | CLS |
+|---|---|---|---|---|---|
+| Original (4 pages sampled) | 68–90 | 89–90 | 100 | 3.2–5.3s | 0 |
+| Rebuild (all 14 pages) | 98–100 | 95–96 | 100 | 1.4–2.1s | 0 |
 
----
+## Open: before launch
 
-## P0 — blocks launch
+1. **Check the two Tekmatix forms on the preview.** They can't be loaded from the build
+   sandbox, so the first real look is on the preview link: the enquiry form on Contact and the
+   expression-of-interest form on The Adawning Book. Style them to the brand inside Tekmatix
+   (Montserrat, navy text, gold button, no bright white).
+2. **Analytics IDs.** Paste the GA4 and Meta Pixel IDs into Site settings when available.
+3. **Legal pages:** ✅ approved by Dawn (6 Oct); the draft note is gone and both show
+   "Last updated 6 October 2026".
+4. **Production branch.** Switch the Cloudflare production branch and the GitHub default
+   branch to `main` before attaching dawnedwards-jones.com.
 
-### 1. The enquiry form is not connected to anything
+## Open: content only Dawn can supply (5 Oct)
 
-`src/contact.html` has a well-built form: 9 enquiry types covering both B2B and B2C,
-fields for `first_name`, `last_name`, `email`, `phone`, `enquiry_type`, `message`.
+- **Corporate and speaking testimonials:** ✅ from the VA's linked doc ("Speaking Gig - Client
+  Testimonial", Maybanke wording as amended by Dawn). Only six exist, so nothing repeats:
+  Corporate Workshops has all four workplace ones (Maddy, Jenifer Hasbun, Caroline/Maybanke,
+  workplace attendee), Speaking has the two talk/workshop ones (Kirsty Foster, Talia Read),
+  and the homepage strip under the hero carries Kirsty's opening line (the Speaking card uses
+  her later sentences). Excerpts are verbatim (… marks a cut; "jouney" typo fixed). Maddy is
+  attributed without her organisation, per the note in that doc. New headings needing
+  approval: "What workplaces say." and "What audiences say." More named corporate
+  testimonials would let the homepage carry a proof band again without repeats.
+- **Speaking photos:** ✅ four from Dawn (6 Oct) are in: the "Your body knows" talk shot as the
+  Speaking hero, the microphone close-up beside "What you get", the wide workshop shot in the
+  homepage Menopause at Work section (cropped to remove another practitioner's pull-up banner),
+  and an event portrait beside the Contact form (cropped to remove bins). More from the Drive
+  folders (75 speaking photos, 11 workshop events) can be added the same way: attach them as
+  files in the chat, or upload through Pages CMS → Media. The newer shoot (animal-print kimono,
+  desk with laptop) still needs sending as files; the desk shots suit Chaos to Calm.
+- **Photo library:** every photo Dawn sends as a file is kept in `src/images/photos/` (the
+  Pages CMS media library), used or not, so the VA can pick it for any section. Photos pasted
+  into the chat arrive as previews only and can't be saved; send them as attachments. The
+  wellness site is a separate repo, so its photos need copying there (or into Tekmatix media)
+  when that build starts.
+- **Pilates-banner photo retired (6 Oct):** `nd-dawn-event.jpg` shows a "New Dawn Pilates and
+  Yoga" banner with the old phone and admin email, so it's off-brand here. About's hero now
+  uses the cream-linen hand-on-heart portrait; Menopause Policy's "A policy is only as good as
+  its practice" uses the event portrait (also beside the Contact form, a temporary repeat
+  until a new corporate-feeling portrait arrives as a file).
+- **Speaker kit:** short and long bio, headshots, talk descriptions, AV needs, a one-page
+  speaker sheet PDF. A page is ready to build once these exist.
+- **Retreats & Experiences:** past retreat proof, imagery, and either the next retreat or an
+  expression-of-interest form. The About page's "Explore retreats" button stays hidden until
+  then (the interim newdawnpilates.com/events link wasn't used, because it lists studio classes).
+- **Socials:** ✅ LinkedIn added first in the footer and in the structured data (5 Oct).
+  Facebook and Instagram still go to the studio's @newdawnpilates accounts; swap or remove
+  them once Dawn decides (personal accounts, or LinkedIn only).
+- **Programme name:** ✅ confirmed "Chaos to Calm" (5 Oct). Renamed everywhere; the page moved
+  to `/chaos-to-calm/` and the old `/calm-to-chaos/` address redirects there.
 
-Its submit handler does this:
+## Open: Dawn's call (not changed, flagged)
 
-```js
-f.addEventListener("submit", function(e){
-  e.preventDefault();
-  document.getElementById("f-done").style.display = "block";
-});
-```
+- **New copy:** ✅ approved by Dawn (6 Oct), with one change: the Menopause at Work lead
+  now reads "…still aren't doing well." Covered: homepage hero sentence ("I help women and workplaces
+  navigate midlife, menopause and change with greater wellbeing, confidence and choice.") and
+  kicker; the Menopause at Work section's label and lead line ("Flagship keynote & workshop",
+  "The conversation most workplaces still aren't having well."); the corporate card text in
+  "Three ways in"; button labels "Book Dawn to speak", "Discuss your organisation", "Listen on
+  Spotify", "Keep me updated"; podcast "Recent episodes / A few places to start." and the
+  one-line episode summaries (taken from the episode descriptions); the homepage page title.
+- **Sections the VA's doc doesn't include** (kept): Start Here "You don't have to have it
+  figured out" and Philosophy "None of this is theory".
+- **Start Here** now says "Five ways in" (approved 6 Oct). The studio door is still in the
+  content, hidden by the wellness switch; when that switch flips, remove the door or change
+  the line back to "Six".
 
-That reveals a message reading *"Your message has not been sent yet because this form is
-still being connected. Please email contact@newdawnwellness.health in the meantime."*
+- **Colour contrast.** Orange `#ee7c19` and olive-gold `#a9993e` used as small text (kickers,
+  card titles, the tagline, nav current state) measure 1.9–2.8:1 on ivory, cream and beige.
+  WCAG AA needs 4.5:1. The colours are brand-locked, so nothing was changed. Proposed fix:
+  keep orange and olive-gold for large display text and buttons, and set small labels in
+  burgundy `#502a1f` or navy, both already in the palette and both well above 7:1. This is
+  the only thing keeping accessibility below 100.
+- **Placeholder panels.** Three sections had captioned colour blocks instead of photos
+  (About → Retreats, Corporate Workshops → "Wellbeing is a business issue", Menopause
+  Policy → "A policy is only as good as its practice"). They now use real photos. Swap in the
+  CMS if Dawn prefers others.
+- **New copy:** ✅ the Ascension calendar section heading (approved 6 Oct): "Book a Soul
+  Mastery Alignment Call.", "30 minutes, by Zoom or phone, Monday to Friday." Still needing
+  approval if the built-in enquiry form is brought back: its success/failure messages and
+  inline prompts ("Please add your first
+  name.", "Please add your email address.", "That email address looks incomplete.",
+  "Please choose what this is about."), which live in `src/_includes/sections/enquiry_form.njk`.
 
-Credit where it's due — that's honest, not a fake success state. But it means **56 CTAs
-across the site point at `contact.html`, and none of them currently produce a lead.**
-This is the single highest-value fix in the repo.
+## Phase 1 evidence (from `docs/ELEVATION-FRAMEWORK.md`): needs Dawn
 
-Wire it to Tekmatix (location `udrK047tPShRFKCOgu0a`). The `enquiry_type` values map
-cleanly onto routing, so use them — a keynote enquiry and a 1:1 coaching enquiry should
-not land in the same undifferentiated bucket:
-
-| Enquiry type | Suggested routing |
-|---|---|
-| Keynote speaking | B2B pipeline, tag `speaking-enquiry` |
-| Corporate workshop or wellbeing day | B2B pipeline, tag `corporate-enquiry` |
-| Menopause policy advisory | B2B pipeline, tag `menopause-policy` |
-| Menopause policy implementation | B2B pipeline, tag `menopause-policy` |
-| Soul Mastery Ascension (1:1 coaching) | B2C pipeline, tag `ascension-enquiry` |
-| Calm to Chaos (business coaching) | B2C pipeline, tag `calm-to-chaos` |
-| Podcast guest or interview | tag `podcast-guest` |
-| Media enquiry | tag `media` |
-| Something else | general enquiry |
-
-Note the `<option>` elements currently carry no `value` attribute — only text. Add explicit
-values before wiring, so the payload is stable if the labels are ever reworded.
-
-Confirm the sending domain before any confirmation email goes out — Dawn has a specific
-authenticated sender setup and mail sent from the wrong domain silently fails to deliver.
-
-### 2. Decide the generator question — everything else depends on it
-
-`src/` is **generated output**. The source is `generator/build_sites.py`, a single ~197KB
-Python file. Edits to the HTML are destroyed on the next build.
-
-Two complications:
-
-- It builds **both** this site and New Dawn Wellness. Only the Dawn Edwards-Jones half is
-  in scope here, so roughly half the file is dead weight in this repo.
-- It **base64-inlines every photograph straight into the HTML**, which is the direct cause
-  of item 3.
-
-Three options. My recommendation is the first.
-
-**a. Convert to Eleventy or Astro (recommended).** Real template files, shared nav and
-footer partials, images as separate optimised assets, proper build pipeline. Solves item 3
-as a side effect. Biggest upfront effort, best position afterwards — and it makes every
-future change cheap instead of awkward.
-
-**b. Keep the Python generator, strip the wellness half.** Cheapest path. Still leaves you
-editing a single large Python file to change a heading, and item 3 needs solving separately.
-
-**c. Retire the generator, make the HTML canonical.** Simple to edit, but every nav or
-footer change then has to be repeated across 14 files by hand. Workable only because the
-page count is small. Expect drift.
-
-Ask Dawn before committing to a route. This is an architecture decision with a real cost
-attached and she should choose it knowingly.
-
-### 3. Cross-site nav links point at pages that are not live
-
-The top nav on **all 14 pages** contains a "New Dawn Wellness" dropdown with six links to
-`newdawnwellness.health` — The Studio, Pilates & Yoga, Retreats, Wellness Events, Massage &
-Healing, The Adawning Experience. `soul-mastery-sanctuary.html` on that domain is also
-linked from the "Work With Me" dropdown and from the homepage "Join the group" CTA.
-
-**None of those pages exist yet.** As of 2 October 2026 `newdawnwellness.health` is live but
-serving Tekmatix funnel pages, not the new wellness site. Launching this site as-is sends
-visitors to broken or wrong destinations from the primary navigation.
-
-Options, in order of preference:
-
-1. Launch both sites together. Cleanest, but couples this launch to the other site's
-   timeline.
-2. Point those six links at the equivalent live pages on `newdawnpilates.com` (currently
-   on Squarespace) until the wellness site ships, then switch them over.
-3. Collapse the dropdown to a single link to the wellness homepage and hide the rest until
-   their targets exist.
-
-Do not launch with them as they are. Confirm the choice with Dawn.
-
----
-
-## P1 — fix before launch, but not blocking the decision above
-
-### 4. Page weight is 250–850KB per page because photos are inlined
-
-Current sizes:
-
-| Page | Size |
-|---|---|
-| index.html | 848 KB |
-| contact.html | 492 KB |
-| book.html | 485 KB |
-| start-here.html | 475 KB |
-| calm-to-chaos.html | 437 KB |
-| soul-mastery-ascension.html | 420 KB |
-| about.html | 414 KB |
-| philosophy.html | 390 KB |
-| speaking.html | 361 KB |
-| podcast.html | 304 KB |
-| corporate-workshops.html | 256 KB |
-| privacy / terms / menopause-policy | 11–14 KB |
-
-The three small pages are the ones with no photographs — which confirms the cause. Base64
-encoding also adds roughly 33% overhead on top of the original file size, and inlined
-images cannot be cached separately or lazily fetched, so the cost is paid on every page view.
-
-Fix: extract to real files in `src/images/`, convert to WebP with JPEG fallback, generate
-responsive `srcset` variants, keep `loading="lazy"` on everything below the fold. The 29
-original photographs are in `generator/photos/` for re-encoding at full quality.
-
-Target under 150KB per page. This matters for Core Web Vitals, which matters for the local
-and B2B search visibility this site is built to win.
-
-### 5. HTML double-escaping bug — visible on the page
-
-`&` has been escaped twice in several places, producing the literal string `&amp;` in
-rendered text. Affected pages and occurrence counts:
-
-```
-about.html               1
-contact.html             1
-corporate-workshops.html 2
-index.html               2
-menopause-policy.html    1
-speaking.html            1
-terms.html               1
-```
-
-Visible in page titles — `index.html`'s `<title>` currently renders as
-`Pilates, Yoga &amp; Whole-Body Healing`. Fix at the generator level so it cannot recur,
-not by patching the output.
-
-### 6. Homepage lead magnet form goes nowhere, and has no magnet
-
-`src/index.html` contains:
-
-```html
-<form onsubmit="return false">
-  <input type="email" placeholder="Your email address">
-  <button class="btn btn-gold" type="submit">Send me the guide</button>
-</form>
-```
-
-Two problems. The form is a no-op, and **no guide is specified anywhere** — there is no
-PDF, no download, no named lead magnet. Wiring the form without creating the asset will
-leave subscribers waiting for something that does not exist. Ask Dawn what the guide is
-before connecting this.
-
-### 7. Analytics are stubbed out
-
-Every page carries commented-out Google Analytics 4 and Meta Pixel blocks with placeholder
-IDs (`G-XXXXXXXXXX`, `PIXEL_ID_HERE`). Nothing is tracking. Dawn needs to supply the real
-IDs — see `docs/DAWN-TO-SUPPLY.md`. Once live, add conversion events on form submit and on
-each booking widget so the B2B funnel is measurable.
-
-### 8. No discovery-call booking anywhere
-
-`corporate-workshops.html` and `menopause-policy.html` both have "Book a discovery call"
-CTAs that resolve to the generic contact form. For a B2B audience, a real calendar converts
-considerably better than a form — the prospect gets a time rather than a wait.
-
-Dawn's Tekmatix has no corporate or speaking discovery calendar yet. Once she creates one,
-embed it via `https://api.leadconnectorhq.com/widget/booking/<calendarId>`.
-
-`soul-mastery-ascension.html` can be wired immediately — use the **Soul Mastery Alignment
-Call** calendar, `7EiIsiDaO3oyu3OXTsjP` (30 minutes, Zoom or phone, Mon–Fri 8am–4pm).
-
----
-
-## P2 — pre-launch QA
-
-- Run every page through Lighthouse; fix anything under 90 on performance or accessibility.
-- Move the Google Fonts load out of the CSS. `assets/style.css` pulls Cormorant Garamond and
-  Montserrat via `@import`, which no page can start fetching until the stylesheet itself has
-  downloaded — two serial round trips before any text renders in the right typeface. Replace
-  with `<link rel="preconnect">` plus a `<link rel="stylesheet">` in each page `<head>`. The
-  fonts are correct; only the loading method is wrong.
-- Check colour contrast on gold-on-ivory and gold-on-cream combinations against WCAG AA.
-  Amber `#f4a261` on ivory `#fdf8f2` is likely to fail for body-size text.
-- Test the dropdown nav by keyboard alone, and with a screen reader. The mobile toggle
-  relies on JS with no `aria-expanded` state — add it.
-- Verify every internal link resolves. 56 point at `contact.html` alone.
-- Confirm `og-image.jpg` renders correctly when a page is shared to LinkedIn and Facebook.
-- Validate the JSON-LD with Google's Rich Results Test.
-- Check all 14 pages at 375px, 768px and 1440px.
-- Confirm no reference to the retired 12-hour cancellation policy or $15 late fee has crept
-  back in, and that Dawn's private home studio address appears nowhere.
-- Submit the sitemap in Google Search Console for `dawnedwards-jones.com`.
-
----
-
-## Explicitly out of scope
-
-- The New Dawn Wellness site. Separate build, separate repo, separate launch.
-- Rewriting Dawn's copy. Flag weak sections, propose alternatives, change nothing without
-  her approval.
-- Brand colours, fonts and the visual system. Confirmed correct — see `CLAUDE.md`.
-- Sending anything to a contact list. Dawn approves all client-facing communication first.
+Showreel footage, a speaker-kit PDF (the third sheen is reserved for its download button),
+named signature talks with outcomes, testimonials attributed to a role and organisation,
+and a corporate discovery calendar in Tekmatix. See `docs/DAWN-TO-SUPPLY.md`.

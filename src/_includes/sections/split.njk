@@ -1,0 +1,18 @@
+{%- from "macros.njk" import head, bg, buttons, fig -%}
+{%- set panel = fig(s.photo, s.photo_alt, s.tone, s.photo_position) -%}
+<section {{ bg(s) }}><div class="wrap">
+{%- if s.section_heading or s.section_kicker %}{{ head({kicker: s.section_kicker, heading: s.section_heading}) }}{% endif %}
+<div class="split reveal">
+{%- set text -%}
+<div>
+{%- if s.kicker %}<div class="kicker">{{ s.kicker | mdi | safe }}</div>{% endif -%}
+{%- if s.heading %}<h2>{{ s.heading | mdi | safe }}</h2>{% endif -%}
+{%- if s.lead %}<p class="lead split-lead">{{ s.lead | mdi | safe }}</p>{% endif -%}
+{{ s.body | md | safe }}
+{%- if s.ticks and s.ticks.length %}<ul class="ticks">{% for t in s.ticks %}<li>{{ t | mdi | safe }}</li>{% endfor %}</ul>{% endif -%}
+{{ buttons(s.buttons) }}
+</div>
+{%- endset -%}
+{%- if s.photo_side == 'right' %}{{ text | safe }}{{ panel | safe }}{% else %}{{ panel | safe }}{{ text | safe }}{% endif -%}
+</div>
+</div></section>

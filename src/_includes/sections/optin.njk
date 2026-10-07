@@ -1,0 +1,20 @@
+{%- from "macros.njk" import head, bg, buttons -%}
+{#- With a button link, the sign-up happens on that page (e.g. a Tekmatix opt-in);
+    without one, the old on-page email field shows. -#}
+{%- set linked = s.button_link and s.button_label and (s.button_link | linkIsLive) -%}
+<section {{ bg(s, "optin") }}><div class="wrap">
+<div class="sec-head reveal">
+{%- if s.kicker %}<div class="kicker">{{ s.kicker | mdi | safe }}</div>{% endif -%}
+<h2>{{ s.heading | mdi | safe }}</h2>
+{%- if s.text %}<div class="optin-text">{{ s.text | md | safe }}</div>{% endif -%}
+</div>
+{%- if linked %}
+{{ buttons([{ label: s.button_label, link: s.button_link, style: "gold" }], true) }}
+{%- elif not s.button_link %}
+<form onsubmit="return false">
+<input type="email" placeholder="Your email address" aria-label="Email address">
+<button class="btn btn-gold" type="submit">{{ s.button_label | btnLabel | safe }}</button>
+</form>
+{%- endif %}
+{%- if s.fine_print %}<p class="fine">{{ s.fine_print | mdi | safe }}</p>{% endif %}
+</div></section>

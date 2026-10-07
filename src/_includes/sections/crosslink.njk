@@ -1,0 +1,3 @@
+{%- if s.link and s.link_label and (s.link | linkIsLive) -%}
+<section class="crosslink"><div class="wrap">{{ s.text | mdi | safe }} <a href="{{ s.link }}">{{ s.link_label | arrowLabel | safe }}</a></div></section>
+{%- endif -%}

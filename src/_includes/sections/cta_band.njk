@@ -1,0 +1,6 @@
+{%- from "macros.njk" import buttons, bg -%}
+<section {{ bg(s, "cta-band", "cream") }}><div class="wrap reveal">
+<p class="say">{{ s.line | mdi | safe }}</p>
+{{ buttons(s.buttons, true) }}
+{%- if s.note %}<p class="cta-note">{{ s.note | mdi | safe }}</p>{% endif %}
+</div></section>

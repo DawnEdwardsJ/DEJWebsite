@@ -1,0 +1,167 @@
+{
+  "url": "https://dawnedwards-jones.com",
+  "name": "Dawn Edwards-Jones",
+  "tagline": "Author · Speaker · Coach",
+  "logo": "https://assets.cdn.filesafe.space/udrK047tPShRFKCOgu0a/media/69ba2f9e9c981702addae6c0.png",
+  "email": "contact@newdawnwellness.health",
+  "phone": "+61 429 460 733",
+  "wellnessSiteLive": false,
+  "wellnessUrl": "https://newdawnwellness.health",
+  "wellnessLiveLinks": [
+    "https://newdawnwellness.health/meditation/newdawnreset",
+    "https://newdawnwellness.health/soul-mastery-ascension/info",
+    "https://newdawnwellness.health/soul-sanctuary"
+  ],
+  "turnstileSiteKey": "",
+  "analytics": {
+    "ga4Id": "",
+    "metaPixelId": ""
+  },
+  "nav": [
+    {
+      "label": "Home",
+      "link": "/"
+    },
+    {
+      "label": "Start Here",
+      "link": "/start-here/"
+    },
+    {
+      "label": "About",
+      "link": "/about/"
+    },
+    {
+      "label": "Philosophy",
+      "link": "/philosophy/"
+    },
+    {
+      "label": "Work With Me",
+      "link": "/soul-mastery-ascension/",
+      "children": [
+        {
+          "label": "Soul Mastery — Personal Coaching",
+          "link": "/soul-mastery-ascension/"
+        },
+        {
+          "label": "Chaos to Calm — Business Coaching",
+          "link": "/chaos-to-calm/"
+        }
+      ]
+    },
+    {
+      "label": "Speaking & Corporate",
+      "link": "/speaking/",
+      "children": [
+        {
+          "label": "Keynote Speaking",
+          "link": "/speaking/"
+        },
+        {
+          "label": "Corporate Workshops",
+          "link": "/corporate-workshops/"
+        },
+        {
+          "label": "Menopause Policy Advisory",
+          "link": "/menopause-policy/"
+        }
+      ]
+    },
+    {
+      "label": "Publications",
+      "link": "/podcast/",
+      "children": [
+        {
+          "label": "The Adawning Podcast",
+          "link": "/podcast/"
+        },
+        {
+          "label": "The Adawning Book",
+          "link": "/book/"
+        }
+      ]
+    },
+    {
+      "label": "New Dawn Wellness",
+      "link": "https://newdawnwellness.health"
+    }
+  ],
+  "navButton": {
+    "label": "Enquire",
+    "link": "/contact/"
+  },
+  "footer": {
+    "blurb": "Author, keynote speaker and self-leadership coach helping women — and the organisations they work in — move from overwhelm to calm, embodied leadership.",
+    "tagline": "Dawn Edwards-Jones · Founder of The Adawning",
+    "columns": [
+      {
+        "heading": "Work With Dawn",
+        "links": [
+          {
+            "label": "Soul Mastery — Personal Coaching",
+            "link": "/soul-mastery-ascension/"
+          },
+          {
+            "label": "Chaos to Calm — Business Coaching",
+            "link": "/chaos-to-calm/"
+          },
+          {
+            "label": "Contact",
+            "link": "/contact/"
+          }
+        ]
+      },
+      {
+        "heading": "Speaking & Corporate",
+        "links": [
+          {
+            "label": "Keynote Speaking",
+            "link": "/speaking/"
+          },
+          {
+            "label": "Corporate Workshops",
+            "link": "/corporate-workshops/"
+          },
+          {
+            "label": "Menopause Policy Advisory",
+            "link": "/menopause-policy/"
+          }
+        ]
+      },
+      {
+        "heading": "Explore",
+        "links": [
+          {
+            "label": "About Dawn",
+            "link": "/about/"
+          },
+          {
+            "label": "The Adawning Podcast",
+            "link": "/podcast/"
+          },
+          {
+            "label": "The Adawning Book",
+            "link": "/book/"
+          },
+          {
+            "label": "New Dawn Wellness Studio →",
+            "link": "https://newdawnwellness.health"
+          }
+        ]
+      }
+    ]
+  },
+  "social": [
+    {
+      "label": "LinkedIn",
+      "link": "https://www.linkedin.com/in/dawnedwardsjones"
+    },
+    {
+      "label": "Facebook",
+      "link": "https://www.facebook.com/newdawnpilates"
+    },
+    {
+      "label": "Instagram",
+      "link": "https://www.instagram.com/newdawnpilates/"
+    }
+  ]
+}
