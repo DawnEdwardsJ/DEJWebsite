@@ -8,9 +8,9 @@ sections:
     text: "The private, 1:1 version of the Soul Mastery Sanctuary — my premium container for women ready to go all in. Deep identity and nervous-system work, close proximity and faster, lasting transformation."
     buttons:
       - { label: "Enquire about working together", link: "/contact/?type=soul-mastery-ascension#enquire", style: gold }
-    photo: /images/photos/nd-dawn-portrait.jpg
-    photo_alt: "Dawn Edwards-Jones, smiling warmly"
-    photo_position: center 30%
+    photo: /images/photos/dawn-white-linen-namaste.jpg
+    photo_alt: "Dawn in cream linen, hands together at her heart"
+    photo_position: center 25%
     tone: forest
 
   - type: cards
