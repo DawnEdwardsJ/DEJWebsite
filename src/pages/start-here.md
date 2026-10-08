@@ -47,9 +47,9 @@ sections:
 
   - type: split
     background: cream
-    photo: /images/photos/dawn-cup-eyes-closed.jpg
-    photo_alt: "Dawn pausing with a warm cup, eyes closed"
-    photo_position: center top
+    photo: /images/photos/dawn-park-smile.jpg
+    photo_alt: "Dawn smiling warmly among trees"
+    photo_position: center 30%
     photo_side: right
     tone: gold
     kicker: "Before you choose"

@@ -8,8 +8,9 @@ sections:
     text: "Soul-led business coaching for women who want to grow something meaningful without sacrificing themselves. Grounded strategy, nervous-system first."
     buttons:
       - { label: "Enquire", link: "/contact/?type=chaos-to-calm#enquire", style: gold }
-    photo: /images/photos/dawn-journaling-wide.jpg
-    photo_alt: "Dawn journaling at home, warm and approachable"
+    photo: /images/photos/dawn-desk-smile.jpg
+    photo_alt: "Dawn at her desk with her laptop, smiling, in soft window light"
+    photo_position: center 30%
     tone: burgundy
 
   - type: split
