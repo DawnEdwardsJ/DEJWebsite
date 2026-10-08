@@ -8,9 +8,9 @@ sections:
     text: "The private, 1:1 version of the Soul Mastery Sanctuary — my premium container for women ready to go all in. Deep identity and nervous-system work, close proximity and faster, lasting transformation."
     buttons:
       - { label: "Enquire about working together", link: "/contact/?type=soul-mastery-ascension#enquire", style: gold }
-    photo: /images/photos/dawn-white-linen-namaste.jpg
-    photo_alt: "Dawn in cream linen, hands together at her heart"
-    photo_position: center 25%
+    photo: /images/photos/dawn-cream-linen-curtain.jpg
+    photo_alt: "Dawn in cream linen beside a sheer curtain, gazing out in quiet reflection"
+    photo_position: center 30%
     tone: forest
 
   - type: cards

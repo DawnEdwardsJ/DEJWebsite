@@ -16,8 +16,8 @@ sections:
     form_id: 0lb2NPRSWjokp4p5Gwmz
     form_name: "Corporate Website - Enquiry Form"
     start_height: 820
-    photo: /images/photos/dawn-event-portrait.jpg
-    photo_alt: "Dawn smiling at a speaking event"
+    photo: /images/photos/dawn-white-shirt-full-length.jpg
+    photo_alt: "Dawn in a white linen shirt and denim skirt, smiling, at home"
     photo_position: center 30%
     tone: gold
     note: "Or email me directly at [contact@newdawnwellness.health](mailto:contact@newdawnwellness.health)"

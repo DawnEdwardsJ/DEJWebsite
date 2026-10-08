@@ -9,9 +9,9 @@ sections:
     text: "I speak on menopause, burnout, nervous-system health and self-leadership — warm, honest and grounded, with practical takeaways your audience will actually use."
     buttons:
       - { label: "Book Dawn to speak", link: "/contact/?type=keynote-speaking#enquire", style: gold, sheen: true }
-    photo: /images/photos/dawn-speaking-your-body-knows.jpg
-    photo_alt: "Dawn speaking to a room of women, microphone in hand, beside her slide “Your body knows”"
-    photo_position: 70% 40%
+    photo: /images/photos/dawn-white-shirt-desk.jpg
+    photo_alt: "Dawn Edwards-Jones in a white linen shirt, smiling, by her desk"
+    photo_position: center 25%
     tone: navy
 
   - type: logos
