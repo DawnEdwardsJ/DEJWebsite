@@ -107,11 +107,16 @@ edit `_site/`, it is rebuilt every time).
   is used on two elements; the third is reserved for the speaker-kit download button.
   Signature effects Dawn chose (Oct 2026): h1 split into measured lines that rise in turn;
   kicker hairlines draw and letters settle; photos unveil inside their frame over the
-  blurred preview; pull quotes light word by word with scroll; menu icon morphs to a cross
+  blurred preview (850ms; hero 900ms); pull quotes light word by word with scroll; menu icon morphs to a cross
   with items cascading; button labels roll on hover, arrows nudge, in-text links draw an
   underline; a gold reading line on pages with `readingLine: true`; and a footer curtain on
   desktop (main lifts to reveal the sticky footer). Button labels go through the `btnLabel`
   filter, which adds an aria-hidden duplicate for the roll.
+- **Photo loading** (Oct 2026): hero photos load eagerly with high priority. Every other photo
+  (`ph-fade` class, set by the `fig` macro) is fetched in the background once the page has
+  loaded (`warmPhotos` in site.js, skipped on data saver and 2G), so photos are sharp before
+  anyone scrolls to them. Each fades in over 300ms once decoded. Measured on simulated 4G and
+  3G, blurry time while scrolling dropped from up to 2.7s to none.
 - **Finishing details**: headings use `text-wrap: balance`, paragraphs `pretty`; pull-quote
   marks hang via the `hang` filter (text unchanged). The enquiry form uses inline messages
   from `data-missing` / `data-invalid` attributes in `enquiry_form.njk` (site.js sets
