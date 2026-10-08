@@ -9,8 +9,9 @@ sections:
     text: "Practical, grounded workshops that help your people manage stress, navigate menopause and lead themselves — reframing wellbeing as performance, retention and care."
     buttons:
       - { label: "Discuss your organisation", link: "/contact/?type=corporate-workshop#enquire", style: gold }
-    photo: /images/photos/group2.jpg
-    photo_alt: "Dawn leading a wellbeing workshop for a room of women"
+    photo: /images/photos/dawn-speaking-mic.jpg
+    photo_alt: "Dawn presenting to a workplace audience, microphone in hand"
+    photo_position: center 30%
     tone: navy
     credentials: "Menopause · Burnout · Nervous-system health · Self-leadership"
 
@@ -28,8 +29,9 @@ sections:
 
   - type: split
     background: cream
-    photo: /images/photos/supported-women.jpg
-    photo_alt: "Women seated together in a supported group session"
+    photo: /images/photos/dawn-portrait-smile.jpg
+    photo_alt: "Dawn Edwards-Jones, smiling and at ease"
+    photo_position: center 25%
     tone: olive
     kicker: "Why it matters"
     heading: "Wellbeing is a business issue."
