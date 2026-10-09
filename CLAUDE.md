@@ -135,6 +135,8 @@ edit `_site/`, it is rebuilt every time).
   `/menopause-policy/` (301s in `src/_redirects`). It covers the Readiness Audit, manager
   training, policy support and staff awareness. The audit's one-pager PDF lives in
   `src/downloads/` and is served at `/downloads/menopause-readiness-audit.pdf`.
+  Printed QR codes use `/book-a-call`, a 302 in `src/_redirects` that opens the Contact page;
+  repoint it (and the audit's "Book a call" button) when a corporate calendar exists.
 - **Menu breakpoint** is 1260px (the full row needs that width); below it the menu folds into
   the side panel, which is `display:none` when closed so it can't widen the page on phones.
 

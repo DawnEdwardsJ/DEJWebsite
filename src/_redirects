@@ -17,3 +17,8 @@
 /contact.html                  /contact/                  301
 /privacy.html                  /privacy/                  301
 /terms.html                    /terms/                    301
+
+# Printed QR codes point here. 302 (temporary) so the destination can change later,
+# e.g. to a corporate booking calendar, without reprinting anything.
+/book-a-call                   /contact/                  302
+/book-a-call/                  /contact/                  302
