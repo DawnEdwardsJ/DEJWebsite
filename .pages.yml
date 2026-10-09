@@ -208,6 +208,7 @@ content:
               - { name: kicker, component: kicker }
               - { name: heading, component: heading }
               - { name: intro, component: intro }
+              - { name: anchor, label: "Section ID (for links like /page/#audit)", type: string }
               - name: steps
                 label: Steps
                 type: object
