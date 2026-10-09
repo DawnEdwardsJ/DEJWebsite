@@ -54,12 +54,26 @@
     }
   });
 
-  /* ---- photos fade in over their blurred preview once loaded ---- */
-  d.querySelectorAll('.fig .ph[loading="lazy"]').forEach(function (img) {
-    function done() { img.classList.add("is-loaded"); }
+  /* ---- photos fade in over their blurred preview once loaded (and decoded, so the
+     first frame they're shown in already has the picture) ---- */
+  var fades = d.querySelectorAll(".fig .ph-fade");
+  fades.forEach(function (img) {
+    function show() { img.classList.add("is-loaded"); }
+    function done() { if (img.decode) img.decode().then(show, show); else show(); }
     if (img.complete && img.naturalWidth) done();
-    else { img.addEventListener("load", done, { once: true }); img.addEventListener("error", done, { once: true }); }
+    else { img.addEventListener("load", done, { once: true }); img.addEventListener("error", show, { once: true }); }
   });
+
+  /* ---- once the first screen has loaded, fetch the page's other photos in the background,
+     so they're ready before anyone scrolls to them. Skipped for data saver and 2G. ---- */
+  function warmPhotos() {
+    var c = navigator.connection;
+    if (c && (c.saveData || /(^|-)2g$/.test(c.effectiveType || ""))) return;
+    fades.forEach(function (img) { if (img.loading === "lazy") img.loading = "eager"; });
+  }
+  function whenIdle(fn) { (window.requestIdleCallback || function (f) { return setTimeout(f, 200); })(fn, { timeout: 1500 }); }
+  if (d.readyState === "complete") whenIdle(warmPhotos);
+  else window.addEventListener("load", function () { whenIdle(warmPhotos); }, { once: true });
 
   function esc(t) { return t.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
 

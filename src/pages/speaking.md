@@ -1,6 +1,6 @@
 ---
 title: "Keynote Speaking | Dawn Edwards-Jones"
-description: "Book Dawn Edwards-Jones to speak. Warm, grounded keynotes on menopause, burnout, self-leadership and wellbeing for conferences, workplaces and women’s events."
+description: "Book Dawn Edwards-Jones to speak. Warm, grounded keynotes on mental and emotional wellbeing, burnout, menopause and self-leadership for conferences, workplaces and women’s events."
 sections:
   - type: hero_photo
     dark: true

@@ -1,12 +1,12 @@
 ---
-title: "Dawn Edwards-Jones | Keynote Speaker on Menopause & Women’s Wellbeing"
-description: "Dawn Edwards-Jones — keynote speaker on menopause and women’s wellbeing, podcaster and retreat host. Helping women and workplaces navigate midlife, menopause and change across Australia."
+title: "Dawn Edwards-Jones | Keynote Speaker on Mental & Emotional Wellbeing"
+description: "Dawn Edwards-Jones — keynote speaker on mental and emotional wellbeing, burnout and menopause at work. Podcaster and retreat host helping people and workplaces through stress and change."
 permalink: /
 sections:
   - type: hero_photo
-    kicker: "Keynote Speaker · Menopause & Women’s Wellbeing · Podcaster · Retreat Host"
+    kicker: "Keynote Speaker · Mental & Emotional Wellbeing · Burnout & Menopause at Work"
     heading: "From overwhelm to *calm, embodied leadership.*"
-    text: "I help women and workplaces navigate midlife, menopause and change with greater wellbeing, confidence and choice."
+    text: "I help people and workplaces navigate stress, burnout, menopause and change with greater wellbeing, confidence and choice."
     buttons:
       - { label: "Book Dawn to speak", link: "/contact/?type=keynote-speaking#enquire", style: gold, sheen: true }
       - { label: "Work with me", link: "/#ways", style: ghost }

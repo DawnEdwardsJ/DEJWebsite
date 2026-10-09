@@ -517,8 +517,8 @@ html{scroll-padding-top:96px}
 /* blurred preview behind each photo, then a soft fade as the real photo arrives */
 .fig.has-img::before{content:"";position:absolute;inset:0;z-index:0;background:var(--lqip) var(--pos,center)/cover no-repeat;
   filter:blur(14px);transform:scale(1.12)}
-.js .fig .ph[loading="lazy"]{opacity:0;transition:opacity 700ms var(--ease-out),transform 900ms var(--ease-out)}
-.js .fig .ph.is-loaded{opacity:1}
+.js .fig .ph-fade{opacity:0;transition:opacity 300ms var(--ease-out),transform 900ms var(--ease-out)}
+.js .fig .ph-fade.is-loaded{opacity:1}
 
 /* ---- dropdown families: the name is a link, the chevron opens the list ---- */
 .main-nav .has-drop{display:flex;align-items:center}
@@ -565,9 +565,9 @@ html{scroll-padding-top:96px}
 /* the frame (and its blurred preview) stays put; the sharp photo unveils inside it */
 .fig.has-img picture{position:absolute;inset:0;display:block;z-index:0}
 .js .reveal .fig.has-img picture{clip-path:inset(100% 0 0 0);transform:scale(1.14);
-  transition:clip-path 1300ms var(--ease-out) 160ms,transform 1900ms var(--ease-out) 160ms}
+  transition:clip-path 850ms var(--ease-out) 60ms,transform 1400ms var(--ease-out) 60ms}
 .js .reveal.in .fig.has-img picture{clip-path:inset(0 0 0 0);transform:none}
-.hero .hfig.has-img picture{animation:unveil 1300ms var(--ease-out) 150ms backwards,settle-img 1900ms var(--ease-out) 150ms backwards}
+.hero .hfig.has-img picture{animation:unveil 900ms var(--ease-out) 100ms backwards,settle-img 1400ms var(--ease-out) 100ms backwards}
 @keyframes unveil{from{clip-path:inset(100% 0 0 0)}to{clip-path:inset(0 0 0 0)}}
 @keyframes settle-img{from{transform:scale(1.14)}}
 

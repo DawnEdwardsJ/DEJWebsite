@@ -25,7 +25,7 @@
 {%- macro fig(photo, alt, tone="gold", pos="", sizes="(max-width: 900px) 90vw, 560px", cls="", eager=false) -%}
 {%- if photo -%}
 {%- set preview = photo | lqip -%}
-<div class="fig {{ tone or 'gold' }} has-img media{% if cls %} {{ cls }}{% endif %}"{% if preview %} style="--lqip:url({{ preview }}){% if pos %};--pos:{{ pos }}{% endif %}"{% endif %}><img class="ph" src="{{ photo }}" alt="{{ alt }}" sizes="{{ sizes }}"{% if pos %} style="object-position:{{ pos }}"{% endif %}{% if eager %} loading="eager" fetchpriority="high"{% endif %}></div>
+<div class="fig {{ tone or 'gold' }} has-img media{% if cls %} {{ cls }}{% endif %}"{% if preview %} style="--lqip:url({{ preview }}){% if pos %};--pos:{{ pos }}{% endif %}"{% endif %}><img class="ph{% if not eager %} ph-fade{% endif %}" src="{{ photo }}" alt="{{ alt }}" sizes="{{ sizes }}"{% if pos %} style="object-position:{{ pos }}"{% endif %}{% if eager %} loading="eager" fetchpriority="high"{% endif %}></div>
 {%- else -%}
 <div class="fig {{ tone or 'gold' }}{% if cls %} {{ cls }}{% endif %}">{{ alt }}</div>
 {%- endif -%}

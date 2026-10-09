@@ -70,8 +70,9 @@ sections:
 
   - type: split
     background: cream
-    photo: /images/photos/nd-circle.jpg
-    photo_alt: "Women resting at a wellness retreat"
+    photo: /images/photos/dawn-park-hand-on-heart.jpg
+    photo_alt: "Dawn standing barefoot among trees, eyes closed, hand on her heart"
+    photo_position: center 35%
     tone: beige
     kicker: "Retreats"
     heading: "Sixteen retreats and counting."
