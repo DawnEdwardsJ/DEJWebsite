@@ -100,7 +100,7 @@ rather than assembled:
 - **The last band before the footer is always light**, so it stands apart from the navy
   footer.
 - **Every main page opens with a photo banner.** Business pages (Speaking, Corporate
-  Workshops, Menopause Policy) use the navy version; the rest use cream.
+  Workshops, Menopause in the Workplace) use the navy version; the rest use cream.
 
 ## House rules
 

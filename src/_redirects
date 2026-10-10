@@ -9,9 +9,16 @@
 /calm-to-chaos                 /chaos-to-calm/            301
 /speaking.html                 /speaking/                 301
 /corporate-workshops.html      /corporate-workshops/      301
-/menopause-policy.html         /menopause-policy/         301
+/menopause-policy.html         /menopause-in-the-workplace/  301
+/menopause-policy/             /menopause-in-the-workplace/  301
+/menopause-policy              /menopause-in-the-workplace/  301
 /podcast.html                  /podcast/                  301
 /book.html                     /book/                     301
 /contact.html                  /contact/                  301
 /privacy.html                  /privacy/                  301
 /terms.html                    /terms/                    301
+
+# Printed QR codes point here. 302 (temporary) so the destination can change later,
+# e.g. to a corporate booking calendar, without reprinting anything.
+/book-a-call                   /contact/                  302
+/book-a-call/                  /contact/                  302

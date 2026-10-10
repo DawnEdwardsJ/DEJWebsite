@@ -1,9 +1,9 @@
 {%- from "macros.njk" import head, bg -%}
-<section {{ bg(s, "grain") }}><div class="wrap">
+<section {{ bg(s, "grain") }}{% if s.anchor %} id="{{ s.anchor }}"{% endif %}><div class="wrap">
 {{ head(s) }}
 <div class="method-steps">
 {%- for st in s.steps -%}
-<div class="method-step reveal"><div class="stage">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</div><div><div class="q">{{ st.question | mdi | safe }}</div><h3>{{ st.title | mdi | safe }}</h3><p>{{ st.text | mdi | safe }}</p></div></div>
+<div class="method-step reveal"><div class="stage">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</div><div>{% if st.question %}<div class="q">{{ st.question | mdi | safe }}</div>{% endif %}<h3>{{ st.title | mdi | safe }}</h3><p>{{ st.text | mdi | safe }}</p></div></div>
 {%- endfor -%}
 </div>
 {%- if s.closing_line %}

@@ -14,7 +14,8 @@ into my organisation?" and convert that into an enquiry or a booked call.
 Two audiences, in priority order:
 
 1. **B2B** — corporate decision-makers, HR and wellbeing leads, event organisers, media.
-   They arrive for keynote speaking, corporate workshops, or menopause policy advisory.
+   They arrive for keynote speaking, corporate workshops, or menopause in the workplace support
+   (readiness audit, manager training, policy support, staff awareness).
 2. **B2C** — women looking for premium 1:1 coaching (Soul Mastery Ascension) or
    soul-led business coaching (Chaos to Calm).
 
@@ -130,6 +131,13 @@ edit `_site/`, it is rebuilt every time).
   Pilates, yoga, classes and studio events belong on the wellness site. Every page has one
   primary next step: Speaking → "Book Dawn to speak", Corporate/Menopause → "Discuss your
   organisation", Podcast → "Listen on Spotify". Menopause at Work is the flagship.
+- **Menopause in the Workplace** (Oct 2026): `/menopause-in-the-workplace/` replaced
+  `/menopause-policy/` (301s in `src/_redirects`). It covers the Readiness Audit, manager
+  training, policy support and staff awareness. Its two one-pager PDFs live in
+  `src/downloads/`: `menopause-readiness-audit.pdf` and `menopause-corporate-pathway.pdf`
+  (the five-step pathway the page's cards mirror).
+  Printed QR codes use `/book-a-call`, a 302 in `src/_redirects` that opens the Contact page;
+  repoint it (and the audit's "Book a call" button) when a corporate calendar exists.
 - **Menu breakpoint** is 1260px (the full row needs that width); below it the menu folds into
   the side panel, which is `display:none` when closed so it can't widen the page on phones.
 
@@ -192,7 +200,8 @@ Live calendars relevant to this site:
 it without asking Dawn to reactivate it.
 
 There is **no corporate or speaking discovery calendar yet.** The "Discuss your organisation"
-CTAs on the corporate workshops and menopause policy pages currently open the enquiry form. When Dawn creates the calendar, add a `calendar` section.
+CTAs on the corporate workshops and Menopause in the Workplace pages (and the Readiness Audit
+"Book a call" button) currently open the enquiry form. When Dawn creates the calendar, add a `calendar` section.
 See `docs/DAWN-TO-SUPPLY.md`.
 
 Relevant products: Soul Mastery Ascension `6a18178e5e7d1e7aef6b9acc`,
