@@ -1,6 +1,6 @@
 ---
 title: "Menopause in the Workplace | Dawn Edwards-Jones"
-description: "Menopause in the workplace support from Dawn Edwards-Jones: readiness audits, manager training, menopause policy support and staff awareness sessions for organisations across Australia."
+description: "Menopause in the workplace support from Dawn Edwards-Jones: a readiness audit first, then policy, manager training, employee programs and ongoing partnership, one sensible step at a time."
 sections:
   - type: hero_photo
     dark: true
@@ -32,13 +32,16 @@ sections:
 
   - type: cards
     background: ivory
-    kicker: "How I can help"
-    heading: "Support at every stage."
+    kicker: "Menopause support for organisations"
+    heading: "Five steps, and only one of them is first."
+    intro: "Every step is proposed by what the step before it finds, so you never buy the whole thing. You buy the next sensible piece. Steps two, three and four are not a queue; most organisations take two of the three, in whatever order their own findings make obvious."
     cards:
-      - { title: "Menopause Readiness Audit", text: "Find out where your organisation actually stands before you spend anything. Confidential surveys, a policy review and a clear, ranked plan." }
-      - { title: "Manager Training", text: "Give managers the confidence and language for supportive conversations, and the practical know-how to make reasonable adjustments." }
-      - { title: "Menopause Policy Support", text: "I work with your leadership to shape a practical, compassionate menopause policy, then help you put it into practice across your organisation." }
-      - { title: "Menopause Awareness for Staff", text: "Warm, honest education sessions that reduce stigma and absence, and help everyone understand what menopause can look like at work." }
+      - { price: "One", title: "Find out where you stand", text: "**Menopause Readiness Audit.** A confidential survey of your women and of their managers, a review of the policies you already have, and a written report that ranks every gap by exposure and by what it would cost to close. You end up with a document you can take to your executive." }
+      - { price: "Two", title: "Write it down", text: "**Policy Build.** A one-page menopause policy drafted from what your own survey found, a manager FAQ sitting behind it, and a named person to go to who is not the line manager. Your lawyer signs it off. You end up with something a manager can act on without asking permission." }
+      - { price: "Three", title: "Train the people who hear it first", text: "**Manager Training.** Ninety minutes, up to twenty managers. What to say, what not to say, what an adjustment actually costs, and when to escalate. Confidence measured before and after. You end up with the number that shows it worked." }
+      - { price: "Four", title: "Support the women themselves", text: "**Employee Program.** The 6 Week Reset run as a workplace cohort. Movement, nervous system regulation, breathwork and the habits that hold. Onsite or online. You end up with somewhere for a manager to refer someone to." }
+      - { price: "Five", title: "Keep it alive", text: "**Retained Partner.** A named contact for HR, a quarterly manager refresh, an annual re-survey against your original baseline, and policy upkeep as the law moves. You end up with a second year you can prove." }
+    footer_button: { label: "Download the pathway (PDF)", link: "/downloads/menopause-corporate-pathway.pdf", style: ghost }
 
   - type: method
     background: navy

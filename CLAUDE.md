@@ -133,8 +133,9 @@ edit `_site/`, it is rebuilt every time).
   organisation", Podcast → "Listen on Spotify". Menopause at Work is the flagship.
 - **Menopause in the Workplace** (Oct 2026): `/menopause-in-the-workplace/` replaced
   `/menopause-policy/` (301s in `src/_redirects`). It covers the Readiness Audit, manager
-  training, policy support and staff awareness. The audit's one-pager PDF lives in
-  `src/downloads/` and is served at `/downloads/menopause-readiness-audit.pdf`.
+  training, policy support and staff awareness. Its two one-pager PDFs live in
+  `src/downloads/`: `menopause-readiness-audit.pdf` and `menopause-corporate-pathway.pdf`
+  (the five-step pathway the page's cards mirror).
   Printed QR codes use `/book-a-call`, a 302 in `src/_redirects` that opens the Contact page;
   repoint it (and the audit's "Book a call" button) when a corporate calendar exists.
 - **Menu breakpoint** is 1260px (the full row needs that width); below it the menu folds into
