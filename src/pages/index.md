@@ -45,7 +45,7 @@ sections:
         button_label: "Explore Soul Mastery"
         button_link: /soul-mastery-ascension/
       - title: "Chaos to Calm · Business Coaching"
-        text: "**For** women who want to grow a meaningful business without sacrificing themselves, with grounded strategy and a nervous-system-first approach."
+        text: "**For** women moving out of corporate life and into work that’s actually theirs: business coaching that begins with identity."
         button_label: "Explore Chaos to Calm"
         button_link: /chaos-to-calm/
 
