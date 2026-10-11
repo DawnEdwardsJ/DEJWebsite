@@ -1,11 +1,11 @@
 ---
 title: "Soul Mastery Ascension | 1:1 Coaching with Dawn Edwards-Jones"
-description: "Soul Mastery Ascension — premium 1:1 coaching with Dawn Edwards-Jones. Deep identity and nervous-system work for women ready for lasting transformation."
+description: "Soul Mastery Ascension: premium 1:1 coaching with Dawn Edwards-Jones. Deep identity and nervous-system work for women ready for lasting transformation."
 sections:
   - type: hero_photo
     kicker: "1:1 Coaching"
     heading: "Soul Mastery Ascension."
-    text: "The private, 1:1 version of the Soul Mastery Sanctuary — my premium container for women ready to go all in. Deep identity and nervous-system work, close proximity and faster, lasting transformation."
+    text: "The private, 1:1 version of the Soul Mastery Sanctuary, my premium container for women ready to go all in. Deep identity and nervous-system work, close proximity and faster, lasting transformation."
     buttons:
       - { label: "Enquire about working together", link: "/contact/?type=soul-mastery-ascension#enquire", style: gold }
     photo: /images/photos/dawn-cream-linen-curtain.jpg
@@ -20,7 +20,7 @@ sections:
     cards:
       - { title: "Identity rewiring", text: "Move beyond old patterns into who you’re becoming." }
       - { title: "Nervous-system mastery", text: "Regulate at a deeper level so change holds under pressure." }
-      - { title: "Proximity to Dawn", text: "Close, personal support — you’re not another number." }
+      - { title: "Proximity to Dawn", text: "Close, personal support. You’re not another number." }
       - { title: "Faster, deeper shifts", text: "Private work moves you further, sooner." }
 
   - type: split
@@ -43,7 +43,7 @@ sections:
     frame_title: "Book a Soul Mastery Alignment Call with Dawn"
 
   - type: crosslink
-    text: "Not ready for 1:1? The Sanctuary is the group version — same work, in community."
+    text: "Not ready for 1:1? The Sanctuary is the group version: same work, in community."
     link: https://newdawnwellness.health/soul-sanctuary
     link_label: "Explore Soul Mastery Sanctuary →"
 ---

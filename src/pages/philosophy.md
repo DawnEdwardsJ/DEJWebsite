@@ -1,12 +1,12 @@
 ---
 readingLine: true
-title: "The Adawning Philosophy | What We Believe — Dawn Edwards-Jones"
-description: "The Adawning philosophy — the beliefs behind Dawn Edwards-Jones’ work. You’re not broken. Your body isn’t the enemy. And you deserve support long before breaking point."
+title: "The Adawning Philosophy: What We Believe | Dawn Edwards-Jones"
+description: "The Adawning philosophy: the beliefs behind Dawn Edwards-Jones’ work. You’re not broken. Your body isn’t the enemy. And you deserve support long before breaking point."
 sections:
   - type: hero_photo
     kicker: "The Adawning"
     heading: "What we believe."
-    text: "Everything I teach — on stage, in the studio and one-to-one — comes back to a few simple truths. This is the ground it all stands on."
+    text: "Everything I teach (on stage, in the studio and one-to-one) comes back to a few simple truths. This is the ground it all stands on."
     photo: /images/photos/dawn-white-linen-namaste.jpg
     photo_alt: "Dawn standing in cream linen, hands at her heart"
     tone: beige
@@ -18,8 +18,8 @@ sections:
     intro: "Not as slogans. As the things I’ve lived, and the things I’ve watched change women’s lives when they finally let themselves believe them too."
     beliefs:
       - belief: "You don’t need fixing."
-        text: "You’re not broken. You’re carrying more than any one person was built to hold — and doing it without enough support."
-      - belief: "Your body isn’t broken — *it’s overwhelmed.*"
+        text: "You’re not broken. You’re carrying more than any one person was built to hold, and doing it without enough support."
+      - belief: "Your body isn’t broken, *it’s overwhelmed.*"
         text: "The symptoms you’re fighting are signals, not failures. Your body is asking for safety, not more pressure."
       - belief: "Success was never meant to cost your wellbeing."
         text: "Achievement and exhaustion don’t have to arrive together. You can lead, and still feel like yourself."
@@ -28,11 +28,11 @@ sections:
       - belief: "Softness isn’t weakness."
         text: "Calm is a form of strength. The steadiest presence in the room is rarely the loudest one."
       - belief: "Healing isn’t selfish."
-        text: "Coming back to yourself is what lets you hold everyone else — without disappearing in the process."
+        text: "Coming back to yourself is what lets you hold everyone else, without disappearing in the process."
       - belief: "Your nervous system isn’t the enemy."
-        text: "It has been protecting you. The work isn’t to override it — it’s to help it feel safe again."
+        text: "It has been protecting you. The work isn’t to override it; it’s to help it feel safe again."
       - belief: "You deserve support *before* breaking point."
-        text: "Not once you’ve collapsed. Before. Support isn’t a reward for falling apart — it’s how you never have to."
+        text: "Not once you’ve collapsed. Before. Support isn’t a reward for falling apart; it’s how you never have to."
       - belief: "Coming home to yourself changes everything."
         text: "When you stop abandoning yourself, your health, your relationships and your work all begin to change from the inside out."
 
@@ -56,7 +56,7 @@ sections:
     kicker: "The Adawning"
     heading: "This is the work."
     lines:
-      - text: "The Adawning is a movement — women choosing to stop surviving their own lives and start leading them from calm."
+      - text: "The Adawning is a movement: women choosing to stop surviving their own lives and start leading them from calm."
       - text: "Not by doing more. By finally being supported properly."
       - text: "If that’s the woman you’re becoming, you’re already one of us."
         style: small

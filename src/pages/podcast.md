@@ -1,6 +1,6 @@
 ---
 title: "The Adawning Podcast | Dawn Edwards-Jones"
-description: "The Adawning — the podcast from Dawn Edwards-Jones. Honest, grounded conversations on self-leadership, nervous-system health, menopause and coming home to yourself."
+description: "The Adawning: the podcast from Dawn Edwards-Jones. Honest, grounded conversations on self-leadership, nervous-system health, menopause and coming home to yourself."
 sections:
   - type: hero_photo
     kicker: "Listen"
@@ -19,7 +19,7 @@ sections:
     tone: beige
     kicker: "About the show"
     heading: "Real talk for women coming home to themselves."
-    body: "Each episode is a warm, no-fluff conversation — part insight, part permission slip. Expect nervous-system science, lived experience, and the reframes that help you breathe a little easier."
+    body: "Each episode is a warm, no-fluff conversation: part insight, part permission slip. Expect nervous-system science, lived experience, and the reframes that help you breathe a little easier."
 
   - type: cards
     background: cream

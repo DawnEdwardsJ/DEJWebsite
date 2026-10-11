@@ -83,6 +83,10 @@ fitness coach, not a generic mindset coach.
 
 Sales language is invitation-based and relational. Never pushy or deadline-driven.
 
+**No em dashes or en dashes anywhere in site copy** (Dawn's rule, Oct 2026). Use a comma,
+full stop, colon, semicolon or brackets; in name-and-descriptor labels use " · " (e.g.
+"Soul Mastery · Personal Coaching"). Testimonial attributions have no leading dash.
+
 ## Architecture — read this before editing
 
 The site is built with **Eleventy**. Source is in `src/`, output goes to `_site/` (never

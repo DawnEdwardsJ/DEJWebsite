@@ -1,6 +1,6 @@
 ---
 title: "Chaos to Calm | Soul-Led Business Coaching with Dawn Edwards-Jones"
-description: "Chaos to Calm — soul-led business coaching for women building businesses without burning out. Grounded strategy and nervous-system-first leadership."
+description: "Chaos to Calm: soul-led business coaching for women building businesses without burning out. Grounded strategy and nervous-system-first leadership."
 sections:
   - type: hero_photo
     kicker: "Business Coaching"
@@ -19,7 +19,7 @@ sections:
     tone: burgundy
     kicker: "The approach"
     heading: "Build from calm, not chaos."
-    body: "Most business advice runs on urgency and hustle. I help you build the opposite way — sustainable growth rooted in clarity, self-leadership and a regulated nervous system, so your business supports your life instead of consuming it."
+    body: "Most business advice runs on urgency and hustle. I help you build the opposite way: sustainable growth rooted in clarity, self-leadership and a regulated nervous system, so your business supports your life instead of consuming it."
     ticks:
       - "Clarity over busywork"
       - "Aligned, invitation-based selling"
