@@ -62,7 +62,7 @@ sections:
       - "Practical tools people actually use"
     buttons:
       - { label: "Discuss your organisation", link: "/contact/?type=corporate-workshop#enquire", style: gold }
-      - { label: "Menopause policy advisory", link: "/menopause-policy/", style: ghost }
+      - { label: "Menopause in the workplace", link: "/menopause-in-the-workplace/", style: ghost }
 
   - type: manifesto
     background: cream

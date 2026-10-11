@@ -5,8 +5,8 @@ sections:
   - type: hero_photo
     dark: true
     kicker: "For Workplaces"
-    heading: "Support the women who hold it all together."
-    text: "Practical, grounded workshops that help your people manage stress, navigate menopause and lead themselves — reframing wellbeing as performance, retention and care."
+    heading: "Support the people who hold it all together."
+    text: "Practical, grounded workshops that help your people manage stress, navigate menopause in the workplace and lead themselves — reframing wellbeing as performance, retention and care."
     buttons:
       - { label: "Discuss your organisation", link: "/contact/?type=corporate-workshop#enquire", style: gold }
     photo: /images/photos/dawn-white-linen-shirt-portrait.jpg
@@ -58,12 +58,12 @@ sections:
 
   - type: cta_band
     background: ivory
-    line: "Ready to support the women who hold your organisation together?"
+    line: "Ready to support the people who hold your organisation together?"
     buttons:
       - { label: "Discuss your organisation", link: "/contact/?type=corporate-workshop#enquire", style: gold }
 
   - type: crosslink
     text: "Want to embed lasting change in your organisation?"
-    link: /menopause-policy/
-    link_label: "Explore Menopause Policy Advisory →"
+    link: /menopause-in-the-workplace/
+    link_label: "Explore Menopause in the Workplace →"
 ---

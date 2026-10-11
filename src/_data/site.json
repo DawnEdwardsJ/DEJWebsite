@@ -14,8 +14,8 @@
   ],
   "turnstileSiteKey": "",
   "analytics": {
-    "ga4Id": "",
-    "metaPixelId": ""
+    "ga4Id": "G-Q6GWN5TWYL",
+    "metaPixelId": "295191695777401"
   },
   "nav": [
     {
@@ -61,8 +61,8 @@
           "link": "/corporate-workshops/"
         },
         {
-          "label": "Menopause Policy Advisory",
-          "link": "/menopause-policy/"
+          "label": "Menopause in the Workplace",
+          "link": "/menopause-in-the-workplace/"
         }
       ]
     },
@@ -122,8 +122,8 @@
             "link": "/corporate-workshops/"
           },
           {
-            "label": "Menopause Policy Advisory",
-            "link": "/menopause-policy/"
+            "label": "Menopause in the Workplace",
+            "link": "/menopause-in-the-workplace/"
           }
         ]
       },

@@ -35,6 +35,9 @@ this repo through Workers Builds. Everything it needs is in `wrangler.jsonc`:
 
 Every branch push builds a preview version; production deploys from `main`. Turn on
 **Preview URLs** in the Worker's settings to get a shareable link for each pull request.
+Branch builds run `npx wrangler preview`, which fails unless `wrangler.jsonc` has a
+`previews` block (an empty one is enough). Every preview build failed from 7 to 11 Oct 2026
+for that reason.
 
 The contact form secret goes in: Cloudflare → Workers & Pages → `dejwebsite` → Settings →
 **Variables and Secrets** → add `TEKMATIX_API_TOKEN` (type Secret). The same place takes the

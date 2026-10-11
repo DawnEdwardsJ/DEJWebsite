@@ -43,7 +43,7 @@ first commit on `main` if you need the history.
    sandbox, so the first real look is on the preview link: the enquiry form on Contact and the
    expression-of-interest form on The Adawning Book. Style them to the brand inside Tekmatix
    (Montserrat, navy text, gold button, no bright white).
-2. **Analytics IDs.** Paste the GA4 and Meta Pixel IDs into Site settings when available.
+2. **Analytics IDs:** ✅ supplied by Mitch (11 Oct) and set in `site.json`.
 3. **Legal pages:** ✅ approved by Dawn (6 Oct); the draft note is gone and both show
    "Last updated 6 October 2026".
 4. **Production branch.** Switch the Cloudflare production branch and the GitHub default

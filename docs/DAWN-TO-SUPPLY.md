@@ -36,10 +36,8 @@ Integrations → create one with contacts view/edit access, then paste it into C
 
 ## 3. GA4 Measurement ID and Meta Pixel ID
 
-**Blocks:** all analytics and conversion tracking.
-
-Every page carries commented-out tracking blocks with placeholders `G-XXXXXXXXXX` and
-`PIXEL_ID_HERE`. Nothing is being measured.
+**✅ Supplied 11 Oct 2026** (GA4 `G-Q6GWN5TWYL`, Meta Pixel `295191695777401`, both in
+`src/_data/site.json`). Tracking starts once that change is merged.
 
 - **GA4:** Google Analytics → Admin → Data streams → the web stream for this domain → the
   Measurement ID, format `G-` followed by ten characters. If no property exists for

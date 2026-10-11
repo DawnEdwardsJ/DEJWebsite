@@ -449,6 +449,12 @@ p.local-seo{max-width:70ch;margin:0 auto;text-align:center;font-size:.95rem;line
 .optin .fine{margin-left:auto;margin-right:auto}
 /* a lone card shouldn't stretch the full width */
 .grid:has(> :only-child){grid-template-columns:minmax(0,560px);justify-content:center}
+/* Five cards: three above, two centred below, rather than four and an orphan */
+@media (min-width:901px){
+.grid:has(> .card:nth-child(5):last-child){grid-template-columns:repeat(6,minmax(0,1fr))}
+.grid:has(> .card:nth-child(5):last-child) > .card{grid-column:span 2}
+.grid:has(> .card:nth-child(5):last-child) > .card:nth-child(4){grid-column:2 / span 2}
+}
 /* hero photo layouts squeezed side by side on phones: stack them */
 @media(max-width:900px){.hero-split{grid-template-columns:1fr;min-height:0}.hero-split .hfig{min-height:420px}}
 /* footer headings: same look as before, correct heading order for screen readers */
@@ -725,7 +731,7 @@ p,li,cite,.quote-card p{text-wrap:pretty}
 .quote-card cite{display:block;line-height:1.7}
 
 /* small line under a call-to-action band */
-.cta-note{margin:22px auto 0;font-size:.95rem;max-width:none}
+.cta-note{margin:22px auto 0;font-size:.95rem;max-width:62ch}
 .cta-note a{color:var(--navy);text-decoration:underline;text-decoration-color:rgba(238,124,25,.55);text-underline-offset:3px;transition:text-decoration-color var(--t-hover) var(--ease-out)}
 .cta-note a:hover{text-decoration-color:var(--orange)}
 .cta-band .cta-note{text-align:center}
