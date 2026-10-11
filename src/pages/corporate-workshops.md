@@ -6,7 +6,7 @@ sections:
     dark: true
     kicker: "For Workplaces"
     heading: "Support the people who hold it all together."
-    text: "Practical, grounded workshops that help your people manage stress, navigate menopause and lead themselves — reframing wellbeing as performance, retention and care."
+    text: "Practical, grounded workshops that help your people manage stress, navigate menopause in the workplace and lead themselves — reframing wellbeing as performance, retention and care."
     buttons:
       - { label: "Discuss your organisation", link: "/contact/?type=corporate-workshop#enquire", style: gold }
     photo: /images/photos/dawn-white-linen-shirt-portrait.jpg
