@@ -361,6 +361,7 @@ content:
               - { name: intro, component: intro }
               - { name: calendar_id, label: Tekmatix calendar ID, type: string, required: true }
               - { name: frame_title, label: Calendar title (screen readers), type: string }
+              - { name: note, label: "Small line under the calendar (optional, links allowed)", type: string }
       - { name: body, label: Page text (legal pages only), type: rich-text, options: { format: markdown } }
 
   - name: site

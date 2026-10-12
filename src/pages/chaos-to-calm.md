@@ -1,18 +1,19 @@
 ---
 title: "From Chaos to Calm™ | Business Coaching with Dawn Edwards-Jones"
-description: "From Chaos to Calm™: a guided journey for women moving out of corporate life and into work that’s actually theirs. Business coaching that begins with identity."
+description: "From Chaos to Calm™: business coaching for women leaving corporate life to start a business of their own. A guided six month journey that begins with identity."
 sections:
   - type: hero_photo
-    kicker: "From Chaos to Calm™"
+    kicker: "Business coaching · From Chaos to Calm™"
     heading: "You don’t build the business first. *You rebuild the woman.*"
-    text: "You’ve done well on paper. The career, the title, the competence everyone relies on. And somewhere in the middle of it you lost the thread back to yourself."
+    text: "A guided journey for women leaving corporate life to build a business of their own, starting with the woman who has to build it."
     buttons:
-      - { label: "Book a call", link: "#book", style: gold }
+      - { label: "Book a call", link: "https://adawning.newdawnwellness.health/widget/bookings/chaos-to-calm-alignment", style: gold }
       - { label: "See the journey", link: "#journey", style: ghost }
     photo: /images/photos/dawn-desk-smile.jpg
     photo_alt: "Dawn at her desk with her laptop, smiling, in soft window light"
     photo_position: center 30%
     tone: burgundy
+    credentials: "Six month journey · Small group or private · Live on Zoom"
 
   - type: split
     background: ivory
@@ -22,6 +23,8 @@ sections:
     kicker: "Where we begin"
     heading: "So we don’t start with the business. *We start with you.*"
     body: |-
+      You’ve done well on paper. The career, the title, the competence everyone relies on. And somewhere in the middle of it you lost the thread back to yourself.
+
       Most women don’t struggle to build a business because they lack strategy. They struggle because they’re trying to build it as a woman who is exhausted, over-responsible, and quietly unsure she’s allowed to want this.
 
       From Chaos to Calm is a guided journey for women moving out of corporate life and into work that’s actually theirs. It’s business coaching that begins with identity, because the offer, the pricing, the visibility and the selling all get easier once the woman building them feels safe in her own body.
@@ -59,6 +62,7 @@ sections:
     cards:
       - { price: "$3,500", title: "The Journey · In the room, every week", text: "You’re in the room every week with me and a small group of women doing the same brave thing. The Discovery, the fourteen modules, the weekly hour, the workbooks, the meditations and the practices chosen for you are all yours. Or six monthly payments of $600." }
       - { price: "$5,995", title: "Ascension · The group, plus me", text: "Everything in The Journey, plus twelve private hours with me across the journey, your expanded Soul Blueprint and report, Voxer access Monday to Thursday, and a pace set by you rather than the room. Founding rate, six places. Or six monthly payments of $1,050." }
+    footer_button: { label: "Book a call with Dawn", link: "https://adawning.newdawnwellness.health/widget/bookings/chaos-to-calm-alignment", style: gold }
 
   - type: calendar
     background: cream
@@ -68,4 +72,5 @@ sections:
     intro: "Thirty minutes, Zoom or phone, whichever feels easier. No pitch. I want to hear where you are and tell you honestly whether this is the right room for you. If the timing feels right and the money feels hard, talk to me rather than ruling yourself out."
     calendar_id: vxKSKPPjkrISkSwzHESP
     frame_title: "Book a From Chaos to Calm alignment call with Dawn"
+    note: "Calendar not showing? [Open the booking page](https://adawning.newdawnwellness.health/widget/bookings/chaos-to-calm-alignment)"
 ---

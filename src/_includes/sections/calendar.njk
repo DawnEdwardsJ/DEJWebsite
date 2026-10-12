@@ -4,5 +4,6 @@
 <div class="calendar-embed reveal">
 <iframe src="https://api.leadconnectorhq.com/widget/booking/{{ s.calendar_id }}" title="{{ s.frame_title or 'Book a call with Dawn' }}" id="{{ s.calendar_id }}_cal" scrolling="no" loading="lazy"></iframe>
 </div>
+{%- if s.note %}<p class="cta-note cal-note">{{ s.note | mdi | safe }}</p>{% endif %}
 <script src="https://link.msgsndr.com/js/form_embed.js" defer></script>
 </div></section>
