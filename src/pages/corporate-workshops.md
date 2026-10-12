@@ -1,12 +1,12 @@
 ---
 title: "Corporate Workshops & Wellbeing | Dawn Edwards-Jones"
-description: "Corporate wellbeing workshops and sessions with Dawn Edwards-Jones — menopause, burnout, nervous-system health and self-leadership for teams and organisations."
+description: "Corporate wellbeing workshops and sessions with Dawn Edwards-Jones: menopause, burnout, nervous-system health and self-leadership for teams and organisations."
 sections:
   - type: hero_photo
     dark: true
     kicker: "For Workplaces"
     heading: "Support the people who hold it all together."
-    text: "Practical, grounded workshops that help your people manage stress, navigate menopause in the workplace and lead themselves — reframing wellbeing as performance, retention and care."
+    text: "Practical, grounded workshops that help your people manage stress, navigate menopause in the workplace and lead themselves, reframing wellbeing as performance, retention and care."
     buttons:
       - { label: "Discuss your organisation", link: "/contact/?type=corporate-workshop#enquire", style: gold }
     photo: /images/photos/dawn-white-linen-shirt-portrait.jpg
@@ -22,7 +22,7 @@ sections:
     kicker: "What I deliver"
     heading: "Sessions built for real workplaces."
     cards:
-      - { title: "Menopause at Work", text: "Education and practical support for staff and managers — reducing stigma and absence." }
+      - { title: "Menopause at Work", text: "Education and practical support for staff and managers, reducing stigma and absence." }
       - { title: "Burnout & Nervous-System Health", text: "Give teams the tools to regulate stress and stay resourced." }
       - { title: "Self-Leadership & Wellbeing", text: "Sustainable performance without the burnout culture." }
       - { title: "Wellbeing Days & Retreats", text: "Movement, breathwork and restoration for your team." }
@@ -35,7 +35,7 @@ sections:
     tone: olive
     kicker: "Why it matters"
     heading: "Wellbeing is a business issue."
-    body: "Unsupported stress and menopause cost organisations in absence, turnover and lost performance. I help you get ahead of it — with sessions that are warm and human, not clinical or preachy."
+    body: "Unsupported stress and menopause cost organisations in absence, turnover and lost performance. I help you get ahead of it, with sessions that are warm and human, not clinical or preachy."
     ticks:
       - "Reduce absence and turnover"
       - "Support women through midlife transitions"
@@ -48,13 +48,13 @@ sections:
     heading: "What workplaces say."
     quotes:
       - quote: "Dawn presented a Menopause workshop and information session to our organisation as part of our 2025 Wellness program. She ran an extremely professional, yet relatable session… Since the session, we’ve had feedback from our staff that this was one of the best sessions we’ve had in our wellness program so far… I would highly recommend a corporate wellness session from Dawn … to any organisation that advocates for their employees’ health and wellbeing."
-        cite: "— Maddy · HR Officer, organisation advocating for healthcare professionals"
+        cite: "Maddy · HR Officer, organisation advocating for healthcare professionals"
       - quote: "Dawn’s professionalism and experience made our session a breeze to navigate. It was evident that she had grasped our target audience and the goals we aimed to achieve, resulting in content that was not only relevant but also personalised to our company’s needs. Dawn’s expertise shone through, ensuring an engaging and insightful experience for all participants."
-        cite: "— Jenifer Hasbun · General Manager, Shared Services, Corporate Protection Australia"
+        cite: "Jenifer Hasbun · General Manager, Shared Services, Corporate Protection Australia"
       - quote: "This was a team-building event, and it was truly an amazing experience… Dawn was not only an expert facilitator but also genuinely caring and invested in our well-being… I left the Wellness Retreat feeling rejuvenated, inspired, and connected to myself and nature."
-        cite: "— Caroline · Administrator, Maybanke Association Inc. · Half-day wellness retreat"
+        cite: "Caroline · Administrator, Maybanke Association Inc. · Half-day wellness retreat"
       - quote: "Dawn was a great speaker and shared very useful, valuable information beyond the basic repeated information about menopause. A great holistic approach to preventing symptoms of menopause."
-        cite: "— Workplace menopause workshop attendee"
+        cite: "Workplace menopause workshop attendee"
 
   - type: cta_band
     background: ivory

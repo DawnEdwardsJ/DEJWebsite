@@ -735,6 +735,7 @@ p,li,cite,.quote-card p{text-wrap:pretty}
 .cta-note a{color:var(--navy);text-decoration:underline;text-decoration-color:rgba(238,124,25,.55);text-underline-offset:3px;transition:text-decoration-color var(--t-hover) var(--ease-out)}
 .cta-note a:hover{text-decoration-color:var(--orange)}
 .cta-band .cta-note{text-align:center}
+.cal-note{text-align:center}
 
 /* the closed phone menu is fully hidden: no shadow at the screen edge, no tabbing into it */
 /* closed, it is taken out of the page entirely, so it can't widen the page on phones

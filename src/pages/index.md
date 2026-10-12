@@ -1,6 +1,6 @@
 ---
 title: "Dawn Edwards-Jones | Keynote Speaker on Mental & Emotional Wellbeing"
-description: "Dawn Edwards-Jones — keynote speaker on mental and emotional wellbeing, burnout and menopause at work. Podcaster and retreat host helping people and workplaces through stress and change."
+description: "Dawn Edwards-Jones: keynote speaker on mental and emotional wellbeing, burnout and menopause at work. Podcaster and retreat host helping people and workplaces through stress and change."
 permalink: /
 sections:
   - type: hero_photo
@@ -11,14 +11,14 @@ sections:
       - { label: "Book Dawn to speak", link: "/contact/?type=keynote-speaking#enquire", style: gold, sheen: true }
       - { label: "Work with me", link: "/#ways", style: ghost }
     photo: /images/photos/dawn-couch-relaxed.jpg
-    photo_alt: "Dawn Edwards-Jones at home — warm, grounded, present."
+    photo_alt: "Dawn Edwards-Jones at home: warm, grounded, present."
     photo_position: center top
     tone: burgundy
 
   - type: trust_strip
     rating: "Loved by clients & audiences"
     quote: "Dawn is such a natural speaker. In her talk about menopause she was warm, empathetic and empowering."
-    cite: "— Kirsty Foster, Social Mums Club"
+    cite: "Kirsty Foster, Social Mums Club"
     mark: |-
       30 years in leadership
       16+ retreats led
@@ -29,21 +29,25 @@ sections:
     background: ivory
     anchor: ways
     kicker: "Ways to work with me"
-    heading: "Three ways in — wherever you’re starting."
-    intro: "Whether you’re booking a stage, looking for ongoing support, or ready to go all in privately — there’s a door here for you."
+    heading: "Four ways in, wherever you’re starting."
+    intro: "Whether you’re booking a stage, looking for ongoing support, building a business, or ready to go all in privately, there’s a door here for you."
     cards:
       - title: "Bring Dawn to your event"
         text: "**For** conferences, workplaces and women’s events wanting a warm, grounded keynote or workshop."
         button_label: "See speaking"
         button_link: /speaking/
       - title: "Corporate Workshops & Wellbeing"
-        text: "**For** teams and organisations: workshops, wellbeing sessions and menopause policy advisory."
+        text: "**For** teams and organisations: workshops, wellbeing sessions and menopause in the workplace support."
         button_label: "For organisations"
         button_link: /corporate-workshops/
-      - title: "Soul Mastery — Personal Coaching"
-        text: "**For** women ready to transform from the inside out — through ongoing group coaching and community, or private 1:1 work with Dawn."
+      - title: "Soul Mastery · Personal Coaching"
+        text: "**For** women ready to transform from the inside out, through ongoing group coaching and community, or private 1:1 work with Dawn."
         button_label: "Explore Soul Mastery"
         button_link: /soul-mastery-ascension/
+      - title: "Chaos to Calm · Business Coaching"
+        text: "**For** women leaving corporate life to build a business of their own: business coaching that begins with identity."
+        button_label: "Explore Chaos to Calm"
+        button_link: /chaos-to-calm/
 
   - type: split
     background: navy
@@ -54,7 +58,7 @@ sections:
     kicker: "Flagship keynote & workshop"
     heading: "Menopause at Work."
     lead: "The conversation most workplaces still aren’t doing well."
-    body: "Unsupported stress and menopause cost organisations in absence, turnover and lost performance. I help you get ahead of it — with sessions that are warm and human, not clinical or preachy."
+    body: "Unsupported stress and menopause cost organisations in absence, turnover and lost performance. I help you get ahead of it, with sessions that are warm and human, not clinical or preachy."
     ticks:
       - "Reduce absence and turnover"
       - "Support women through midlife transitions"
@@ -73,9 +77,9 @@ sections:
       - text: "Push harder. Be more disciplined. Manage your time better. Build more resilience. Wake earlier. Meditate longer. Take another course. Read another book."
         style: list
       - text: "But what if you were never the problem?"
-      - text: "What if you’ve simply become an expert at *surviving* — holding the family together, leading the team, building the business, caring for ageing parents, carrying everyone around you…"
+      - text: "What if you’ve simply become an expert at *surviving*: holding the family together, leading the team, building the business, caring for ageing parents, carrying everyone around you…"
       - text: "…while quietly abandoning yourself?"
-      - text: "This is the work I care about most: helping women stop surviving — and start leading themselves from calm."
+      - text: "This is the work I care about most: helping women stop surviving, and start leading themselves from calm."
         style: small
     footer_button: { label: "Read what we believe →", link: "/philosophy/", style: gold }
 
@@ -87,13 +91,13 @@ sections:
     photo_alt: "Portrait of Dawn Edwards-Jones, holding a cup in a moment of stillness"
     photo_position: center top
     tone: forest
-    lead: "I spent 30 years in the corporate world before wellness — leadership roles across Deloitte, KPMG, government and universities — quietly holding everything together while running on empty."
+    lead: "I spent 30 years in the corporate world before wellness (leadership roles across Deloitte, KPMG, government and universities), quietly holding everything together while running on empty."
     body: |-
-      I know grief in my bones. I went from being a wife to a widow overnight, and I had to rebuild my life from the ground up. I later emigrated from Wales to Australia with my husband and three children, built businesses as an entrepreneur, and moved through trauma and menopause burnout along the way — the kind no amount of discipline fixes.
+      I know grief in my bones. I went from being a wife to a widow overnight, and I had to rebuild my life from the ground up. I later emigrated from Wales to Australia with my husband and three children, built businesses as an entrepreneur, and moved through trauma and menopause burnout along the way, the kind no amount of discipline fixes.
 
       What changed everything was learning to regulate my nervous system, come home to my body and lead from safety instead of force.
 
-      Today I bring that lived experience to stages, boardrooms and private clients — because no woman should have to choose between success and her wellbeing.
+      Today I bring that lived experience to stages, boardrooms and private clients, because no woman should have to choose between success and her wellbeing.
     buttons:
       - { label: "More about Dawn →", link: "/about/", style: gold }
 
@@ -104,13 +108,13 @@ sections:
     background: olive
     kicker: "The method"
     heading: "The Adawning Method™"
-    intro: "The path I walk every woman through — on stage, in the room, and one-to-one."
+    intro: "The path I walk every woman through: on stage, in the room, and one-to-one."
     steps:
       - { question: "Who am I?", title: "01 · Remember", text: "Come back to the woman underneath the roles, the pressure and the performing." }
       - { question: "Body · Breath · Soul", title: "02 · Reconnect", text: "Regulate the nervous system and feel safe in your own body again." }
       - { question: "Voice · Worth · Identity", title: "03 · Reclaim", text: "Stop abandoning yourself. Reclaim your voice, your worth and your yes." }
       - { question: "Life · Health · Business", title: "04 · Rebuild", text: "Rebuild your life from calm and clarity, not urgency and force." }
-      - { question: "Lead · Speak · Inspire", title: "05 · Rise", text: "Step into steady, self-led leadership — and light the way for others." }
+      - { question: "Lead · Speak · Inspire", title: "05 · Rise", text: "Step into steady, self-led leadership, and light the way for others." }
     closing_line: "This is the work. Lived first, then taught."
 
   - type: cards
@@ -130,24 +134,24 @@ sections:
   - type: stats
     background: burgundy
     kicker: "On the stage"
-    heading: "A voice that lands — and lasts."
+    heading: "A voice that lands. And lasts."
     stats:
       - { number: "30", label: "Years in corporate leadership" }
-      - { number: "16+", label: "Retreats led — Bali, Thailand & QLD" }
+      - { number: "16+", label: "Retreats led · Bali, Thailand & QLD" }
       - { number: "2,000+", label: "Largest stage" }
 
   - type: cards
     background: cream
     kicker: "For you"
     heading: "Support for the woman navigating it herself."
-    intro: "Whether it’s menopause, burnout or the quiet exhaustion of holding everything together — you don’t need more discipline. You need the right support. Start where you feel ready."
+    intro: "Whether it’s menopause, burnout or the quiet exhaustion of holding everything together, you don’t need more discipline. You need the right support. Start where you feel ready."
     cards:
-      - title: "Soul Mastery — Personal Coaching"
-        text: "My deeper coaching work for women ready to transform from the inside out — through ongoing group coaching and community, or private 1:1 work with Dawn."
+      - title: "Soul Mastery · Personal Coaching"
+        text: "My deeper coaching work for women ready to transform from the inside out, through ongoing group coaching and community, or private 1:1 work with Dawn."
         button_label: "Explore Soul Mastery"
         button_link: /soul-mastery-ascension/
-      - title: "Chaos to Calm — Business Coaching"
-        text: "Soul-led business coaching for women who want to grow something meaningful without sacrificing themselves — with grounded strategy and a nervous-system-first approach."
+      - title: "Chaos to Calm · Business Coaching"
+        text: "Soul-led business coaching for women who want to grow something meaningful without sacrificing themselves, with grounded strategy and a nervous-system-first approach."
         button_label: "Explore Chaos to Calm"
         button_link: /chaos-to-calm/
 
@@ -156,12 +160,12 @@ sections:
     kicker: "In their words"
     heading: "Women who came home."
     quotes:
-      - quote: "The most powerful, deeply relaxing experience — Dawn has an incredible gift for holding space. I left feeling completely reset and reconnected to myself."
-        cite: "— Angela N. · Hypno-meditation"
+      - quote: "The most powerful, deeply relaxing experience. Dawn has an incredible gift for holding space. I left feeling completely reset and reconnected to myself."
+        cite: "Angela N. · Hypno-meditation"
       - quote: "Dawn is warm, intuitive and genuinely transformational. I felt safe, seen and lighter than I have in years."
-        cite: "— Kiran · Healing session"
-      - quote: "Thoughtfully facilitated, calm and grounding — Dawn nurtured each one of us. I left calmer, more grounded and very grateful."
-        cite: "— Cynthia E. · Day immersion"
+        cite: "Kiran · Healing session"
+      - quote: "Thoughtfully facilitated, calm and grounding. Dawn nurtured each one of us. I left calmer, more grounded and very grateful."
+        cite: "Cynthia E. · Day immersion"
 
   - type: optin
     background: forest
@@ -170,7 +174,7 @@ sections:
     text: |-
       A gentle guided meditation for women who are tired of always being the strong one.
 
-      You’re the one who holds everything together. This is a space to pause, soften, calm your nervous system and come back to yourself — without pressure or overthinking.
+      You’re the one who holds everything together. This is a space to pause, soften, calm your nervous system and come back to yourself, without pressure or overthinking.
     button_label: "Get the free meditation"
     button_link: https://newdawnwellness.health/meditation/newdawnreset
     fine_print: "No pressure, no spam. Unsubscribe any time."

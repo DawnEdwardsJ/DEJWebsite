@@ -23,7 +23,7 @@ sections:
     tone: gold
     kicker: "Why it matters"
     heading: "A policy is only as good as its practice."
-    body: "Too many organisations write a menopause policy and stop there. My role is to make sure it lives — shaping the document with your leadership, then guiding the training, communication and everyday support that turn intention into culture."
+    body: "Too many organisations write a menopause policy and stop there. My role is to make sure it lives: shaping the document with your leadership, then guiding the training, communication and everyday support that turn intention into culture."
     ticks:
       - "Advisory partnership with management"
       - "Policy shaped to your organisation"
@@ -71,9 +71,9 @@ sections:
     heading: "What workplaces say."
     quotes:
       - quote: "Dawn presented a Menopause workshop and information session to our organisation as part of our 2025 Wellness program. She ran an extremely professional, yet relatable session… Since the session, we’ve had feedback from our staff that this was one of the best sessions we’ve had in our wellness program so far… I would highly recommend a corporate wellness session from Dawn … to any organisation that advocates for their employees’ health and wellbeing."
-        cite: "— Maddy · HR Officer, organisation advocating for healthcare professionals"
+        cite: "Maddy · HR Officer, organisation advocating for healthcare professionals"
       - quote: "Dawn was a great speaker and shared very useful, valuable information beyond the basic repeated information about menopause. A great holistic approach to preventing symptoms of menopause."
-        cite: "— Workplace menopause workshop attendee"
+        cite: "Workplace menopause workshop attendee"
 
   - type: cta_band
     background: ivory

@@ -5,7 +5,7 @@ sections:
   - type: hero
     kicker: "Enquire"
     heading: "Let’s work together."
-    text: "Whether you’re booking a speaker, supporting your team, or ready for private coaching — I’d love to hear what you’re creating. No pressure, just a conversation."
+    text: "Whether you’re booking a speaker, supporting your team, or ready for private coaching, I’d love to hear what you’re creating. No pressure, just a conversation."
 
   - type: form_embed
     background: cream

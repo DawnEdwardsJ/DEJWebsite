@@ -37,9 +37,9 @@ We handle personal information in line with the Australian Privacy Principles in
 
 We do not sell your personal information. Ever. We share it only with the service providers who help us run the business, and only to the extent they need it:
 
-- **Tekmatix** – our customer relationship, booking, email and payment platform
-- **Google** – website analytics and our Google Business Profile
-- **Meta** – if you reach us through Facebook or Instagram, or see our ads
+- **Tekmatix**: our customer relationship, booking, email and payment platform
+- **Google**: website analytics and our Google Business Profile
+- **Meta**: if you reach us through Facebook or Instagram, or see our ads
 - Our accountant, insurer or legal advisers, where genuinely necessary
 - Anyone we are required to disclose to by law
 
