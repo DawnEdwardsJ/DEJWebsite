@@ -13,7 +13,7 @@ sections:
     photo_alt: "Dawn at her desk with her laptop, smiling, in soft window light"
     photo_position: center 30%
     tone: burgundy
-    credentials: "Six month journey · Small group or private · Live on Zoom"
+    credentials: "Starts January 2027 · Six month journey · Small group or private · Live on Zoom"
 
   - type: split
     background: ivory
@@ -58,7 +58,7 @@ sections:
     background: ivory
     kicker: "The investment"
     heading: "There are two ways to walk this."
-    intro: "Same journey. Same fourteen modules. The difference is how much of me comes with you."
+    intro: "Same journey. Same fourteen modules. The difference is how much of me comes with you. The next cohort begins in January 2027."
     cards:
       - { price: "$3,500", title: "The Journey · In the room, every week", text: "You’re in the room every week with me and a small group of women doing the same brave thing. The Discovery, the fourteen modules, the weekly hour, the workbooks, the meditations and the practices chosen for you are all yours. Or six monthly payments of $600." }
       - { price: "$5,995", title: "Ascension · The group, plus me", text: "Everything in The Journey, plus twelve private hours with me across the journey, your expanded Soul Blueprint and report, Voxer access Monday to Thursday, and a pace set by you rather than the room. Founding rate, six places. Or six monthly payments of $1,050." }
