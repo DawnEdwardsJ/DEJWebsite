@@ -22,7 +22,7 @@ sections:
     chapters:
       - label: "01 · The corporate years"
         heading: "For thirty years, I was the woman who had it handled."
-        lead: "Leadership roles across Deloitte, KPMG, government and universities. Big responsibilities. Bigger expectations."
+        lead: "Leadership roles across two of the Big Four consulting firms, government and universities. Big responsibilities. Bigger expectations."
         body: |-
           I was good at it, the kind of good that means people stop asking if you’re okay, because you always seem to be. On paper it looked like success. And in many ways, it was.
 

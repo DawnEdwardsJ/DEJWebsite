@@ -91,7 +91,7 @@ sections:
     photo_alt: "Portrait of Dawn Edwards-Jones, holding a cup in a moment of stillness"
     photo_position: center top
     tone: forest
-    lead: "I spent 30 years in the corporate world before wellness (leadership roles across Deloitte, KPMG, government and universities), quietly holding everything together while running on empty."
+    lead: "I spent 30 years in the corporate world before wellness (leadership roles across two of the Big Four consulting firms, government and universities), quietly holding everything together while running on empty."
     body: |-
       I know grief in my bones. I went from being a wife to a widow overnight, and I had to rebuild my life from the ground up. I later emigrated from Wales to Australia with my husband and three children, built businesses as an entrepreneur, and moved through trauma and menopause burnout along the way, the kind no amount of discipline fixes.
 
