@@ -22,11 +22,11 @@ sections:
     heading: "The same work, in community or one to one."
     cards:
       - title: "Soul Mastery Sanctuary · Group coaching"
-        text: "Weekly group coaching online, with a community of women doing this work together. Ongoing emotional and identity work, a weekly recalibration, and the relief of not doing it alone."
+        text: "Weekly group coaching online, with a community of women doing this work together. Ongoing emotional and identity work, a weekly recalibration, and the relief of not doing it alone. You also have the library of workbooks, meditations and past calls, there whenever you need them."
         button_label: "Explore the Sanctuary"
         button_link: https://newdawnwellness.health/soul-sanctuary
       - title: "Soul Mastery Ascension · Private 1:1"
-        text: "The private, 1:1 version of the Soul Mastery Sanctuary, my premium container for women ready to go all in. Deep identity and nervous-system work, close proximity and faster, lasting transformation."
+        text: "The private, 1:1 version of the Soul Mastery Sanctuary, my premium container for women ready to go all in. Deep identity and nervous-system work, close proximity and faster, lasting transformation. Everything in the Sanctuary is included too, so alongside your private sessions with me you can join the weekly group calls and use the library."
         button_label: "Explore Ascension"
         button_link: "#ascension"
 
