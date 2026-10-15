@@ -33,6 +33,14 @@ sections:
     buttons:
       - { label: "Apply to work together →", link: "https://newdawnwellness.health/soul-mastery-ascension/info", style: gold }
 
+  - type: testimonials
+    background: beige
+    kicker: "In their words"
+    heading: "From inside the Sanctuary."
+    quotes:
+      - quote: "Before joining Soul Mastery, the hardest part of how I was feeling day to day was that I was quite lost and lonely, knowing I needed to move forward but not knowing the way. I now feel more connected. I feel more confident in my ability to handle situations because of… the practices I have learnt and embodied. The in, in, long out breath has changed my life."
+        cite: "Aurelia Powell · Soul Mastery Sanctuary"
+
   - type: calendar
     background: cream
     anchor: book
